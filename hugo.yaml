@@ -1,0 +1,99 @@
+baseURL: https://abel-did.github.io/blog/
+languageCode: en-us
+title: Abel DIDOUH
+
+params:
+  theme:
+    # light | dark | system
+    default: dark
+    displayToggle: true
+
+module:
+  imports:
+    - path: hextra-main
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    params:
+       reading_speed: 228
+    weight: 1
+  nb:
+    languageName: Bokmål
+    weight: 2
+  fr:
+    languageName: Français
+    weight: 3
+
+menu:
+  main:
+    - identifier: blog
+      name: Blog
+      pageRef: /blog
+      weight: 1
+    - name: Search
+      weight: 2
+      params:
+        type: search
+
+
+blog:
+  list:
+      displayTags: true
+      # date | lastmod | publishDate | title | weight
+      sortBy: date
+      sortOrder: desc # or "asc"
+      # Pagination
+      pagerSize: 1
+
+article:
+      displayPagination: true
+
+toc:
+    displayTags: true
+
+highlight:
+    copy:
+      enable: true
+      # hover | always
+      display: hover
+
+enableRobotsTXT: true
+# Parse Git commit
+enableGitInfo: false
+# enableEmoji: false
+hasCJKLanguage: true
+
+page:
+    # full (100%), wide (90rem), normal (80rem)
+    width: normal
+    # tabs:
+    #   sync: true
+
+footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: false
+    width: normal
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: false
+
+
+markup:
+  highlight:
+    noClasses: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
+        enable: true
+
+
