@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DIDOUH Abel – Posts</title>
-    <link>http://localhost:1313/website/fr/blog/</link>
+    <link>https://abel-did.github.io/website/fr/blog/</link>
     <description>Recent content in Posts on DIDOUH Abel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
@@ -9,7 +9,7 @@
     <webMaster>abel@example.com (Abel)</webMaster>
     <lastBuildDate>Sun, 10 Aug 2025 12:08:34 +1200</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/website/fr/blog/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://abel-did.github.io/website/fr/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -19,10 +19,10 @@
     
     <item>
       <title>Cryptographie et Sécurité IoT</title>
-      <link>http://localhost:1313/website/fr/blog/2025-09-14-embsec2/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-09-14-embsec2/</link>
       <pubDate>Sun, 14 Sep 2025 13:28:29 +0200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-09-14-embsec2/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-09-14-embsec2/</guid>
       <description>
         
         
@@ -38,7 +38,7 @@
 &lt;h4&gt;Le principe de Kerckhoffs dans l&amp;rsquo;IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;le-principe-de-kerckhoffs-dans-liot&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#le-principe-de-kerckhoffs-dans-liot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Le principe de Kerckhoffs stipule qu’un système cryptographique doit rester sécurisé même si tout, sauf la clé, est connu publiquement. Dans l’IoT, ce principe est crucial en raison des dispositifs contraints. La sécurité par obscurité est inefficace face à la rétro-ingénierie ou aux fuites. Ainsi, on privilégie des algorithmes standards comme ceux du NIST, avec une gestion robuste des clés. Par exemple, le &amp;ldquo;Blurry Box Encryption&amp;rdquo; utilise des ancres matérielles pour protéger la confidentialité tout en respectant ce principe. Les compromis incluent des algorithmes simplifiés pour économiser l’énergie, tout en garantissant une sécurité durable face aux attaques.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-09-14-embsec2/fr/FIG0.jpg&#34; title=&#34;Auguste Kerckhoffs&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/fr/FIG0.jpg&#34; title=&#34;Auguste Kerckhoffs&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Auguste Kerckhoffs&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Niveaux de sécurité adaptés aux contraintes IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;niveaux-de-sécurité-adaptés-aux-contraintes-iot&#34;&gt;&lt;/span&gt;
@@ -49,7 +49,7 @@
     &lt;a href=&#34;#chiffrement-sym%c3%a9trique-pour-dispositifs-contraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Les origines de la cryptographie symétrique remontent à l&amp;rsquo;Antiquité, notamment à Jules César, célèbre empereur romain, qui aurait utilisé un chiffrement par substitution de lettres, connu aujourd&amp;rsquo;hui sous le nom de &amp;ldquo;chiffre de César&amp;rdquo;. Ce système simple consistait à décaler chaque lettre d&amp;rsquo;un message d&amp;rsquo;un nombre fixe de positions dans l&amp;rsquo;alphabet pour rendre le texte incompréhensible à quiconque ne connaissait pas la clé, c&amp;rsquo;est-à-dire le décalage utilisé. Bien que rudimentaire, cette méthode illustre le principe fondamental de la cryptographie symétrique, qui reste inchangé depuis des siècles.&lt;/p&gt;
 &lt;p&gt;Dans la cryptographie symétrique, un message en clair est transformé en un message chiffré (ou texte chiffré) à l&amp;rsquo;aide d&amp;rsquo;un algorithme de chiffrement, souvent noté Encrypt(), et d&amp;rsquo;une clé cryptographique secrète. Cette clé, partagée uniquement entre l&amp;rsquo;émetteur et le destinataire, est essentielle pour garantir la confidentialité du message. Le processus de déchiffrement, réalisé via l&amp;rsquo;algorithme Decrypt(), utilise cette même clé pour reconvertir le texte chiffré en message original. Cette utilisation d&amp;rsquo;une clé unique pour les deux opérations explique le terme &amp;ldquo;symétrique&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-09-14-embsec2/fr/FIG1.png&#34; title=&#34;Principe du chiffrement symétrique&#34; alt=&#34;Symmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/fr/FIG1.png&#34; title=&#34;Principe du chiffrement symétrique&#34; alt=&#34;Symmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Principe du chiffrement symétrique&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Au fil du temps, la cryptographie symétrique a évolué, passant de techniques manuelles comme le chiffre de César à des algorithmes complexes tels que DES (Data Encryption Standard) dans les années 1970 ou AES (Advanced Encryption Standard), largement utilisé aujourd&amp;rsquo;hui. Ces algorithmes modernes exploitent des clés beaucoup plus longues et des transformations mathématiques sophistiquées pour résister aux attaques informatiques, notamment les tentatives de cassage par force brute.&lt;/p&gt;
@@ -59,7 +59,7 @@
 &lt;h4&gt;Cryptographie asymétrique adaptée IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;cryptographie-asymétrique-adaptée-iot&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#cryptographie-asym%c3%a9trique-adapt%c3%a9e-iot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;La cryptographie asymétrique est une méthode de chiffrement qui repose sur deux clés : une clé publique, partagée librement, et une clé privée, gardée secrète. La clé publique sert à chiffrer un message ou vérifier une signature, tandis que la clé privée permet de déchiffrer ou de signer. Les deux clés sont liées mathématiquement, mais il est presque impossible de déduire la privée à partir de la publique. Cette approche est utilisée pour sécuriser les communications, comme dans les e-mails ou HTTPS, pour authentifier des messages via des signatures numériques ou pour échanger des clés sécurisées dans des systèmes comme la blockchain. Des algorithmes comme RSA ou ECC sont courants, mais cette méthode est plus lente que la cryptographie symétrique.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-09-14-embsec2/fr/FIG2.png&#34; title=&#34;Principe du chiffrement asymétrique&#34; alt=&#34;Asymmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/fr/FIG2.png&#34; title=&#34;Principe du chiffrement asymétrique&#34; alt=&#34;Asymmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Principe du chiffrement asymétrique&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Conclusion&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;conclusion&#34;&gt;&lt;/span&gt;
@@ -79,10 +79,10 @@
     
     <item>
       <title>Les fondamentaux du développement sécurisé pour les systèmes IoT</title>
-      <link>http://localhost:1313/website/fr/blog/2025-09-12-embsec1/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-09-12-embsec1/</link>
       <pubDate>Fri, 12 Sep 2025 00:46:21 +0200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-09-12-embsec1/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-09-12-embsec1/</guid>
       <description>
         
         
@@ -163,10 +163,10 @@ L’avenir de l’IoT dépend des choix techniques actuels. Chaque dispositif co
     
     <item>
       <title>Les outils SDR : écosystème technologique de la radio logicielle moderne</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-20-sdr9/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-20-sdr9/</link>
       <pubDate>Mon, 25 Aug 2025 13:09:53 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-20-sdr9/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-20-sdr9/</guid>
       <description>
         
         
@@ -188,35 +188,35 @@ L’avenir de l’IoT dépend des choix techniques actuels. Chaque dispositif co
     &lt;a href=&#34;#mat%c3%a9riel-sdr--de-lentr%c3%a9e-de-gamme-au-professionnel&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h5&gt;Solutions d&amp;rsquo;entrée de gamme&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;solutions-dentrée-de-gamme&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solutions-dentr%c3%a9e-de-gamme&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Le RTL-SDR représente l&amp;rsquo;archétype des solutions d&amp;rsquo;entrée de gamme qui ont démocratisé l&amp;rsquo;accès à la technologie SDR. Basé sur le chipset RTL2832U initialement conçu pour la réception TNT, ce dispositif USB offre une gamme de fréquences de 24 MHz à 1766 MHz avec un coût inférieur à 40 euros. Sa simplicité d&amp;rsquo;utilisation et son excellent rapport qualité-prix en font l&amp;rsquo;outil de choix pour l&amp;rsquo;initiation aux concepts SDR et l&amp;rsquo;expérimentation radio.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/rtl-sdr.jpg&#34; title=&#34;RTL-SDR&#34; alt=&#34;RTL-SDR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/rtl-sdr.jpg&#34; title=&#34;RTL-SDR&#34; alt=&#34;RTL-SDR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;RTL-SDR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Les performances du RTL-SDR, bien que limitées par sa résolution 8 bits et sa bande passante de 2.4 MHz, suffisent amplement pour de nombreuses applications éducatives et expérimentales. La réception des signaux de diffusion FM, des communications aéronautiques, et des protocoles de télémétrie illustrent la diversité des usages possibles avec cet équipement accessible.&lt;/p&gt;
 &lt;p&gt;Le SDRplay RSP1A étend les capacités d&amp;rsquo;entrée de gamme avec une résolution améliorée de 12 bits et une gamme fréquentielle étendue de 1 kHz à 2 GHz. Cette évolution technologique offre une sensibilité supérieure et une meilleure dynamique, particulièrement appréciées pour la réception des signaux faibles et l&amp;rsquo;analyse spectrale fine.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/sdr-play.jpg&#34; title=&#34;SDRplay&#34; alt=&#34;SDRplay&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/sdr-play.jpg&#34; title=&#34;SDRplay&#34; alt=&#34;SDRplay&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;SDRplay&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h5&gt;Plateformes intermédiaires&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;plateformes-intermédiaires&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#plateformes-interm%c3%a9diaires&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Le HackRF One occupe une position unique en tant que plateforme bidirectionnelle capable d&amp;rsquo;émettre et de recevoir sur une gamme exceptionnellement large de 1 MHz à 6 GHz. Avec sa résolution de 8 bits et sa bande passante de 20 MHz, il constitue un outil polyvalent pour l&amp;rsquo;apprentissage des techniques de modulation et l&amp;rsquo;expérimentation en transmission radio.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/SDR_HackRF_one_PCB.jpg&#34; title=&#34;SDR HackRF&#34; alt=&#34;SDR HackRF&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/SDR_HackRF_one_PCB.jpg&#34; title=&#34;SDR HackRF&#34; alt=&#34;SDR HackRF&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;SDR HackRF&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;L&amp;rsquo;ADALM-Pluto d&amp;rsquo;Analog Devices apporte la technologie AD9363 dans un format compact et abordable. Cette plateforme couvre la gamme 325-3800 MHz avec une résolution de 12 bits et une bande passante configurable jusqu&amp;rsquo;à 20 MHz. Son intégration native avec MATLAB et GNU Radio facilite le prototypage rapide d&amp;rsquo;applications de traitement du signal avancées.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/pluto-sdr.jpg&#34; title=&#34;Pluto SDR&#34; alt=&#34;Pluto SDR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/pluto-sdr.jpg&#34; title=&#34;Pluto SDR&#34; alt=&#34;Pluto SDR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Pluto SDR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;La LimeSDR se distingue par son architecture entièrement open-source et ses performances élevées. Basée sur le chipset LMS7002M, elle offre une couverture fréquentielle de 100 kHz à 3.8 GHz avec une résolution de 12 bits et une bande passante ajustable jusqu&amp;rsquo;à 61.44 MHz. Cette flexibilité technique en fait une plateforme de choix pour la recherche académique et le développement d&amp;rsquo;applications spécialisées.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/lime-sdr.jpg&#34; title=&#34;Lime SDR&#34; alt=&#34;Lime SDR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/lime-sdr.jpg&#34; title=&#34;Lime SDR&#34; alt=&#34;Lime SDR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Lime SDR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h5&gt;Solutions professionnelles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;solutions-professionnelles&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#solutions-professionnelles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Les plateformes USRP (Universal Software Radio Peripheral) d&amp;rsquo;Ettus Research définissent la référence en matière d&amp;rsquo;outils SDR professionnels. La gamme USRP propose des solutions modulaires adaptées aux exigences les plus strictes en termes de performances, de fiabilité et de flexibilité. Les modèles USRP B200/B210 offrent des performances intermédiaires, tandis que les séries N et X310 atteignent des spécifications de niveau industriel.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/usrp.jpg&#34; title=&#34;USRP&#34; alt=&#34;USRP&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/usrp.jpg&#34; title=&#34;USRP&#34; alt=&#34;USRP&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;USRP&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;L&amp;rsquo;architecture modulaire des USRP permet l&amp;rsquo;adaptation aux besoins spécifiques par sélection de cartes filles (daughterboards) couvrant différentes bandes fréquentielles. Cette approche modulaire optimise les performances pour chaque application tout en préservant l&amp;rsquo;investissement dans la plateforme de base.
@@ -226,7 +226,7 @@ Les solutions USRP intègrent des FPGA programmables permettant l&amp;rsquo;impl
     &lt;a href=&#34;#gnu-radio--la-r%c3%a9f%c3%a9rence-open-source&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;GNU Radio constitue le framework de référence pour le développement d&amp;rsquo;applications SDR. Cette plateforme open source fournit une bibliothèque extensive de blocs de traitement du signal, facilitant l&amp;rsquo;implémentation d&amp;rsquo;algorithmes complexes par assemblage graphique de modules fonctionnels. L&amp;rsquo;approche graphique de GNU Radio Companion (GRC) démocratise l&amp;rsquo;accès aux techniques de traitement du signal avancées.
 L&amp;rsquo;architecture modulaire de GNU Radio repose sur un système de blocs interconnectés par des flux de données typés. Cette organisation favorise la réutilisabilité du code et facilite le débogage des applications complexes. Les blocs de base couvrent l&amp;rsquo;ensemble des opérations courantes : filtrage, modulation, démodulation, synchronisation, et visualisation.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-25-sdr9/fr/gnuradio.png&#34; title=&#34;GNURadio&#34; alt=&#34;GNURadio&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-25-sdr9/fr/gnuradio.png&#34; title=&#34;GNURadio&#34; alt=&#34;GNURadio&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;GNURadio&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;La extensibilité de GNU Radio permet l&amp;rsquo;intégration de blocs personnalisés développés en C++ ou Python. Cette flexibilité autorise l&amp;rsquo;implémentation d&amp;rsquo;algorithmes propriétaires tout en bénéficiant de l&amp;rsquo;infrastructure robuste du framework. La communauté active contribue régulièrement de nouveaux blocs spécialisés, enrichissant continuellement l&amp;rsquo;écosystème.&lt;/p&gt;
@@ -263,10 +263,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Modulations et démodulations numériques</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-19-sdr8/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-19-sdr8/</link>
       <pubDate>Sat, 23 Aug 2025 13:09:53 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-19-sdr8/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-19-sdr8/</guid>
       <description>
         
         
@@ -313,10 +313,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Boucle à verrouillage de phase</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-19-sdr7/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-19-sdr7/</link>
       <pubDate>Sat, 16 Aug 2025 14:16:59 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-19-sdr7/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-19-sdr7/</guid>
       <description>
         
         
@@ -343,13 +343,13 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
 &lt;p&gt;Le processus de verrouillage s&amp;rsquo;établit progressivement. Initialement, si les fréquences diffèrent, le détecteur de phase produit un battement à la fréquence différence. Cette composante basse fréquence, après filtrage, module le VCO qui se rapproche progressivement de la fréquence de référence. Lorsque l&amp;rsquo;écart devient suffisamment faible, la boucle &amp;ldquo;accroche&amp;rdquo; et maintient un verrouillage stable. La phase du VCO suit alors fidèlement celle de la référence, avec un décalage constant déterminé par les caractéristiques de la boucle.&lt;/p&gt;
 &lt;p&gt;La conception du filtre de boucle revêt une importance capitale. Un filtre du premier ordre, simple capacité en parallèle, offre une réponse stable mais un temps d&amp;rsquo;accrochage relativement long. Les filtres du second ordre, intégrant résistances et capacités, permettent d&amp;rsquo;optimiser le compromis entre rapidité d&amp;rsquo;accrochage et stabilité. La bande passante du filtre définit directement la plage de capture de la PLL, c&amp;rsquo;est-à-dire l&amp;rsquo;écart maximal de fréquence initial permettant le verrouillage, ainsi que la capacité de la boucle à suivre les variations rapides de la référence.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-19-sdr7/fr/FIG0.png&#34; title=&#34;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-19-sdr7/fr/FIG0.png&#34; title=&#34;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Boucle à verrouillage de phase à retour non unitaire&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;boucle-à-verrouillage-de-phase-à-retour-non-unitaire&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#boucle-%c3%a0-verrouillage-de-phase-%c3%a0-retour-non-unitaire&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;L&amp;rsquo;architecture à retour non unitaire transforme la PLL en un véritable synthétiseur de fréquence programmable. En insérant un diviseur de fréquence dans la boucle de retour, on force le VCO à osciller à un multiple exact de la fréquence de référence, ouvrant ainsi la voie à la génération de milliers de fréquences différentes à partir d&amp;rsquo;une unique référence.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-19-sdr7/fr/FIG1.png&#34; title=&#34;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase et retour non unitaire&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-19-sdr7/fr/FIG1.png&#34; title=&#34;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase et retour non unitaire&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Schéma synoptique d&amp;#39;une boucle à verrouilage de phase et retour non unitaire&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Le principe repose sur une astuce élégante : le détecteur de phase compare la référence non pas directement au signal du VCO, mais à ce signal divisé par un facteur N programmable. À l&amp;rsquo;équilibre, les deux signaux comparés doivent avoir la même fréquence. Si la référence oscille à fref, le VCO doit donc osciller à N × fref pour que, après division, les fréquences soient identiques au niveau du comparateur. En modifiant simplement la valeur de N, on change instantanément la fréquence de sortie par pas de fref.&lt;/p&gt;
@@ -373,10 +373,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Chaînes de traitement numérique dans une radio logicielle</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-13-sdr6/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-13-sdr6/</link>
       <pubDate>Fri, 15 Aug 2025 14:16:59 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-13-sdr6/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-13-sdr6/</guid>
       <description>
         
         
@@ -395,13 +395,13 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     &lt;a href=&#34;#filtrage-num%c3%a9rique--fir-et-iir&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Une fois numérisé par l’ADC, le signal brut contient souvent des interférences provenant de fréquences hors de la bande d’intérêt, comme des signaux adjacents ou du bruit. Le filtrage numérique constitue la première étape majeure pour nettoyer ce signal et limiter sa bande passante à celle nécessaire pour les traitements ultérieurs. Par exemple, dans une SDR captant un spectre large à 2 mégasamples par seconde (Msps), un filtre peut isoler un canal FM de 200 kHz. Deux types de filtres dominent dans ce contexte : les filtres à réponse impulsionnelle finie (FIR) et à réponse impulsionnelle infinie (IIR). Les filtres FIR calculent leur sortie par une convolution, où chaque échantillon de sortie est une combinaison linéaire des échantillons d’entrée pondérés par des coefficients prédéfinis, selon l’équation : &lt;/p&gt;
 &lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;munderover&gt;&lt;mo&gt;∑&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;/munderover&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; y[n] = \sum_{k=0}^{N-1} h[k]x[n-k] &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:3.1304em;vertical-align:-1.3021em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop op-limits&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.8283em;&#34;&gt;&lt;span style=&#34;top:-1.8479em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span&gt;&lt;span class=&#34;mop op-symbol large-op&#34;&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-4.3em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3021em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;p&gt;L&amp;rsquo;architecture du filtre FIR est la suivante :&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr6/fr/FIG0.png&#34; title=&#34;Architecture d&amp;#39;un filtre FIR&#34; alt=&#34;FIR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr6/fr/FIG0.png&#34; title=&#34;Architecture d&amp;#39;un filtre FIR&#34; alt=&#34;FIR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Architecture d&amp;#39;un filtre FIR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Cette méthode garantit une stabilité absolue, car il n’y a pas de rétroaction, et une phase linéaire, essentielle pour préserver la forme des signaux dans des modulations complexes comme la QAM. Par exemple, un filtre FIR à 64 coefficients peut être conçu pour isoler un canal DAB+ de 1,536 MHz avec une grande précision. En revanche, les filtres IIR intègrent une rétroaction, où la sortie dépend à la fois des entrées actuelles et des sorties précédentes, suivant une équation de la forme :  &lt;/p&gt;
 &lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;munderover&gt;&lt;mo&gt;∑&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/munderover&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;munderover&gt;&lt;mo&gt;∑&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;/munderover&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; y[n] = \sum_{k=0}^{N} b[k]x[n-k] - \sum_{k=1}^{M} a[k]y[n-k]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:3.1304em;vertical-align:-1.3021em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop op-limits&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.8283em;&#34;&gt;&lt;span style=&#34;top:-1.8479em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span&gt;&lt;span class=&#34;mop op-symbol large-op&#34;&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-4.3em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3021em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:3.1304em;vertical-align:-1.3021em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop op-limits&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.8283em;&#34;&gt;&lt;span style=&#34;top:-1.8479em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span&gt;&lt;span class=&#34;mop op-symbol large-op&#34;&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-4.3em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3021em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;p&gt;L&amp;rsquo;architecture du filtre IIR est la suivante :&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr6/fr/FIG1.png&#34; title=&#34;Architecture d&amp;#39;un filtre IIR&#34; alt=&#34;IIR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr6/fr/FIG1.png&#34; title=&#34;Architecture d&amp;#39;un filtre IIR&#34; alt=&#34;IIR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Architecture d&amp;#39;un filtre IIR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Ils offrent une sélectivité élevée avec moins de coefficients, ce qui réduit la charge computationnelle, mais leur phase non linéaire et leur risque d’instabilité les rendent moins adaptés aux applications critiques. Dans une SDR, les filtres FIR sont souvent privilégiés pour les réceptions précises, comme dans les systèmes de radiodiffusion numérique, tandis que les IIR sont utilisés pour des pré-filtres rapides ou des applications où la phase est moins critique.&lt;/p&gt;
@@ -433,10 +433,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Architecture IQ : fondation du traitement numérique en SDR</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-09-sdr5/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr5/</link>
       <pubDate>Mon, 11 Aug 2025 10:44:53 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-09-sdr5/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr5/</guid>
       <description>
         
         
@@ -455,14 +455,14 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
 &lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;cos&lt;/mi&gt;&lt;mo&gt;⁡&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;ω&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;sin&lt;/mi&gt;&lt;mo&gt;⁡&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;ω&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; s(t) = I (t) \cos(\omega t) - Q(t) \sin (\omega t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop&#34;&gt;cos&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;ω&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.1667em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop&#34;&gt;sin&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;ω&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;p&gt;où I(t) et Q(t) sont deux signaux basse fréquence portant respectivement la partie réelle et imaginaire d&amp;rsquo;une version complexe du signal. Dans cette notation, le signal devient :&lt;/p&gt;
 &lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; s_{c} = I(t) + j Q(t)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.5806em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.1514em;&#34;&gt;&lt;span style=&#34;top:-2.55em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;p&gt;Cette approche permet de transposer les signaux modulés en bande de base complexe, où les opérations de traitement (décalage fréquentiel, filtrage, démodulation) sont mathématiquement simples.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr5/fr/FIG0.png&#34; title=&#34;Architecture I/Q en réception&#34; alt=&#34;IQ&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr5/fr/FIG0.png&#34; title=&#34;Architecture I/Q en réception&#34; alt=&#34;IQ&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Architecture I/Q en réception&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Implémentation matérielle de l&amp;rsquo;architecture IQ&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;implémentation-matérielle-de-larchitecture-iq&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#impl%c3%a9mentation-mat%c3%a9rielle-de-larchitecture-iq&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;En réception, la génération du flux IQ repose sur un mélangeur en quadrature. Le signal RF en entrée est d’abord divisé en deux voies identiques. La première est multipliée par une onde locale en cosinus, générée par l’oscillateur local (LO). La seconde est multipliée par une onde locale en sinus, obtenue en introduisant un déphasage précis de 90° sur le LO. Les produits de mélange contiennent la somme et la différence des fréquences d’entrée et du LO ; un filtrage passe-bas conserve uniquement la composante en fréquence intermédiaire proche de zéro. Chaque voie filtrée est ensuite numérisée par un convertisseur analogique-numérique indépendant, fournissant ainsi deux flux parallèles : I[n] et Q[n].&lt;/p&gt;
 &lt;p&gt;En émission, le chemin est symétrique : les flux numériques I et Q générés par le processeur passent dans des convertisseurs numérique-analogique (DAC), puis sont recombinés par un mélangeur en quadrature pour reconstituer un signal RF réel.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr5/fr/FIG1.png&#34; title=&#34;Architecture interne de l&amp;#39;AD9361&#34; alt=&#34;Picture AD9361&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr5/fr/FIG1.png&#34; title=&#34;Architecture interne de l&amp;#39;AD9361&#34; alt=&#34;Picture AD9361&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Architecture interne de l&amp;#39;AD9361&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Avantages de la représentation IQ&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;avantages-de-la-représentation-iq&#34;&gt;&lt;/span&gt;
@@ -470,7 +470,7 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
 &lt;h4&gt;Limitations et imperfections réelles&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;limitations-et-imperfections-réelles&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#limitations-et-imperfections-r%c3%a9elles&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;En pratique, la génération de voies I et Q parfaites est impossible. De petits déséquilibres d’amplitude entre les deux voies, des erreurs de phase par rapport aux 90° idéaux, ou encore des non-linéarités introduisent une réjection imparfaite de l’image spectrale. Ces défauts se manifestent par la présence d’un signal miroir indésirable symétrique par rapport à la fréquence centrale. Par exemple, une erreur de phase de 2° ou un déséquilibre de 0,5 dB peuvent limiter la réjection d’image à moins de 40 dB. Dans une SDR moderne, ces défauts peuvent toutefois être atténués par des algorithmes de calibration numérique, souvent exécutés automatiquement au démarrage ou en continu.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr5/fr/FIG2.png&#34; title=&#34;Imperfections réelles de l&amp;#39;architecture I/Q&#34; alt=&#34;IQ Chain Imperfections&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr5/fr/FIG2.png&#34; title=&#34;Imperfections réelles de l&amp;#39;architecture I/Q&#34; alt=&#34;IQ Chain Imperfections&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Imperfections réelles de l&amp;#39;architecture I/Q&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Place de l&amp;rsquo;IQ dans la chaîne SDR&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;place-de-liq-dans-la-chaîne-sdr&#34;&gt;&lt;/span&gt;
@@ -492,10 +492,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Technologie de numérisation du signal : pivot de la radio logicielle</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-09-sdr4/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr4/</link>
       <pubDate>Mon, 11 Aug 2025 10:44:50 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-09-sdr4/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr4/</guid>
       <description>
         
         
@@ -515,7 +515,7 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     &lt;a href=&#34;#architectures-dacquisition-en-sdr&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Le choix de l’architecture d’acquisition détermine la complexité du front-end et les contraintes imposées à l’ADC. L’approche hétérodyne reste très répandue : le signal RF est d’abord translaté vers une fréquence intermédiaire plus basse grâce à un mélangeur, puis filtré avant d’être numérisé. Cette méthode permet de réduire la fréquence d’échantillonnage requise et d’utiliser des ADC moins coûteux et moins sensibles au jitter d’horloge. En revanche, elle impose de multiplier les étages analogiques, avec les inconvénients associés : distorsion d’intermodulation, bruit de phase de l’oscillateur local, dérive thermique et nécessité de calibrations régulières.&lt;/p&gt;
 &lt;p&gt;À l’opposé, la numérisation directe, ou &lt;em&gt;direct sampling&lt;/em&gt;, consiste à attaquer l’ADC directement en bande RF. Cette solution supprime la fréquence intermédiaire et simplifie considérablement la chaîne analogique, tout en offrant une bande instantanée très large. Elle exige cependant des convertisseurs très rapides, souvent à plusieurs gigas-échantillons par seconde, dont le coût, la consommation et la sensibilité au jitter sont bien plus élevés.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr4/fr/radio_architectures.png&#34; title=&#34;Schéma des différents types d&amp;#39;architectures.&#34; alt=&#34;SDR Architecture&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr4/fr/radio_architectures.png&#34; title=&#34;Schéma des différents types d&amp;#39;architectures.&#34; alt=&#34;SDR Architecture&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Schéma des différents types d&amp;#39;architectures.&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Entre ces deux approches, le sous-échantillonnage, ou &lt;em&gt;bandpass sampling&lt;/em&gt;, occupe une place particulière. Il repose sur le repli spectral volontaire d’une bande RF dans la zone de Nyquist grâce à un choix précis de la fréquence d’échantillonnage. Cela permet de traiter des signaux à haute fréquence avec un ADC plus lent, mais impose un filtrage d’entrée très sélectif pour éviter la superposition indésirable d’autres bandes.&lt;/p&gt;
@@ -538,10 +538,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Architectures analogiques et hétérodynes</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-09-sdr3/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr3/</link>
       <pubDate>Mon, 11 Aug 2025 10:44:46 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-09-sdr3/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr3/</guid>
       <description>
         
         
@@ -566,7 +566,7 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
 &lt;/ol&gt;
 &lt;p&gt;Dans les systèmes modernes, des composants supplémentaires comme des filtres à ondes acoustiques de surface (SAW) ou des synthétiseurs de fréquence basés sur des boucles à verrouillage de phase (PLL) peuvent être intégrés pour améliorer la performance et la stabilité.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr3/fr/radio.png&#34; title=&#34;Schéma d&amp;#39;une chaîne RF en émission&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr3/fr/radio.png&#34; title=&#34;Schéma d&amp;#39;une chaîne RF en émission&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Schéma d&amp;#39;une chaîne RF en émission&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;Le principe de l’hétérodyne en radio&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;le-principe-de-lhétérodyne-en-radio&#34;&gt;&lt;/span&gt;
@@ -625,10 +625,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>Les bases théoriques de la radio</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-09-sdr2/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr2/</link>
       <pubDate>Mon, 11 Aug 2025 10:44:43 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-09-sdr2/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr2/</guid>
       <description>
         
         
@@ -659,7 +659,7 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
 &lt;h4&gt;Shannon et la capacité d&amp;rsquo;un canal&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;shannon-et-la-capacité-dun-canal&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#shannon-et-la-capacit%c3%a9-dun-canal&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;En 1948, Claude Edwood Shannon modélise pour la première fois un schéma de canal de communication dans son article intitulé : &lt;strong&gt;Une théorie mathématique de la communication&lt;/strong&gt;. L&amp;rsquo;ensemble des parties prenantes dans la transmission d&amp;rsquo;un signal sont caractérisé depuis la source d&amp;rsquo;information jusqu&amp;rsquo;à sa destination.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr2/fr/canal_com.png&#34; title=&#34;Schéma d&amp;#39;un canal de communication&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr2/fr/canal_com.png&#34; title=&#34;Schéma d&amp;#39;un canal de communication&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Schéma d&amp;#39;un canal de communication&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;Le scientifique est pionnier de la théorie de l&amp;rsquo;information. Il a établit un théorème fondamental qui définit la &lt;strong&gt;capacité d&amp;rsquo;un canal&lt;/strong&gt;.&lt;/p&gt;
@@ -721,10 +721,10 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     
     <item>
       <title>À la découverte de la radio logicielle</title>
-      <link>http://localhost:1313/website/fr/blog/2025-08-09-sdr1/</link>
+      <link>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr1/</link>
       <pubDate>Sun, 10 Aug 2025 17:38:04 +1200</pubDate>
       <author>abel@example.com (Abel)</author>
-      <guid>http://localhost:1313/website/fr/blog/2025-08-09-sdr1/</guid>
+      <guid>https://abel-did.github.io/website/fr/blog/2025-08-09-sdr1/</guid>
       <description>
         
         
@@ -750,13 +750,13 @@ L&amp;rsquo;évolution constante des performances matérielles et de la sophisti
     &lt;a href=&#34;#la-naissance-de-la-sdr-moderne-ann%c3%a9es-1980-1990&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Dans les années 1980, la progression des processeurs numériques de signal (DSP) a permis un traitement plus avancé des signaux numériques, ce qui a jeté les bases de la SDR moderne. Les recherches se sont intensifiées autour de la modulation numérique, avec des chercheurs qui ont commencé à explorer la possibilité de remplacer des composants matériels spécifiques par des logiciels, notamment pour le traitement des signaux radio.
 Le terme « Software Defined Radio » a été introduit en 1984 par Joseph Mitola. En 1992, il publie son article fondamental où il décrit la SDR comme une radio qui utilise des logiciels pour effectuer des fonctions de traitement du signal qui étaient auparavant faites par des composants matériels.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr1/fr/sdr.png&#34; title=&#34;Frise chronologique de la SDR&#34; alt=&#34;SDR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr1/fr/sdr.png&#34; title=&#34;Frise chronologique de la SDR&#34; alt=&#34;SDR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Frise chronologique de la SDR&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;h4&gt;L’essor commercial et militaire (années 2000)&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;lessor-commercial-et-militaire-années-2000&#34;&gt;&lt;/span&gt;
     &lt;a href=&#34;#lessor-commercial-et-militaire-ann%c3%a9es-2000&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Lien permanent vers cette section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Dans les années 2000, la SDR devient de plus en plus une réalité dans le domaine commercial et militaire. L’armée, en particulier, a vu dans la SDR un moyen de réduire la complexité et les coûts des systèmes de communication. Elle permettait d’adapter rapidement les fréquences de communication et les protocoles sans avoir à remplacer le matériel, en particulier dans les environnements de guerre où la flexibilité est cruciale.&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-    &lt;img src=&#34;http://localhost:1313/website/images/2025-08-09-sdr1/fr/sdr_mil.jpg&#34; title=&#34;Software Defined Radio enables enhanced military communications - Military Embedded Systems&#34; alt=&#34;SDR&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-08-09-sdr1/fr/sdr_mil.jpg&#34; title=&#34;Software Defined Radio enables enhanced military communications - Military Embedded Systems&#34; alt=&#34;SDR&#34;  loading=&#34;lazy&#34; /&gt;
     &lt;figcaption&gt;Software Defined Radio enables enhanced military communications - Military Embedded Systems&lt;/figcaption&gt;
   &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;En 2000, des entreprises comme National Instruments et Ettus Research ont commencé à développer des plates-formes SDR accessibles, comme le NI-USRP (Universal Software Radio Peripheral) et les flexradio systems, qui ont facilité le passage à des implémentations SDR dans des contextes aussi variés que les réseaux sans fil, la recherche et la surveillance des signaux radio.&lt;/p&gt;

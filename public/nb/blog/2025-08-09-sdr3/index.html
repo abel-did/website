@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="nb" dir="ltr"><head><script src="/website/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=website/livereload" data-no-instant defer></script>
+<html lang="nb" dir="ltr"><head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
   <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
 <link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
 <title>Analoge og heterodyne arkitekturer – DIDOUH Abel</title>
-  <meta name="description" content="Den heterodyne arkitekturen konverterer et radiosignal til en mellomfrekvens ved hjelp av en mikser og en lokal oscillator. Denne konverteringen forenkler forsterkning og filtrering, forbedrer følsomhet, selektivitet og stabilitet. Brukt i over et århundre, utruster den fortsatt radiosystemer." /><link rel="canonical" href="http://localhost:1313/website/nb/blog/2025-08-09-sdr3/" itemprop="url" />
+  <meta name="description" content="Den heterodyne arkitekturen konverterer et radiosignal til en mellomfrekvens ved hjelp av en mikser og en lokal oscillator. Denne konverteringen forenkler forsterkning og filtrering, forbedrer følsomhet, selektivitet og stabilitet. Brukt i over et århundre, utruster den fortsatt radiosystemer." /><link rel="canonical" href="https://abel-did.github.io/website/nb/blog/2025-08-09-sdr3/" itemprop="url" />
 
 <meta property="og:title" content="Analoge og heterodyne arkitekturer">
 <meta
@@ -22,7 +22,7 @@
   content="
     article
   ">
-<meta property="og:url" content="http://localhost:1313/website/nb/blog/2025-08-09-sdr3/"><meta property="article:section" content="blog">
+<meta property="og:url" content="https://abel-did.github.io/website/nb/blog/2025-08-09-sdr3/"><meta property="article:section" content="blog">
 
 <meta
   property="article:published_time"
@@ -44,15 +44,35 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Analoge og heterodyne arkitekturer">
   <meta name="twitter:description" content="Den heterodyne arkitekturen konverterer et radiosignal til en mellomfrekvens ved hjelp av en mikser og en lokal oscillator. Denne konverteringen forenkler forsterkning og filtrering, forbedrer følsomhet, selektivitet og stabilitet. Brukt i over et århundre, utruster den fortsatt radiosystemer.">
-<link href="/website/css/compiled/main.css" rel="stylesheet" />
-    <link href="/website/css/variables.css" rel="stylesheet" />
-    <link href="/website/css/custom.css" rel="stylesheet" />
+
+    <link rel="preload" href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" as="style" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
+    <link href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" rel="stylesheet" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
 
   
-<script src="/website/js/main-head.js" integrity=""></script>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-35BR2S567M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-35BR2S567M");
+</script>
+
+
+
+
+
+
+
+<script src="/website/js/main-head.min.2375b7265ea066ecb314226ce5ff17478453df5f350d34d830b3fc96fba21672.js" integrity="sha256-I3W3Jl6gZuyzFCJs5f8XR4RT3181DTTYMLP8lvuiFnI="></script>
 
   
-  <link rel="stylesheet" href="/website/css/katex.43cad0dd02cabefbb5ac29f913b28f760020f085c95a4b52b97d5d5df4452aa413e2c0b3ae91df65d3e2c581e1a266052298a6fa5918f91c93709c48a55a4dfb.css" integrity="sha512-Q8rQ3QLKvvu1rCn5E7KPdgAg8IXJWktSuX1dXfRFKqQT4sCzrpHfZdPixYHhomYFIpim&#43;lkY&#43;RyTcJxIpVpN&#43;w==" />
+  <link rel="stylesheet" href="/website/css/katex.min.b88a0f576a036ab039112c36f015b8f93deecf8e80a54c0500695b62d505c77f6860bed1004e89e2864f7ef0cfaffbe3be754e2519708c950501ab34e0c6e5b0.css" integrity="sha512-uIoPV2oDarA5ESw28BW4&#43;T3uz46ApUwFAGlbYtUFx39oYL7RAE6J4oZPfvDPr/vjvnVOJRlwjJUFAas04MblsA==" />
   </head>
 <body>
     <a href="#content" class="hx:sr-only hx:focus-visible:not-sr-only hx:focus-visible:fixed hx:focus-visible:z-50 hx:focus-visible:top-2 hx:focus-visible:left-2 hx:focus-visible:bg-primary-500 hx:focus-visible:text-white hx:focus-visible:px-4 hx:focus-visible:py-2 hx:focus-visible:rounded-md hx:focus-visible:text-sm hx:focus-visible:font-medium">Hopp til innhold</a><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
@@ -739,7 +759,7 @@
   </a></div></div>
     </div></footer>
     
-    <script defer src="/website/js/main.js" integrity=""></script>
-<script defer src="/website/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script><script defer src="/website/nb.search.js" integrity=""></script>
+    <script defer src="/website/js/main.min.897e9c8f347683d69730bb3bc14ac84fa3c2758bb22a00a7c206cc7b2cec9834.js" integrity="sha256-iX6cjzR2g9aXMLs7wUrIT6PCdYuyKgCnwgbMeyzsmDQ="></script>
+<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script><script defer src="/website/nb.search.min.5edac8058c61b2c84cf39ac598d653d9cf5691e3c5184790107c13bc9fec339e.js" integrity="sha256-XtrIBYxhsshM85rFmNZT2c9WkePFGEeQEHwTvJ/sM54="></script>
   </body>
 </html>

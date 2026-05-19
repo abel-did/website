@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DIDOUH Abel – Etiquettes</title>
-    <link>http://localhost:1313/website/fr/tags/</link>
+    <link>https://abel-did.github.io/website/fr/tags/</link>
     <description>Recent content in Etiquettes on DIDOUH Abel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
@@ -9,7 +9,7 @@
     <webMaster>abel@example.com (Abel)</webMaster>
     <lastBuildDate>Tue, 19 Aug 2025 15:21:34 +1200</lastBuildDate>
     
-	  <atom:link href="http://localhost:1313/website/fr/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://abel-did.github.io/website/fr/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       
