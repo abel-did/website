@@ -1,74 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
+<html lang="en" dir="ltr"><head><script src="/website/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=website/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
 <link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
 <link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
-<title>Exploring Software-Defined Radio – DIDOUH Abel</title>
-  <meta name="description" content="This series explores Software-Defined Radio (SDR), which replaces traditional radio hardware components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling." /><link rel="canonical" href="https://abel-did.github.io/website/blog/2025-08-09-sdr1/" itemprop="url" />
+<title>Discovering Software-Defined Radio – DIDOUH Abel</title>
+  <meta name="description" content="This series explores software-defined radio (SDR), which replaces traditional radio components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling." /><link rel="canonical" href="http://localhost:1313/website/blog/2025-08-09-sdr1/" itemprop="url" />
 
-<meta property="og:title" content="Exploring Software-Defined Radio">
+<meta property="og:title" content="Discovering Software-Defined Radio">
 <meta
   property="og:description"
   content="
-    This series explores Software-Defined Radio (SDR), which replaces traditional radio hardware components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.
+    This series explores software-defined radio (SDR), which replaces traditional radio components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.
   ">
 <meta
   property="og:type"
   content="
     article
   ">
-<meta property="og:url" content="https://abel-did.github.io/website/blog/2025-08-09-sdr1/"><meta property="article:section" content="blog">
+<meta property="og:url" content="http://localhost:1313/website/blog/2025-08-09-sdr1/"><meta property="article:section" content="blog">
 
 <meta
   property="article:published_time"
-  content="2025-08-12T18:45:05+12:00">
+  content="2025-08-10T17:38:04+12:00">
 
 
 <meta
   property="article:modified_time"
-  content="2025-08-12T18:45:05+12:00">
+  content="2025-08-10T17:38:04+12:00">
 
 
 
-  <meta itemprop="name" content="Exploring Software-Defined Radio">
-  <meta itemprop="description" content="This series explores Software-Defined Radio (SDR), which replaces traditional radio hardware components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.">
-  <meta itemprop="datePublished" content="2025-08-12T18:45:05+12:00">
-  <meta itemprop="dateModified" content="2025-08-12T18:45:05+12:00">
-  <meta itemprop="wordCount" content="549">
+  <meta itemprop="name" content="Discovering Software-Defined Radio">
+  <meta itemprop="description" content="This series explores software-defined radio (SDR), which replaces traditional radio components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.">
+  <meta itemprop="datePublished" content="2025-08-10T17:38:04+12:00">
+  <meta itemprop="dateModified" content="2025-08-10T17:38:04+12:00">
+  <meta itemprop="wordCount" content="655">
+  <meta itemprop="keywords" content="SDR">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Exploring Software-Defined Radio">
-  <meta name="twitter:description" content="This series explores Software-Defined Radio (SDR), which replaces traditional radio hardware components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.">
-
-    <link rel="preload" href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" as="style" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
-    <link href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" rel="stylesheet" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
+  <meta name="twitter:title" content="Discovering Software-Defined Radio">
+  <meta name="twitter:description" content="This series explores software-defined radio (SDR), which replaces traditional radio components with flexible software solutions. We will cover the theoretical foundations of radio, SDR architectures, modulation, and channel capacity, while detailing concepts such as noise and sampling.">
+<link href="/website/css/compiled/main.css" rel="stylesheet" />
+    <link href="/website/css/variables.css" rel="stylesheet" />
+    <link href="/website/css/custom.css" rel="stylesheet" />
 
   
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-35BR2S567M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-35BR2S567M");
-</script>
-
-
-
-
-
-
-
-<script src="/website/js/main-head.min.2375b7265ea066ecb314226ce5ff17478453df5f350d34d830b3fc96fba21672.js" integrity="sha256-I3W3Jl6gZuyzFCJs5f8XR4RT3181DTTYMLP8lvuiFnI="></script>
+<script src="/website/js/main-head.js" integrity=""></script>
 
   
   
@@ -186,10 +167,70 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-09-14-embsec2/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Cryptography and IoT Security</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-09-12-embsec1/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Fundamentals of Secure Development for IoT Systems</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-20-sdr9/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">SDR Tools: Technological Ecosystem of Modern Software-Defined Radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-19-sdr8/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Digital modulations and demodulations</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-19-sdr7/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Phase-Locked Loop</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-13-sdr6/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Digital processing chains in a software-defined radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
       href="/website/blog/2025-08-09-sdr5/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">IQ Architecture: Foundation of Digital Processing in SDR</span>
+      <span class="hx:min-w-0 [word-break:break-word]">IQ architecture: foundation of digital processing in SDR</span>
     </a>
   </div>
               
@@ -199,7 +240,7 @@
       href="/website/blog/2025-08-09-sdr4/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Signal Digitization Technology: The Heart of Software-Defined Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Signal digitization technology: pivot of software-defined radio</span>
     </a>
   </div>
               
@@ -209,7 +250,7 @@
       href="/website/blog/2025-08-09-sdr3/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Analog and Heterodyne Architectures</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Analog and heterodyne architectures</span>
     </a>
   </div>
               
@@ -219,7 +260,7 @@
       href="/website/blog/2025-08-09-sdr2/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Theoretical Foundations of Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Theoretical foundations of radio</span>
     </a>
   </div>
               
@@ -229,7 +270,7 @@
       href="/website/blog/2025-08-09-sdr1/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Exploring Software-Defined Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Discovering Software-Defined Radio</span>
     </a>
   </div>
   
@@ -243,18 +284,63 @@
   
               
             </li></ul>
-      </div></li><li><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+      </div></li>
+              <li class=""><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/website/stackguide"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Stack Guide</span>
     </a>
-  </div></li><li><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="Toggle section" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+  </div><div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/website/about"
+      href="/website/stackguide/2025-09-13-gnuradio4/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Creating Your Own GNU Radio Blocks</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-13-gnuradio3/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Creating an AM Modulator with GNU Radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-10-gnuradio2/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">First Contact with GNU Radio Companion</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-10-gnuradio1/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">GNU Radio Installation</span>
+    </a>
+  </div>
+              
+            </li></ul>
+      </div></li>
+              <li class=""><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/about/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">About</span>
@@ -315,7 +401,7 @@
         </li>
       <li role="none" class="hx:flex hx:flex-col">
           <a
-            href="/website/de/"
+            href="/website/de/blog/2025-08-09-sdr1/"
             role="menuitem"
             class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Deutsch</a>
@@ -389,31 +475,35 @@
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="Table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#series-outline-exploring-software-defined-radio">Series Outline: Exploring Software-Defined Radio
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#series-plan-discovering-software-defined-radio">Series Plan: Discovering Software-Defined Radio
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#origins-and-evolution-of-sdr">Origins and Evolution of SDR
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#origins-and-evolution-of-sdr">Origins and Evolution of SDR
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#early-explorations-1960s1970s">Early Explorations (1960s–1970s)
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#early-explorations-1960s---1970s">Early Explorations (1960s - 1970s)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#the-birth-of-modern-sdr-1980s1990s">The Birth of Modern SDR (1980s–1990s)
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#the-birth-of-modern-sdr-1980s-1990s">The Birth of Modern SDR (1980s-1990s)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#commercial-and-military-growth-2000s">Commercial and Military Growth (2000s)
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#commercial-and-military-rise-2000s">Commercial and Military Rise (2000s)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#the-era-of-democratization-and-open-source-2010s-and-beyond">The Era of Democratization and Open Source (2010s and Beyond)
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#the-era-of-democratization-and-open-source-2010-and-beyond">The Era of Democratization and Open-Source (2010 and Beyond)
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#conclusion">Conclusion
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#in-conclusion">In Conclusion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#references">References:
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -433,54 +523,68 @@
         <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
           <a href="/website/blog/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Posts</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Exploring Software-Defined Radio</div>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Discovering Software-Defined Radio</div>
   </div>
 
         
         <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mt-2">
-          <h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Exploring Software-Defined Radio</h1>
+          <h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Discovering Software-Defined Radio</h1>
           
         </div>
         
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 12, 2025</span></div>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 10, 2025</span></div>
         <div class="content">
-          <p>Welcome to this series of articles dedicated to Software-Defined Radio (SDR).
-SDR is a technology that is transforming the way radio systems are designed and deployed. Traditionally, radios were built with dedicated hardware components for each signal-processing function (amplification, modulation, demodulation, etc.). By contrast, in an SDR, much of this processing is carried out by software, enabling greater flexibility, reusability, and adaptability.</p>
-<h4>Series Outline: Exploring Software-Defined Radio<span class="hx:absolute hx:-mt-20" id="series-outline-exploring-software-defined-radio"></span>
-    <a href="#series-outline-exploring-software-defined-radio" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ol>
+          <p>Welcome to this series of articles dedicated to Software-Defined Radio (SDR). SDR is a technology that transforms how radio systems are designed and deployed. Traditionally, radios were built with specific hardware components for each signal processing function (amplification, modulation, demodulation, etc.). In contrast, in an SDR, much of this processing is performed using software, enabling greater flexibility, reusability, and adaptability.</p>
+<h4>Series Plan: Discovering Software-Defined Radio<span class="hx:absolute hx:-mt-20" id="series-plan-discovering-software-defined-radio"></span>
+    <a href="#series-plan-discovering-software-defined-radio" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ol>
 <li>Introduction to Software-Defined Radio</li>
-<li>Theoretical Basics of Radio</li>
-<li>Analog and Heterodyne Architectures</li>
-<li>Signal Digitization Technology</li>
-<li>SDR Tools</li>
-<li>SDR Architecture</li>
-<li>Applications of Software-Defined Radio</li>
-<li>SDR Security</li>
-<li>The Future of Software-Defined Radio</li>
-<li>Summary of Concepts</li>
+<li>Theoretical foundations of radio</li>
+<li>Analog and heterodyne architectures</li>
+<li>Signal digitization technology</li>
+<li>IQ architecture: foundation of digital processing in SDR</li>
+<li>Digital processing chains in an SDR</li>
+<li>Temporal and frequency synchronization</li>
+<li>Digital modulations and demodulations</li>
+<li>SDR tools</li>
 </ol>
-<p>Let’s dive into the world of software-defined radios.</p>
-<h3>Origins and Evolution of SDR<span class="hx:absolute hx:-mt-20" id="origins-and-evolution-of-sdr"></span>
-    <a href="#origins-and-evolution-of-sdr" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Early Explorations (1960s–1970s)<span class="hx:absolute hx:-mt-20" id="early-explorations-1960s1970s"></span>
-    <a href="#early-explorations-1960s1970s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The concept of software-defined radio dates back to the 1960s–1970s, but it was only with the rise of computers and digital technologies that the idea truly began to take shape. The notion of a “programmable” or adaptable radio emerged when researchers started exploring ways to process signals using software.</p>
-<p>At that time, most radios were primarily analog. The need for more flexible radios, capable of handling different types of signals, was evident in both telecommunications and the military, where systems needed to adapt to various modulation schemes and frequency ranges.</p>
-<h4>The Birth of Modern SDR (1980s–1990s)<span class="hx:absolute hx:-mt-20" id="the-birth-of-modern-sdr-1980s1990s"></span>
-    <a href="#the-birth-of-modern-sdr-1980s1990s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In the 1980s, advances in Digital Signal Processors (DSPs) enabled more sophisticated digital signal processing, laying the groundwork for modern SDR. Research intensified around digital modulation, with scientists exploring the possibility of replacing certain hardware components with software—especially for radio signal processing.</p>
-<p>The term Software-Defined Radio was introduced in 1984 by Joseph Mitola. In 1992, he published a seminal paper describing SDR as a radio that uses software to perform signal-processing functions previously handled by hardware components.</p>
-<h4>Commercial and Military Growth (2000s)<span class="hx:absolute hx:-mt-20" id="commercial-and-military-growth-2000s"></span>
-    <a href="#commercial-and-military-growth-2000s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In the 2000s, SDR increasingly became a reality in both commercial and military applications. The military, in particular, recognized SDR as a way to reduce the complexity and costs of communication systems. It allowed rapid adaptation of communication frequencies and protocols without replacing hardware—especially valuable in combat environments where flexibility is critical.</p>
-<p>In 2000, companies such as National Instruments and Ettus Research began developing accessible SDR platforms, such as the NI-USRP (Universal Software Radio Peripheral) and FlexRadio Systems, facilitating SDR implementations across diverse contexts—from wireless networks to academic research and radio signal monitoring.</p>
-<h4>The Era of Democratization and Open Source (2010s and Beyond)<span class="hx:absolute hx:-mt-20" id="the-era-of-democratization-and-open-source-2010s-and-beyond"></span>
-    <a href="#the-era-of-democratization-and-open-source-2010s-and-beyond" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The 2010s marked the true democratization of SDR. Open-source platforms such as GNU Radio, SDR# (SDRSharp), and HDSDR made SDR technology accessible to a wide audience, from hobbyists to researchers. These tools allowed users to build their own SDR setups at relatively low cost, transforming how scientists, engineers, and enthusiasts approach radio technology.</p>
-<p>The emergence of devices like the Raspberry Pi and affordable hardware components such as the RTL-SDR made entry into the SDR world highly cost-effective, opening the door to a new generation of amateur radio operators and innovators.</p>
-<h3>Conclusion<span class="hx:absolute hx:-mt-20" id="conclusion"></span>
-    <a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>The history of software-defined radio is defined by a series of breakthroughs in digital signal processing. From early research in the 1960s to the open-source democratization of the 2010s, SDR has radically transformed the way communication systems are designed and used. Thanks to pioneers like Joseph Mitola and its initial military implementations, SDR has now become a cornerstone of modern telecommunications.</p>
+<p>Let&rsquo;s dive into the world of software-defined radios.</p>
+<h4>Origins and Evolution of SDR<span class="hx:absolute hx:-mt-20" id="origins-and-evolution-of-sdr"></span>
+    <a href="#origins-and-evolution-of-sdr" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><h4>Early Explorations (1960s - 1970s)<span class="hx:absolute hx:-mt-20" id="early-explorations-1960s---1970s"></span>
+    <a href="#early-explorations-1960s---1970s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The concept of software-defined radio dates back to the 1960s-1970s, but it wasn&rsquo;t until the rise of computers and digital technologies that the idea truly began to take shape. The idea of &ldquo;programmable radio&rdquo; or adaptable radio emerged when researchers began exploring ways to process signals using software.</p>
+<p>At that time, early radios were primarily analog. The need for more flexible radios capable of processing different types of signals became evident in telecommunications and military domains, which sought systems capable of adapting to different types of modulation and frequencies.</p>
+<h4>The Birth of Modern SDR (1980s-1990s)<span class="hx:absolute hx:-mt-20" id="the-birth-of-modern-sdr-1980s-1990s"></span>
+    <a href="#the-birth-of-modern-sdr-1980s-1990s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In the 1980s, the advancement of digital signal processors (DSP) enabled more advanced digital signal processing, laying the foundation for modern SDR. Research intensified around digital modulation, with researchers beginning to explore the possibility of replacing specific hardware components with software, particularly for radio signal processing.</p>
+<p>The term &ldquo;Software Defined Radio&rdquo; was introduced in 1984 by Joseph Mitola. In 1992, he published his seminal article describing SDR as a radio that uses software to perform signal processing functions that were previously done by hardware components.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr1/en/sdr.png" title="SDR chronological timeline" alt="SDR"  loading="lazy" />
+    <figcaption>SDR chronological timeline</figcaption>
+  </figure></p>
+<h4>Commercial and Military Rise (2000s)<span class="hx:absolute hx:-mt-20" id="commercial-and-military-rise-2000s"></span>
+    <a href="#commercial-and-military-rise-2000s" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In the 2000s, SDR increasingly became a reality in commercial and military domains. The military, in particular, saw SDR as a means to reduce complexity and costs of communication systems. It allowed for rapid adaptation of communication frequencies and protocols without having to replace hardware, especially in warfare environments where flexibility is crucial.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr1/en/sdr_mil.jpg" title="Software Defined Radio enables enhanced military communications - Military Embedded Systems" alt="SDR"  loading="lazy" />
+    <figcaption>Software Defined Radio enables enhanced military communications - Military Embedded Systems</figcaption>
+  </figure></p>
+<p>In 2000, companies like National Instruments and Ettus Research began developing accessible SDR platforms, such as the NI-USRP (Universal Software Radio Peripheral) and FlexRadio systems, which facilitated the transition to SDR implementations in contexts as varied as wireless networks, research, and radio signal monitoring.</p>
+<h4>The Era of Democratization and Open-Source (2010 and Beyond)<span class="hx:absolute hx:-mt-20" id="the-era-of-democratization-and-open-source-2010-and-beyond"></span>
+    <a href="#the-era-of-democratization-and-open-source-2010-and-beyond" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The 2010s marked a true democratization of SDR. Open-source platforms like GNU Radio, SDR# (SDRSharp), or HDSDR made SDR technologies accessible to a broad audience, from hobbyists to researchers. These software platforms and tools allowed users to build their own SDR equipment at relatively low cost, transforming how researchers, engineers, and hobbyists use radio technologies.</p>
+<p>The emergence of Raspberry Pi and affordable hardware components like RTL-SDR enabled entry into the SDR world at very competitive prices, thus opening the door to a new generation of radio amateurs and innovators.</p>
+<h4>In Conclusion<span class="hx:absolute hx:-mt-20" id="in-conclusion"></span>
+    <a href="#in-conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The history of software-defined radio is marked by a series of technological breakthroughs in digital signal processing. From the first research in the 1960s to democratization via open-source platforms in the 2010s, SDR has radically changed how communication systems are designed and used. Thanks to pioneers like Joseph Mitola and early implementations in the military domain, SDR is now a key element of modern telecommunications.</p>
+<h4>References:<span class="hx:absolute hx:-mt-20" id="references"></span>
+    <a href="#references" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Mitola, J. (1992). Software Radios: Survey, Critical Evaluation and Future Directions. IEEE Aerospace and Electronic Systems Magazine, 8(4), 25-36.</li>
+<li>Reed, J. H. (2002). Software Defined Radio: A Modern Approach to Radio Engineering. Prentice Hall.</li>
+<li>National Instruments. (2008). Introduction to Software Defined Radio with NI-USRP. NI Technical Report.</li>
+<li>Tuttlebee, W. (2004). Software Defined Radio: Origins, Drivers and International Perspectives. Wiley.</li>
+<li>GNU Radio Community. (2015). GNU Radio Manual and Documentation. Available at: <a href="https://www.gnuradio.org"target="_blank" rel="noopener">https://www.gnuradio.org</a>.</li>
+</ul>
 
         </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
         href="/website/blog/2025-08-09-sdr2/"
-        title="Theoretical Foundations of Radio"
+        title="Theoretical foundations of radio"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
-      >Theoretical Foundations of Radio<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
+      >Theoretical foundations of radio<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
     </article>
   </div>
 
@@ -525,7 +629,7 @@ SDR is a technology that is transforming the way radio systems are designed and 
         </li>
       <li role="none" class="hx:flex hx:flex-col">
           <a
-            href="/website/de/"
+            href="/website/de/blog/2025-08-09-sdr1/"
             role="menuitem"
             class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Deutsch</a>
@@ -602,7 +706,7 @@ SDR is a technology that is transforming the way radio systems are designed and 
   </a></div></div>
     </div></footer>
     
-    <script defer src="/website/js/main.min.897e9c8f347683d69730bb3bc14ac84fa3c2758bb22a00a7c206cc7b2cec9834.js" integrity="sha256-iX6cjzR2g9aXMLs7wUrIT6PCdYuyKgCnwgbMeyzsmDQ="></script>
-<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script><script defer src="/website/en.search.min.1132069e2a4c3bd1bfebbbc7f0dc1a67c9c3f44f97c0b27d7e16e4145481cace.js" integrity="sha256-ETIGnipMO9G/67vH8NwaZ8nD9E&#43;XwLJ9fhbkFFSBys4="></script>
+    <script defer src="/website/js/main.js" integrity=""></script>
+<script defer src="/website/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script><script defer src="/website/en.search.js" integrity=""></script>
   </body>
 </html>

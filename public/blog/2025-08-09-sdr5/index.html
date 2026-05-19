@@ -1,77 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr"><head>
+<html lang="en" dir="ltr"><head><script src="/website/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=website/livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="noindex, nofollow" />
   <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
 <link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
 <link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
 <link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
 <link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
 <link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
-<title>IQ Architecture: Foundation of Digital Processing in SDR – DIDOUH Abel</title>
-  <meta name="description" content="The IQ architecture is essential in SDR, allowing an RF signal to be represented in its in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations, and enables correction of hardware imperfections, thus providing flexibility and precision to modern radio systems." /><link rel="canonical" href="https://abel-did.github.io/website/blog/2025-08-09-sdr5/" itemprop="url" />
+<title>IQ architecture: foundation of digital processing in SDR – DIDOUH Abel</title>
+  <meta name="description" content="The IQ architecture is essential in SDR, allowing representation of an RF signal in in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations and enables correction of hardware imperfections, thus offering flexibility and precision to modern radio systems." /><link rel="canonical" href="http://localhost:1313/website/blog/2025-08-09-sdr5/" itemprop="url" />
 
-<meta property="og:title" content="IQ Architecture: Foundation of Digital Processing in SDR">
+<meta property="og:title" content="IQ architecture: foundation of digital processing in SDR">
 <meta
   property="og:description"
   content="
-    The IQ architecture is essential in SDR, allowing an RF signal to be represented in its in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations, and enables correction of hardware imperfections, thus providing flexibility and precision to modern radio systems.
+    The IQ architecture is essential in SDR, allowing representation of an RF signal in in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations and enables correction of hardware imperfections, thus offering flexibility and precision to modern radio systems.
   ">
 <meta
   property="og:type"
   content="
     article
   ">
-<meta property="og:url" content="https://abel-did.github.io/website/blog/2025-08-09-sdr5/"><meta property="article:section" content="blog">
+<meta property="og:url" content="http://localhost:1313/website/blog/2025-08-09-sdr5/"><meta property="article:section" content="blog">
 
 <meta
   property="article:published_time"
-  content="2025-08-12T18:45:25+12:00">
+  content="2025-08-11T10:44:53+12:00">
 
 
 <meta
   property="article:modified_time"
-  content="2025-08-12T18:45:25+12:00">
+  content="2025-08-11T10:44:53+12:00">
 
 
 
-  <meta itemprop="name" content="IQ Architecture: Foundation of Digital Processing in SDR">
-  <meta itemprop="description" content="The IQ architecture is essential in SDR, allowing an RF signal to be represented in its in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations, and enables correction of hardware imperfections, thus providing flexibility and precision to modern radio systems.">
-  <meta itemprop="datePublished" content="2025-08-12T18:45:25+12:00">
-  <meta itemprop="dateModified" content="2025-08-12T18:45:25+12:00">
-  <meta itemprop="wordCount" content="723">
+  <meta itemprop="name" content="IQ architecture: foundation of digital processing in SDR">
+  <meta itemprop="description" content="The IQ architecture is essential in SDR, allowing representation of an RF signal in in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations and enables correction of hardware imperfections, thus offering flexibility and precision to modern radio systems.">
+  <meta itemprop="datePublished" content="2025-08-11T10:44:53+12:00">
+  <meta itemprop="dateModified" content="2025-08-11T10:44:53+12:00">
+  <meta itemprop="wordCount" content="778">
+  <meta itemprop="keywords" content="SDR">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="IQ Architecture: Foundation of Digital Processing in SDR">
-  <meta name="twitter:description" content="The IQ architecture is essential in SDR, allowing an RF signal to be represented in its in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations, and enables correction of hardware imperfections, thus providing flexibility and precision to modern radio systems.">
-
-    <link rel="preload" href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" as="style" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
-    <link href="/website/css/compiled/main.min.1a431501cdeb52323c920e7761f7d9e327b2bee53160196c4bd1d34a3fd9fbc9.css" rel="stylesheet" integrity="sha256-GkMVAc3rUjI8kg53YffZ4yeyvuUxYBlsS9HTSj/Z&#43;8k=" />
-
-  
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
-  
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-35BR2S567M"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
-
-  gtag("config", "G-35BR2S567M");
-</script>
-
-
-
-
-
-
-
-<script src="/website/js/main-head.min.2375b7265ea066ecb314226ce5ff17478453df5f350d34d830b3fc96fba21672.js" integrity="sha256-I3W3Jl6gZuyzFCJs5f8XR4RT3181DTTYMLP8lvuiFnI="></script>
+  <meta name="twitter:title" content="IQ architecture: foundation of digital processing in SDR">
+  <meta name="twitter:description" content="The IQ architecture is essential in SDR, allowing representation of an RF signal in in-phase and quadrature components. It preserves amplitude and phase, simplifies digital processing, facilitates complex modulations and enables correction of hardware imperfections, thus offering flexibility and precision to modern radio systems.">
+<link href="/website/css/compiled/main.css" rel="stylesheet" />
+    <link href="/website/css/variables.css" rel="stylesheet" />
+    <link href="/website/css/custom.css" rel="stylesheet" />
 
   
-  <link rel="stylesheet" href="/website/css/katex.min.b88a0f576a036ab039112c36f015b8f93deecf8e80a54c0500695b62d505c77f6860bed1004e89e2864f7ef0cfaffbe3be754e2519708c950501ab34e0c6e5b0.css" integrity="sha512-uIoPV2oDarA5ESw28BW4&#43;T3uz46ApUwFAGlbYtUFx39oYL7RAE6J4oZPfvDPr/vjvnVOJRlwjJUFAas04MblsA==" />
+<script src="/website/js/main-head.js" integrity=""></script>
+
+  
+  <link rel="stylesheet" href="/website/css/katex.43cad0dd02cabefbb5ac29f913b28f760020f085c95a4b52b97d5d5df4452aa413e2c0b3ae91df65d3e2c581e1a266052298a6fa5918f91c93709c48a55a4dfb.css" integrity="sha512-Q8rQ3QLKvvu1rCn5E7KPdgAg8IXJWktSuX1dXfRFKqQT4sCzrpHfZdPixYHhomYFIpim&#43;lkY&#43;RyTcJxIpVpN&#43;w==" />
   </head>
 <body>
     <a href="#content" class="hx:sr-only hx:focus-visible:not-sr-only hx:focus-visible:fixed hx:focus-visible:z-50 hx:focus-visible:top-2 hx:focus-visible:left-2 hx:focus-visible:bg-primary-500 hx:focus-visible:text-white hx:focus-visible:px-4 hx:focus-visible:py-2 hx:focus-visible:rounded-md hx:focus-visible:text-sm hx:focus-visible:font-medium">Skip to content</a><div class="hextra-nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
@@ -183,13 +164,73 @@
     </a>
       <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="Toggle section" aria-expanded="true"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
   </div><div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
-        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-09-14-embsec2/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Cryptography and IoT Security</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-09-12-embsec1/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Fundamentals of Secure Development for IoT Systems</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-20-sdr9/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">SDR Tools: Technological Ecosystem of Modern Software-Defined Radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-19-sdr8/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Digital modulations and demodulations</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-19-sdr7/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Phase-Locked Loop</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/blog/2025-08-13-sdr6/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Digital processing chains in a software-defined radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col open"><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="true">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hextra-sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
       href="/website/blog/2025-08-09-sdr5/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">IQ Architecture: Foundation of Digital Processing in SDR</span>
+      <span class="hx:min-w-0 [word-break:break-word]">IQ architecture: foundation of digital processing in SDR</span>
     </a>
   </div>
   
@@ -208,7 +249,7 @@
       href="/website/blog/2025-08-09-sdr4/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Signal Digitization Technology: The Heart of Software-Defined Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Signal digitization technology: pivot of software-defined radio</span>
     </a>
   </div>
               
@@ -218,7 +259,7 @@
       href="/website/blog/2025-08-09-sdr3/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Analog and Heterodyne Architectures</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Analog and heterodyne architectures</span>
     </a>
   </div>
               
@@ -228,7 +269,7 @@
       href="/website/blog/2025-08-09-sdr2/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Theoretical Foundations of Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Theoretical foundations of radio</span>
     </a>
   </div>
               
@@ -238,23 +279,68 @@
       href="/website/blog/2025-08-09-sdr1/"
       
     >
-      <span class="hx:min-w-0 [word-break:break-word]">Exploring Software-Defined Radio</span>
+      <span class="hx:min-w-0 [word-break:break-word]">Discovering Software-Defined Radio</span>
     </a>
   </div>
               
             </li></ul>
-      </div></li><li><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+      </div></li>
+              <li class=""><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
-      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/website/stackguide"
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:ltr:pr-8 hx:rtl:pl-8 hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">Stack Guide</span>
     </a>
-  </div></li><li><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+      <button type="button" class="hextra-sidebar-collapsible-button hx:absolute hx:top-1/2 hx:-translate-y-1/2 hx:ltr:right-2 hx:rtl:left-2 hx:shrink-0 hx:cursor-pointer hx:p-0 hx:text-gray-500 hx:dark:text-neutral-400 hx:group-hover:text-gray-900 hx:dark:group-hover:text-gray-50 hx:group-data-[active=true]:text-primary-800 hx:group-data-[active=true]:dark:text-primary-600 hx:hextra-focus-visible-inset" aria-label="Toggle section" aria-expanded="false"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></button>
+  </div><div class="hextra-sidebar-children hx:ltr:pr-0 hx:rtl:pl-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
     <a
       class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-      href="/website/about"
+      href="/website/stackguide/2025-09-13-gnuradio4/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Creating Your Own GNU Radio Blocks</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-13-gnuradio3/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">Creating an AM Modulator with GNU Radio</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-10-gnuradio2/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">First Contact with GNU Radio Companion</span>
+    </a>
+  </div>
+              
+            </li><li class="hx:flex hx:flex-col "><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/stackguide/2025-09-10-gnuradio1/"
+      
+    >
+      <span class="hx:min-w-0 [word-break:break-word]">GNU Radio Installation</span>
+    </a>
+  </div>
+              
+            </li></ul>
+      </div></li>
+              <li class=""><div class="hextra-sidebar-item hx:group hx:relative hx:flex hx:items-center" data-active="false">
+    <a
+      class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:grow hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:hextra-focus-visible-inset hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+      href="/website/about/"
       
     >
       <span class="hx:min-w-0 [word-break:break-word]">About</span>
@@ -315,7 +401,7 @@
         </li>
       <li role="none" class="hx:flex hx:flex-col">
           <a
-            href="/website/de/"
+            href="/website/de/blog/2025-08-09-sdr5/"
             role="menuitem"
             class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Deutsch</a>
@@ -389,31 +475,35 @@
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="Table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#article-outline">Article Outline
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#article-plan">Article Plan
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#origin-and-principle-of-the-iq-representation">Origin and Principle of the IQ Representation
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#origin-and-principle-of-iq-representation">Origin and principle of IQ representation
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#hardware-implementation-of-the-iq-architecture">Hardware Implementation of the IQ Architecture
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#hardware-implementation-of-iq-architecture">Hardware implementation of IQ architecture
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#advantages-of-the-iq-representation">Advantages of the IQ Representation
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#advantages-of-iq-representation">Advantages of IQ representation
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#limitations-and-real-world-imperfections">Limitations and Real-World Imperfections
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#limitations-and-real-imperfections">Limitations and real imperfections
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#role-of-iq-in-the-sdr-signal-chain">Role of IQ in the SDR Signal Chain
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#place-of-iq-in-the-sdr-chain">Place of IQ in the SDR chain
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
         <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#conclusion">Conclusion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#references">References
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -433,48 +523,73 @@
         <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
           <a href="/website/blog/" class="hx:inline-block hx:rounded-sm hx:hextra-focus-visible-inset">Posts</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">IQ Architecture: Foundation of Digital Processing in SDR</div>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">IQ architecture: foundation of digital processing in SDR</div>
   </div>
 
         
         <div class="hx:flex hx:flex-col hx:sm:flex-row hx:items-start hx:sm:items-center hx:sm:justify-between hx:gap-4 hx:mt-2">
-          <h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">IQ Architecture: Foundation of Digital Processing in SDR</h1>
+          <h1 class="hx:mb-0 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">IQ architecture: foundation of digital processing in SDR</h1>
           
         </div>
         
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 12, 2025</span></div>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:dark:text-gray-400 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 11, 2025</span></div>
         <div class="content">
-          <p>Software-defined radio (SDR) owes its flexibility to the fact that most modulation, demodulation, and filtering operations are performed digitally. But to efficiently handle an RF signal in the digital domain, a representation that preserves the full amplitude and phase information is required. This is precisely the role of the IQ architecture: to provide the processor with a complex signal composed of an In-phase (I) component and a Quadrature (Q) component, perfectly synchronized and shifted by 90°. This representation, inherited from complex signal theory, has become indispensable in SDR.</p>
-<h4>Article Outline<span class="hx:absolute hx:-mt-20" id="article-outline"></span>
-    <a href="#article-outline" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
-<li>Origin and principle of the IQ representation</li>
-<li>Hardware implementation of the IQ architecture</li>
-<li>Advantages of the IQ representation</li>
-<li>Limitations and real-world imperfections</li>
-<li>The role of IQ in the SDR signal chain</li>
+          <p>Software-defined radio (SDR) owes its flexibility to the fact that most modulation, demodulation and filtering operations are performed digitally. But to efficiently manipulate an RF signal in the digital domain, one must have a representation that preserves the entirety of amplitude and phase information. This is precisely the role of IQ architecture: providing the processor with a complex signal, composed of an &ldquo;In phase&rdquo; (I) part and a &ldquo;Quadrature&rdquo; (Q) part, perfectly synchronized and phase-shifted by 90°. This representation, inherited from complex signal theory, has become essential in SDR.</p>
+<h4>Article Plan<span class="hx:absolute hx:-mt-20" id="article-plan"></span>
+    <a href="#article-plan" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Origin and principle of IQ representation</li>
+<li>Hardware implementation of IQ architecture</li>
+<li>Advantages of IQ representation</li>
+<li>Limitations and real imperfections</li>
+<li>Place of IQ in the SDR chain</li>
 </ul>
-<h4>Origin and Principle of the IQ Representation<span class="hx:absolute hx:-mt-20" id="origin-and-principle-of-the-iq-representation"></span>
-    <a href="#origin-and-principle-of-the-iq-representation" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>A pure RF signal can be described by a sinusoid:</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo>+</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s(t) = A \cos(\omega t + \phi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span></span><p>In practice, a modulated signal occupies a certain bandwidth around the carrier frequency ωω and contains variations in amplitude and phase. To process it efficiently, it is preferable to represent it as a combination of two orthogonal components:</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo stretchy="false">)</mo><mo>−</mo><mi>Q</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s(t) = I (t) \cos(\omega t) - Q(t) \sin (\omega t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span><p>where I(t)I(t) and Q(t)Q(t) are two baseband signals carrying, respectively, the real and imaginary parts of a complex version of the signal. In this notation, the signal becomes:</p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>s</mi><mi>c</mi></msub><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>j</mi><mi>Q</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s_{c} = I(t) + j Q(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">Q</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span><p>This approach makes it possible to translate modulated signals into a complex baseband representation, where operations such as frequency shifting, filtering, and demodulation become mathematically straightforward.</p>
-<h4>Hardware Implementation of the IQ Architecture<span class="hx:absolute hx:-mt-20" id="hardware-implementation-of-the-iq-architecture"></span>
-    <a href="#hardware-implementation-of-the-iq-architecture" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In reception, the generation of the IQ stream relies on a quadrature mixer. The incoming RF signal is first split into two identical paths. The first is multiplied by a cosine local oscillator (LO) signal. The second is multiplied by a sine LO signal, obtained by introducing an exact 90° phase shift to the LO. The mixing products contain both the sum and the difference of the input and LO frequencies; a low-pass filter retains only the intermediate frequency component near zero. Each filtered path is then digitized by an independent analog-to-digital converter (ADC), producing two parallel streams: I[n]I[n] and Q[n]Q[n].</p>
-<p>In transmission, the process is symmetrical: the digital I and Q streams generated by the processor are fed into digital-to-analog converters (DACs), then recombined by a quadrature mixer to reconstruct a real RF signal.</p>
-<h4>Advantages of the IQ Representation<span class="hx:absolute hx:-mt-20" id="advantages-of-the-iq-representation"></span>
-    <a href="#advantages-of-the-iq-representation" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Using a complex baseband signal allows both the positive and negative components of the spectrum to be represented unambiguously, effectively doubling the usable bandwidth compared to a real signal sampled at the same rate. Complex modulations such as QPSK, QAM, OFDM, or any vector modulation are naturally expressed in this formalism. Furthermore, frequency shifts can be implemented simply through complex multiplication, eliminating the need for additional analog operations and making SDR systems inherently more flexible.</p>
-<h4>Limitations and Real-World Imperfections<span class="hx:absolute hx:-mt-20" id="limitations-and-real-world-imperfections"></span>
-    <a href="#limitations-and-real-world-imperfections" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In practice, generating perfectly matched I and Q channels is impossible. Small amplitude imbalances between the two paths, phase errors relative to the ideal 90°, or nonlinearities introduce imperfect image rejection. These imperfections manifest as an unwanted mirror signal symmetric with respect to the center frequency. For example, a 2° phase error or a 0.5 dB amplitude imbalance can limit image rejection to less than 40 dB. In modern SDR systems, however, these defects can be mitigated through digital calibration algorithms, often executed automatically at startup or continuously during operation.</p>
-<h4>Role of IQ in the SDR Signal Chain<span class="hx:absolute hx:-mt-20" id="role-of-iq-in-the-sdr-signal-chain"></span>
-    <a href="#role-of-iq-in-the-sdr-signal-chain" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In a direct-sampling SDR architecture, the ADC output may already provide an IQ stream if the conversion stage integrates IQ generation internally. In heterodyne architectures, IQ generation takes place after one or more intermediate frequency shifts but before purely digital processing. In all cases, it is this IQ stream that is delivered to the FPGA, DSP, or host processor for analysis, filtering, demodulation, or retransmission.</p>
+<h4>Origin and principle of IQ representation<span class="hx:absolute hx:-mt-20" id="origin-and-principle-of-iq-representation"></span>
+    <a href="#origin-and-principle-of-iq-representation" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>A pure RF signal can be described by a sinusoid:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>A</mi><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo>+</mo><mi>ϕ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s(t) = A \cos(\omega t + \phi)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ϕ</span><span class="mclose">)</span></span></span></span></span><p>In practice, a modulated signal occupies a certain band around the carrier ω and contains amplitude and phase variations. To process it efficiently, it is preferable to represent it as a combination of two orthogonal components:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>s</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo stretchy="false">)</mo><mo>−</mo><mi>Q</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mi>sin</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>ω</mi><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s(t) = I (t) \cos(\omega t) - Q(t) \sin (\omega t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">s</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">Q</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">ω</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span><p>where I(t) and Q(t) are two low-frequency signals carrying respectively the real and imaginary parts of a complex version of the signal. In this notation, the signal becomes:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>s</mi><mi>c</mi></msub><mo>=</mo><mi>I</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>+</mo><mi>j</mi><mi>Q</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex"> s_{c} = I(t) + j Q(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mord mathnormal">Q</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span><p>This approach allows transposing modulated signals to complex baseband, where processing operations (frequency shifting, filtering, demodulation) are mathematically simple.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr5/en/FIG0.png" title="I/Q architecture in reception" alt="IQ"  loading="lazy" />
+    <figcaption>I/Q architecture in reception</figcaption>
+  </figure></p>
+<h4>Hardware implementation of IQ architecture<span class="hx:absolute hx:-mt-20" id="hardware-implementation-of-iq-architecture"></span>
+    <a href="#hardware-implementation-of-iq-architecture" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In reception, IQ stream generation relies on a quadrature mixer. The input RF signal is first divided into two identical paths. The first is multiplied by a local cosine wave, generated by the local oscillator (LO). The second is multiplied by a local sine wave, obtained by introducing a precise 90° phase shift on the LO. The mixing products contain the sum and difference of input and LO frequencies; low-pass filtering preserves only the intermediate frequency component close to zero. Each filtered path is then digitized by an independent analog-to-digital converter, thus providing two parallel streams: I[n] and Q[n].</p>
+<p>In transmission, the path is symmetrical: the digital I and Q streams generated by the processor pass through digital-to-analog converters (DAC), then are recombined by a quadrature mixer to reconstruct a real RF signal.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr5/en/FIG1.png" title="Internal architecture of the AD9361" alt="Picture AD9361"  loading="lazy" />
+    <figcaption>Internal architecture of the AD9361</figcaption>
+  </figure></p>
+<h4>Advantages of IQ representation<span class="hx:absolute hx:-mt-20" id="advantages-of-iq-representation"></span>
+    <a href="#advantages-of-iq-representation" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Using a complex baseband signal allows simultaneous representation of positive and negative spectral components without ambiguity, which doubles the useful bandwidth compared to a real signal sampled at the same frequency. Complex modulations like QPSK, QAM, OFDM or any vector modulation are naturally expressed in this formalism. Furthermore, frequency shifts translate simply to complex multiplication, which avoids additional analog operations and makes SDR intrinsically more flexible.</p>
+<h4>Limitations and real imperfections<span class="hx:absolute hx:-mt-20" id="limitations-and-real-imperfections"></span>
+    <a href="#limitations-and-real-imperfections" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In practice, generating perfect I and Q channels is impossible. Small amplitude imbalances between the two channels, phase errors relative to the ideal 90°, or nonlinearities introduce imperfect image rejection. These defects manifest as the presence of an unwanted mirror signal symmetrical relative to the center frequency. For example, a phase error of 2° or an imbalance of 0.5 dB can limit image rejection to less than 40 dB. In modern SDR, these defects can however be mitigated by digital calibration algorithms, often executed automatically at startup or continuously.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr5/en/FIG2.png" title="Real imperfections of I/Q architecture" alt="IQ Chain Imperfections"  loading="lazy" />
+    <figcaption>Real imperfections of I/Q architecture</figcaption>
+  </figure></p>
+<h4>Place of IQ in the SDR chain<span class="hx:absolute hx:-mt-20" id="place-of-iq-in-the-sdr-chain"></span>
+    <a href="#place-of-iq-in-the-sdr-chain" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In a direct sampling SDR architecture, the ADC output can already provide an IQ stream if the conversion architecture integrates it internally. In heterodyne architectures, IQ generation occurs after one or several intermediate frequency changes, but before purely digital processing. In all cases, it is this IQ stream that is transmitted to the FPGA, DSP or host processor to be analyzed, filtered, demodulated or retransmitted.</p>
 <h4>Conclusion<span class="hx:absolute hx:-mt-20" id="conclusion"></span>
-    <a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>The IQ architecture is far more than a simple representation convention—it is a prerequisite for fully leveraging the power of digital processing in SDR. By simultaneously providing both the amplitude and phase of the signal, it enables direct manipulation of complex spectra, implementation of advanced modulation schemes, and digital correction of hardware imperfections. Mastery of this architecture, both in theory and in practice, is an essential skill for any engineer involved in the design or operation of modern SDR systems.</p>
+    <a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>IQ architecture is much more than a simple representation convention: it is a necessary condition to fully exploit the power of digital processing in SDR. By simultaneously providing signal amplitude and phase, it makes possible direct manipulation of complex spectra, implementation of sophisticated modulations and digital correction of hardware imperfections. Mastery of this architecture, both theoretically and practically, is an essential prerequisite for any engineer working on the design or operation of modern SDR systems.</p>
+<h4>References<span class="hx:absolute hx:-mt-20" id="references"></span>
+    <a href="#references" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Wyatt, T. (2018). <em>Software Defined Radio for Engineers</em>. Artech House.</li>
+<li>Oppenheim, A. V., &amp; Schafer, R. W. (2010). <em>Discrete-Time Signal Processing</em> (3rd ed.). Pearson.</li>
+<li>Collins, A. A., et al. (2018). <em>Software Defined Radio with GNU Radio and USRP</em>. Wiley.</li>
+<li>Reed, J. H. (2002). <em>Software Radio: A Systems Approach</em>. Prentice Hall.</li>
+<li>GNU Radio Project. (2023). <em>GNU Radio Documentation and Tutorials</em>. Available at: <a href="https://wiki.gnuradio.org"target="_blank" rel="noopener">https://wiki.gnuradio.org</a>.</li>
+<li>Proakis, J. G., &amp; Salehi, M. (2008). <em>Digital Communications</em> (5th ed.). McGraw-Hill.</li>
+</ul>
 
         </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
         href="/website/blog/2025-08-09-sdr4/"
-        title="Signal Digitization Technology: The Heart of Software-Defined Radio"
+        title="Signal digitization technology: pivot of software-defined radio"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Signal Digitization Technology: The Heart of Software-Defined Radio</a></div></main>
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Signal digitization technology: pivot of software-defined radio</a><a
+        href="/website/blog/2025-08-13-sdr6/"
+        title="Digital processing chains in a software-defined radio"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >Digital processing chains in a software-defined radio<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
     </article>
   </div>
 
@@ -519,7 +634,7 @@
         </li>
       <li role="none" class="hx:flex hx:flex-col">
           <a
-            href="/website/de/"
+            href="/website/de/blog/2025-08-09-sdr5/"
             role="menuitem"
             class="hx:text-gray-700 hx:dark:text-gray-300 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-neutral-800 hx:dark:hover:text-gray-100 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:rounded-sm hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Deutsch</a>
@@ -596,7 +711,7 @@
   </a></div></div>
     </div></footer>
     
-    <script defer src="/website/js/main.min.897e9c8f347683d69730bb3bc14ac84fa3c2758bb22a00a7c206cc7b2cec9834.js" integrity="sha256-iX6cjzR2g9aXMLs7wUrIT6PCdYuyKgCnwgbMeyzsmDQ="></script>
-<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script><script defer src="/website/en.search.min.1132069e2a4c3bd1bfebbbc7f0dc1a67c9c3f44f97c0b27d7e16e4145481cace.js" integrity="sha256-ETIGnipMO9G/67vH8NwaZ8nD9E&#43;XwLJ9fhbkFFSBys4="></script>
+    <script defer src="/website/js/main.js" integrity=""></script>
+<script defer src="/website/js/flexsearch.9f5b5908f93ae86f1ecd4b043b799f580c2d1654e703dd9357d568ac41b2547a.js" integrity="sha256-n1tZCPk66G8ezUsEO3mfWAwtFlTnA92TV9VorEGyVHo=" crossorigin="anonymous"></script><script defer src="/website/en.search.js" integrity=""></script>
   </body>
 </html>

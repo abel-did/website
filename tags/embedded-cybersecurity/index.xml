@@ -1,0 +1,163 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DIDOUH Laboratories – Embedded Cybersecurity</title>
+    <link>https://abel-did.github.io/website/tags/embedded-cybersecurity/</link>
+    <description>Recent content in Embedded Cybersecurity on DIDOUH Laboratories</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 14 Sep 2025 13:28:29 +0200</lastBuildDate>
+    
+	  <atom:link href="https://abel-did.github.io/website/tags/embedded-cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Cryptography and IoT Security</title>
+      <link>https://abel-did.github.io/website/blog/2025-09-14-embsec2/</link>
+      <pubDate>Sun, 14 Sep 2025 13:28:29 +0200</pubDate>
+      
+      <guid>https://abel-did.github.io/website/blog/2025-09-14-embsec2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The Internet of Things (IoT) imposes unprecedented cryptographic constraints, requiring devices with limited resources to maintain secure communications for decades. These constraints redefine the application of fundamental cryptographic principles and demand a deep understanding of trade-offs between security, performance, and energy efficiency. In an ecosystem where connected objects—from sensors to household devices—proliferate, security must adapt to environments with low computational power, memory, and energy. This article explores these challenges through a structured outline, proposing practical approaches to secure IoT while preserving its efficiency.&lt;/p&gt;
+&lt;h4&gt;Article Outline&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;article-outline&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#article-outline&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Kerckhoffs’ Principle in IoT&lt;/li&gt;
+&lt;li&gt;Security Levels Tailored to IoT Constraints&lt;/li&gt;
+&lt;li&gt;Symmetric Encryption for Constrained Devices&lt;/li&gt;
+&lt;li&gt;Hash Functions for IoT Authentication&lt;/li&gt;
+&lt;li&gt;Asymmetric Cryptography Adapted for IoT&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Kerckhoffs’ Principle in IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;kerckhoffs-principle-in-iot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#kerckhoffs-principle-in-iot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Kerckhoffs’ principle states that a cryptographic system must remain secure even if everything except the key is publicly known. In IoT, this principle is critical due to the constrained nature of devices. Security through obscurity is ineffective against reverse engineering or leaks. Therefore, standardized algorithms, such as those from NIST, are prioritized, supported by robust key management. For example, Blurry Box Encryption uses hardware anchors to protect confidentiality while adhering to this principle. Trade-offs involve simplified algorithms to save energy while ensuring long-term security against attacks.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/en/FIG0.jpg&#34; title=&#34;Auguste Kerckhoffs&#34; alt=&#34;landscape&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;figcaption&gt;Auguste Kerckhoffs&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Security Levels Tailored to IoT Constraints&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;security-levels-tailored-to-iot-constraints&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#security-levels-tailored-to-iot-constraints&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Cryptographic algorithms are distinguished by several parameters, with the most critical being their security level, expressed in bits (e.g., 64 bits, 80 bits, or 256 bits). This parameter provides a practical measure for comparing the robustness of algorithms against attacks. It represents the effort an attacker must expend to compromise the protection offered by the algorithm, whether by decrypting a message, forging a signature, or bypassing authentication.&lt;/p&gt;
+&lt;p&gt;In the IoT context, where devices have limited resources (computational power, memory, energy), choosing the appropriate security level is particularly critical. A security level of &lt;em&gt;n&lt;/em&gt; bits means an attacker must explore a search space of &lt;em&gt;2^n&lt;/em&gt; possibilities to find the correct solution, such as a decryption key. For example, an algorithm with a 256-bit security level requires an attacker to test up to &lt;em&gt;2^256&lt;/em&gt; combinations in the worst case—a computational effort considered practically infeasible with current technology.
+However, in IoT, a high security level like 256 bits may be excessive for constrained devices, as it increases energy consumption and computational demands. Thus, algorithms like AES-128 or SPECK, offering a 128-bit security level, are often preferred to balance robustness and efficiency. Additionally, approaches like OSCORE adapt security to the context, reducing computations while maintaining adequate protection for IoT sensors or gateways. The goal is to ensure long-term security over years while respecting the energy and hardware constraints of connected devices.&lt;/p&gt;
+&lt;h4&gt;Symmetric Encryption for Constrained Devices&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;symmetric-encryption-for-constrained-devices&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#symmetric-encryption-for-constrained-devices&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The origins of symmetric cryptography trace back to antiquity, notably to Julius Caesar, the famous Roman emperor, who reportedly used a letter substitution cipher known today as the Caesar cipher. This simple system involved shifting each letter in a message by a fixed number of positions in the alphabet to make the text incomprehensible to those unaware of the key, i.e., the shift used. Though rudimentary, this method illustrates the fundamental principle of symmetric cryptography, which has remained unchanged for centuries.
+In symmetric cryptography, a plaintext message is transformed into a ciphertext using an encryption algorithm, often denoted as Encrypt(), and a secret cryptographic key. This key, shared only between the sender and recipient, is essential for ensuring message confidentiality. The decryption process, performed via the Decrypt() algorithm, uses the same key to convert the ciphertext back to the original message. The use of a single key for both operations explains the term &amp;ldquo;symmetric.&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/en/FIG1.png&#34; title=&#34;Principle of Symmetric Encryption&#34; alt=&#34;Symmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;figcaption&gt;Principle of Symmetric Encryption&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;Over time, symmetric cryptography has evolved from manual techniques like the Caesar cipher to complex algorithms such as DES (Data Encryption Standard) in the 1970s or AES (Advanced Encryption Standard), widely used today. These modern algorithms leverage longer keys and sophisticated mathematical transformations to resist computational attacks, including brute-force attempts.&lt;/p&gt;
+&lt;p&gt;A major advantage of symmetric cryptography is its speed, making it ideal for encrypting large amounts of data. However, it presents a critical challenge: secure key management. Since the same key is used for both encryption and decryption, it must be securely transmitted between parties, often through a separate or protected channel, to prevent interception by an attacker. This is why symmetric cryptography is often combined with asymmetric cryptography techniques, such as RSA, to securely exchange keys before using a symmetric algorithm for data encryption.&lt;/p&gt;
+&lt;h4&gt;Hash Functions for IoT Authentication&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;hash-functions-for-iot-authentication&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#hash-functions-for-iot-authentication&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A hash function is a mathematical operation that transforms data, such as text or a file, into a fixed-size digital fingerprint called a hash. It is fast, consistently produces the same output for the same input, and changes entirely if the input is slightly modified. Hash functions are used to secure passwords, verify file integrity, or in technologies like blockchain. They are designed to be difficult to reverse and to prevent different inputs from producing the same hash. Algorithms like SHA-256 are common, though some, like MD5, are considered less secure today.&lt;/p&gt;
+&lt;h4&gt;Asymmetric Cryptography Adapted for IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;asymmetric-cryptography-adapted-for-iot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#asymmetric-cryptography-adapted-for-iot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Asymmetric cryptography is an encryption method that relies on two keys: a public key, freely shared, and a private key, kept secret. The public key is used to encrypt a message or verify a signature, while the private key is used to decrypt or sign. The two keys are mathematically linked, but deducing the private key from the public key is nearly impossible. This approach secures communications, such as in emails or HTTPS, authenticates messages via digital signatures, or facilitates secure key exchanges in systems like blockchain. Algorithms like RSA or ECC are common, but this method is slower than symmetric cryptography.&lt;/p&gt;
+&lt;p&gt;&lt;figure&gt;
+    &lt;img src=&#34;https://abel-did.github.io/website/images/2025-09-14-embsec2/en/FIG2.png&#34; title=&#34;Principle of Asymmetric Encryption&#34; alt=&#34;Asymmetric Cryptography&#34;  loading=&#34;lazy&#34; /&gt;
+    &lt;figcaption&gt;Principle of Asymmetric Encryption&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
+&lt;h4&gt;Conclusion&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;conclusion&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#conclusion&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;This concise introduction to cryptography highlights the challenges posed by the RED standard. In the Internet of Things (IoT), designing solutions that accommodate resource constraints while ensuring robust and long-lasting protection is critical. By adhering to Kerckhoffs’ principle, adopting tailored security levels, and combining optimized symmetric, asymmetric, and hash algorithms, IoT achieves a balance of security, performance, and autonomy. These approaches enable devices to operate securely over the long term, fostering the development of the IoT ecosystem.&lt;/p&gt;
+&lt;h4&gt;References&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;references&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#references&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Engineering Secure Devices &amp;ldquo;A practical guide for embedded system architects and developers&amp;rdquo; Dominik MERLI&lt;/li&gt;
+&lt;li&gt;NIST. &amp;ldquo;Lightweight Cryptography Standards.&amp;rdquo; NIST, 2023.&lt;/li&gt;
+&lt;li&gt;Alaba, F. A., et al. &amp;ldquo;Internet of Things Security: A Survey.&amp;rdquo; Journal of Network and Computer Applications, 2017.&lt;/li&gt;
+&lt;li&gt;Seliem, M., et al. &amp;ldquo;IoT Security: Review and Future Directions.&amp;rdquo; IEEE Access, 2020.&lt;/li&gt;
+&lt;li&gt;Yang, Y., et al. &amp;ldquo;Lightweight Authentication Protocols for IoT.&amp;rdquo; IEEE Internet of Things Journal, 2019.&lt;/li&gt;
+&lt;li&gt;Diro, A. A., et al. &amp;ldquo;Lightweight Machine Learning for IoT Security.&amp;rdquo; Computers &amp;amp; Security, 2021.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Fundamentals of Secure Development for IoT Systems</title>
+      <link>https://abel-did.github.io/website/blog/2025-09-12-embsec1/</link>
+      <pubDate>Fri, 12 Sep 2025 00:46:21 +0200</pubDate>
+      
+      <guid>https://abel-did.github.io/website/blog/2025-09-12-embsec1/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Refrigerators now send notifications to smartphones. Thermostats adapt to occupants’ habits. Smartwatches monitor heart rates in real time. These devices form the Internet of Things (IoT). Each device functions as a small connected computer.
+The IoT revolution is transforming daily life while introducing new security risks. Every sensor represents a potential entry point for attackers. Securing these billions of devices has become essential. This article series explores the challenges of IoT security.&lt;/p&gt;
+&lt;h4&gt;Article Outline&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;article-outline&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#article-outline&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;European Regulatory Framework: RED and EN Standards for IoT&lt;/li&gt;
+&lt;li&gt;IoT Secure Development Process&lt;/li&gt;
+&lt;li&gt;Identification of Critical Assets&lt;/li&gt;
+&lt;li&gt;Understanding IoT Threats&lt;/li&gt;
+&lt;li&gt;Implementation of Security Requirements&lt;/li&gt;
+&lt;li&gt;Validation and Maintenance of Security&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;European Regulatory Framework: RED and EN Standards for IoT&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;european-regulatory-framework-red-and-en-standards-for-iot&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#european-regulatory-framework-red-and-en-standards-for-iot&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;h5&gt;The RED Directive Strengthens IoT Security&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;the-red-directive-strengthens-iot-security&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#the-red-directive-strengthens-iot-security&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The European Union enhances the cybersecurity of connected devices through the RED Directive 2014/53/EU, which redefines market requirements. Article 3.3(d) represents a key milestone: every IoT device must incorporate protections against fraud and ensure the security of personal data. For example, a temperature sensor must demonstrate compliance to be marketed in Europe.
+This reform addresses a major issue. The rapid growth of IoT has often prioritized low costs over security, resulting in weak passwords, unencrypted communications, and a lack of updates. The RED Directive puts an end to these risky practices.&lt;/p&gt;
+&lt;h5&gt;EN Standards Guide Secure Implementation&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;en-standards-guide-secure-implementation&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#en-standards-guide-secure-implementation&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;European EN standards translate legal obligations into practical technical specifications to guide the implementation of secure solutions.
+The EN 303 645 standard focuses on the security of consumer IoT devices. It defines thirteen fundamental requirements, such as prohibiting universal default passwords, mandating secure updates, reducing exposed services, and requiring encryption for all communications. For instance, a surveillance camera must have a unique password per device, automatic updates, and minimal open network ports.
+The EN 303 417 standard addresses modern radio communications, defining requirements for 5G and WiFi 6.
+The EN 62443 standard applies to industrial IoT, addressing aspects such as network segmentation and centralized identity management.&lt;/p&gt;
+&lt;h4&gt;IoT Secure Development Process&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;iot-secure-development-process&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#iot-secure-development-process&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;Secure development of IoT devices relies on a methodology tailored to their specific constraints. These devices, often limited in energy and computing resources, must meet high security standards while operating in large-scale deployments where maintenance can be complex.
+This methodology is divided into six main phases. Each phase considers IoT-specific characteristics, balancing security, performance, and hardware constraints to ensure reliable and efficient solutions.&lt;/p&gt;
+&lt;h5&gt;Identification of Critical IoT Assets&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;identification-of-critical-iot-assets&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#identification-of-critical-iot-assets&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;The first step involves identifying all assets that require protection, going beyond a simple technical inventory.
+Hardware components include microcontrollers that process sensitive data, sensors that collect personal information, actuators that execute critical commands, and memory that stores programs and cryptographic keys.
+Data is particularly sensitive. Telemetry data can reveal user behaviors, connection metadata exposes network architecture, cryptographic keys secure the ecosystem, and authentication certificates validate legitimate identities.
+Intangible assets play a significant role. Protecting user privacy is a priority, service availability impacts user experience, reliability strengthens brand reputation, and regulatory compliance prevents costly penalties.
+Criticality assessment accounts for IoT-specific factors. For example, a temperature sensor in a greenhouse has lower criticality than a connected medical device. This detailed analysis enables prioritization of protection measures.&lt;/p&gt;
+&lt;h5&gt;Understanding IoT Threats&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;understanding-iot-threats&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#understanding-iot-threats&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Due to their unique characteristics, IoT devices are vulnerable to sophisticated and varied threats.
+IoT botnets are among the most visible threats. Attackers compromise millions of connected devices, turning them into zombies to launch massive DDoS attacks. For example, the 2016 Mirai attack infected 600,000 devices, generating traffic of 1 Tbps.
+IoT espionage is particularly concerning. Voice assistants continuously record, cameras monitor behaviors, and motion sensors track movements with precision. A compromised device allows attackers to access sensitive data, enabling intrusive surveillance.
+Physical attacks exploit the accessibility of IoT devices, often deployed without sufficient physical protection, which expands the attack surface.
+Denial-of-service attacks target energy constraints. By forcing battery-powered devices to perform intensive computations, attackers deplete their energy, rendering the devices inoperable.&lt;/p&gt;
+&lt;h5&gt;Implementation of IoT Security Requirements&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;implementation-of-iot-security-requirements&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#implementation-of-iot-security-requirements&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;Translating needs into technical requirements for IoT demands an approach tailored to its constraints. Balancing energy performance, production costs, and security involves complex trade-offs.
+Security requirements must be precise. For example, strong authentication may translate to mutual authentication based on ECC-256 certificates, renewed automatically every 30 days, with a fallback mechanism for connectivity loss.
+The security architecture must account for energy constraints. Each cryptographic operation consumes energy, necessitating a balance between security and efficiency. Dedicated cryptographic chips and optimized communication protocols reduce this consumption.
+Scalability poses a major challenge. The infrastructure must manage cryptographic keys and authentication certificates for thousands of connected devices while remaining reliable.
+Hardware constraints require rigorous optimization. For instance, an ARM Cortex-M0+ microcontroller with 32 KB of flash memory and 4 KB of RAM demands meticulous code optimization.
+Modern IoT frameworks, such as Zephyr, FreeRTOS, or Mbed OS, facilitate secure implementation by integrating optimized security mechanisms and proven protocols, reducing development complexity.
+Cryptographic key management is a critical technical challenge. Secure elements, like Atmel’s ATECC608 chips, provide hardware-based protection against physical attacks, though their integration slightly increases costs.&lt;/p&gt;
+&lt;h5&gt;Validation and Maintenance of IoT Security&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;validation-and-maintenance-of-iot-security&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#validation-and-maintenance-of-iot-security&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h5&gt;&lt;p&gt;IoT security testing requires tailored approaches, combining standard software checks with analyses of vulnerabilities related to energy and environmental constraints.
+Energy consumption tests under attack reveal specific vulnerabilities. An attacker can force a sensor to perform intensive computations, rapidly draining its battery and rendering the device unusable.
+Network robustness tests are critical. IoT devices often operate with unstable connections and limited bandwidth. Authentication mechanisms must remain operational after hours of disconnection.
+Physical security tests are essential. IoT devices, often physically accessible, require intrusion tests to verify whether attackers can extract cryptographic keys by tampering with the hardware.
+Scalability tests simulate real-world conditions. The security infrastructure must manage thousands of connected devices simultaneously in realistic scenarios.
+Security maintenance is complex, as devices may remain deployed for decades in hard-to-access environments.
+Vulnerability monitoring requires an automated approach to correlate newly published vulnerabilities with affected devices, enabling rapid risk identification.
+Large-scale secure updates are a complex challenge. Deploying a patch across 100,000 geographically dispersed smart meters requires sophisticated and secure orchestration.&lt;/p&gt;
+&lt;h4&gt;Conclusion&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;conclusion&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#conclusion&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;The Internet of Things integrates computing into daily life, offering significant benefits but also exposing risks if vulnerabilities proliferate. Each connected sensor is a critical link in our collective security.
+The European regulatory framework is progressing positively. The RED Directive transforms recommendations into strict legal obligations, marking a turning point for the IoT industry. Security is becoming a competitive advantage in the market.
+A secure development methodology tailored to IoT constraints provides a proven framework. Although the initial investment in security may seem high, the cost of inaction grows exponentially with deployment scale.
+Future articles in this series will explore practical aspects of IoT security, detailing the selection of cryptographic components, network architecture, and secure update mechanisms.
+The future of IoT depends on current technical choices. Each designed device either strengthens a secure IoT ecosystem or contributes to an uncontrollable attack surface. Developers’ expertise plays a pivotal role in building an inherently secure IoT.&lt;/p&gt;
+&lt;h4&gt;References&lt;span class=&#34;hx:absolute hx:-mt-20&#34; id=&#34;references&#34;&gt;&lt;/span&gt;
+    &lt;a href=&#34;#references&#34; class=&#34;subheading-anchor&#34; aria-label=&#34;Permalink for this section&#34;&gt;&lt;/a&gt;&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Anderson, R., &amp;amp; Moore, T. (2006). The Economics of Information Security. &lt;em&gt;Science&lt;/em&gt;, 314(5799), 610-613.&lt;/li&gt;
+&lt;li&gt;Sicari, S., Rizzardi, A., Grieco, L. A., &amp;amp; Coen-Porisini, A. (2015). Security, Privacy and Trust in Internet of Things. &lt;em&gt;Computer Communications&lt;/em&gt;, 51, 146-164.&lt;/li&gt;
+&lt;li&gt;ENISA. (2017). Baseline Security Recommendations for IoT in the Context of Critical Information Infrastructures. &lt;em&gt;European Union Agency for Network and Information Security&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Kolias, C., Kambourakis, G., Stavrou, A., &amp;amp; Voas, J. (2017). DDoS in the IoT: Mirai and Other Botnets. &lt;em&gt;Computer&lt;/em&gt;, 50(7), 80-84.&lt;/li&gt;
+&lt;li&gt;Roman, R., Zhou, J., &amp;amp; Lopez, J. (2013). On the Features and Challenges of Security and Privacy in Distributed Internet of Things. &lt;em&gt;Computer Networks&lt;/em&gt;, 57(10), 2266-2279.&lt;/li&gt;
+&lt;li&gt;Zarpelão, B. B., Miani, R. S., Kawakani, C. T., &amp;amp; de Alvarenga, S. C. (2017). A Survey of Intrusion Detection in Internet of Things. &lt;em&gt;Journal of Network and Computer Applications&lt;/em&gt;, 84, 25-37.&lt;/li&gt;
+&lt;li&gt;ETSI. (2020). ETSI EN 303 645 V2.1.1 - Cyber Security for Consumer Internet of Things. &lt;em&gt;European Telecommunications Standards Institute&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Hernandez-Ramos, J. L., Jara, A. J., Marin, L., &amp;amp; Skarmeta, A. F. (2013). Distributed Capability-based Access Control for the Internet of Things. &lt;em&gt;Journal of Internet Services and Information Security&lt;/em&gt;, 3(3/4), 1-16.&lt;/li&gt;
+&lt;li&gt;Atzori, L., Iera, A., &amp;amp; Morabito, G. (2010). The Internet of Things: A Survey. &lt;em&gt;Computer Networks&lt;/em&gt;, 54(15), 2787-2805.&lt;/li&gt;
+&lt;li&gt;Weber, R. H. (2010). Internet of Things–New Security and Privacy Challenges. &lt;em&gt;Computer Law &amp;amp; Security Review&lt;/em&gt;, 26(1), 23-30.&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

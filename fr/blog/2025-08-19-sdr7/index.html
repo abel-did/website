@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+
+<script src="https://abel-did.github.io/website/js/tarteaucitron/tarteaucitron.min.js"></script>
+
+        <script type="text/javascript">
+        tarteaucitron.init({
+    	  "privacyUrl": "",  
+          "bodyPosition": "top",  
+
+    	  "hashtag": "#tarteaucitron",  
+    	  "cookieName": "tarteaucitron",  
+    
+    	  "orientation": "middle",  
+       
+          "groupServices": true,  
+          "showDetailsOnClick": true,  
+          "serviceDefaultState": "wait",  
+                           
+    	  "showAlertSmall": false,  
+    	  "cookieslist": false,  
+           "cookieslistEmbed": false,  
+                           
+          "closePopup": true,  
+
+          "showIcon": true,  
+          
+          "iconPosition": "BottomRight",  
+
+    	  "adblocker": false,  
+                           
+          "DenyAllCta" : true,  
+          "AcceptAllCta" : true,  
+          "highPrivacy": true,  
+          "alwaysNeedConsent": true,  
+                           
+    	  "handleBrowserDNTRequest": false,  
+
+    	  "removeCredit": true,  
+    	  "moreInfoLink": true,  
+
+          "useExternalCss": false,  
+          "useExternalJs": false,  
+
+    	  
+                          
+          "readmoreLink": "",  
+
+          "mandatory": true,  
+          "mandatoryCta": false,  
+    
+          
+          
+          "googleConsentMode": true,  
+          "bingConsentMode": true,  
+          "softConsentMode": true,  
+
+          "dataLayer": false,  
+          "serverSide": false,  
+          
+          "partnersList": true  
+        });
+        </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
+<title>Boucle à verrouillage de phase – DIDOUH Laboratories</title>
+  <meta name="description" content="Cet article explore le rôle essentiel des boucles à verrouillage de phase (PLL) dans les systèmes de communication modernes. Il détaillera les principes fondamentaux de la synchronisation de fréquence et de phase, leur utilisation dans les récepteurs et émetteurs, ainsi que leur application dans les systèmes de radio logicielle (SDR)." /><link rel="canonical" href="https://abel-did.github.io/website/fr/blog/2025-08-19-sdr7/" itemprop="url" />
+
+<meta property="og:title" content="Boucle à verrouillage de phase" />
+<meta property="og:description" content="Cet article explore le rôle essentiel des boucles à verrouillage de phase (PLL) dans les systèmes de communication modernes. Il détaillera les principes fondamentaux de la synchronisation de fréquence et de phase, leur utilisation dans les récepteurs et émetteurs, ainsi que leur application dans les systèmes de radio logicielle (SDR)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abel-did.github.io/website/fr/blog/2025-08-19-sdr7/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-08-16T14:16:59+12:00" />
+<meta property="article:modified_time" content="2025-08-16T14:16:59+12:00" />
+
+  <meta itemprop="name" content="Boucle à verrouillage de phase">
+  <meta itemprop="description" content="Cet article explore le rôle essentiel des boucles à verrouillage de phase (PLL) dans les systèmes de communication modernes. Il détaillera les principes fondamentaux de la synchronisation de fréquence et de phase, leur utilisation dans les récepteurs et émetteurs, ainsi que leur application dans les systèmes de radio logicielle (SDR).">
+  <meta itemprop="datePublished" content="2025-08-16T14:16:59+12:00">
+  <meta itemprop="dateModified" content="2025-08-16T14:16:59+12:00">
+  <meta itemprop="wordCount" content="1561">
+  <meta itemprop="keywords" content="SDR">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Boucle à verrouillage de phase">
+  <meta name="twitter:description" content="Cet article explore le rôle essentiel des boucles à verrouillage de phase (PLL) dans les systèmes de communication modernes. Il détaillera les principes fondamentaux de la synchronisation de fréquence et de phase, leur utilisation dans les récepteurs et émetteurs, ainsi que leur application dans les systèmes de radio logicielle (SDR).">
+
+    <link rel="preload" href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" as="style" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+    <link href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" rel="stylesheet" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+
+
+  
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+  
+  <script>
+tarteaucitron.user.gtagUa = 'G-35BR2S567M';
+
+ tarteaucitron.user.gtagMore = function () {   };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+  
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  </head>
+<body dir="ltr"><div class="nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/website/fr/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="DIDOUH Laboratories">DIDOUH Laboratories</span>
+</a>
+
+            <a
+              title="Blog"
+              href="/website/fr/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">Blog</span>
+            </a>
+            <a
+              title="Stack Guide"
+              href="/website/fr/stackguide"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Stack Guide</span>
+            </a>
+            <a
+              title="À propos"
+              href="/website/fr/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">À propos</span>
+            </a>
+            <a
+              title="Étiquettes"
+              href="/website/fr/tags"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Étiquettes</span>
+            </a><div class="search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="Rechercher..."
+      class="search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+<button type="button" aria-label="Menu" class="hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+<div class="hx:mx-auto hx:flex hextra-max-page-width">
+    <aside class="sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:hidden hx:xl:block">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="Rechercher..."
+      class="search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/"
+    
+  >Stack Guide
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-13-gnuradio4/"
+    
+  >Créer ses propres blocs GNU Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-13-gnuradio3/"
+    
+  >Créer un modulateur AM avec GNU Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-10-gnuradio2/"
+    
+  >Premier contact avec GNU Radio Companion
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-10-gnuradio1/"
+    
+  >Installation de GNU Radio
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class="open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/"
+    
+  >Posts
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-09-14-embsec2/"
+    
+  >Cryptographie et Sécurité IoT
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-09-12-embsec1/"
+    
+  >Les fondamentaux du développement sécurisé pour les systèmes IoT
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-20-sdr9/"
+    
+  >Les outils SDR : écosystème technologique de la radio logicielle moderne
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-19-sdr8/"
+    
+  >Modulations et démodulations numériques
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col open"><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
+    href="/website/fr/blog/2025-08-19-sdr7/"
+    
+  >Boucle à verrouillage de phase
+    </a>
+  
+    <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
+              <a
+                href="#"
+                class="hx:flex hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [word-break:break-word] hx:cursor-pointer [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] hx:contrast-more:border hx:gap-2 hx:before:opacity-25 hx:before:content-['#'] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:text-gray-900 hx:contrast-more:dark:text-gray-50 hx:contrast-more:border-transparent hx:contrast-more:hover:border-gray-900 hx:contrast-more:dark:hover:border-gray-50"
+              ></a>
+            </li>
+          </ul>
+  
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-13-sdr6/"
+    
+  >Chaînes de traitement numérique dans une radio logicielle
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr5/"
+    
+  >Architecture IQ : fondation du traitement numérique en SDR
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr4/"
+    
+  >Technologie de numérisation du signal : pivot de la radio logicielle
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr3/"
+    
+  >Architectures analogiques et hétérodynes
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr2/"
+    
+  >Les bases théoriques de la radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr1/"
+    
+  >À la découverte de la radio logicielle
+    </a>
+              
+            </li></ul>
+      </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/about/"
+    
+  >A propos
+    </a></li>
+    </ul>
+
+    <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
+  
+  
+    <div class="hx:md:hidden hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="Changer la langue"
+      data-state="closed"
+      class="language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="Changer la langue"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>Français</span></div>
+    </button>
+    <ul
+      class="language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/nb/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Bokmål</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/fr/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Français<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
+        </li>
+      </ul>
+  </div><button
+  title="Thème d&#39;affichage"
+  data-theme="light"
+  class="theme-toggle hx:cursor-pointer hx:group hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50"
+  type="button"
+  aria-label="Thème d&#39;affichage"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">Sur cette page</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#plan">Plan
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#objectif-de-la-boucle-%c3%a0-verrouillage-de-phase">Objectif de la boucle à verrouillage de phase
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#les-besoins-en-signaux-de-fr%c3%a9quences-stables-dans-un-r%c3%a9cepteur">Les besoins en signaux de fréquences stables dans un récepteur
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#boucle-%c3%a0-verrouillage-de-phase-%c3%a0-retour-unitaire">Boucle à verrouillage de phase à retour unitaire
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#boucle-%c3%a0-verrouillage-de-phase-%c3%a0-retour-non-unitaire">Boucle à verrouillage de phase à retour non unitaire
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#conclusion">Conclusion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#r%c3%a9f%c3%a9rences">Références
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>Revenir en haut</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="/website/fr/blog/">Posts</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Boucle à verrouillage de phase</div>
+  </div>
+
+        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Boucle à verrouillage de phase</h1>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">16 août 2025</span><span class="hx:mx-1">·</span><span class="hx:text-sm hx:text-gray-500">Temps de lecture : 8  minutes 
+          </span>
+        </div>
+        <div class="content" style="text-align: justify;">
+          <p>Les boucles à verrouillage de phase, connues sous l&rsquo;acronyme PLL (Phase Locked Loop), constituent l&rsquo;épine dorsale invisible de notre monde électronique moderne. Des smartphones aux satellites, en passant par les équipements de métrologie les plus sophistiqués, ces circuits ingénieux orchestrent silencieusement la génération et la synchronisation de millions de signaux. Comprendre leur fonctionnement, c&rsquo;est saisir l&rsquo;un des mécanismes fondamentaux qui permettent à nos systèmes de communication de fonctionner avec une précision remarquable.</p>
+<h4>Plan<span class="hx:absolute hx:-mt-20" id="plan"></span>
+    <a href="#plan" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Objectif de la boucle à verrouillage de phase</li>
+<li>Les besoins en signaux de fréquences stables dans un récepteur</li>
+<li>Boucle à verrouillage de phase à retour unitaire</li>
+<li>Boucle à verrouillage de phase à retour non unitaire</li>
+</ul>
+<h4>Objectif de la boucle à verrouillage de phase<span class="hx:absolute hx:-mt-20" id="objectif-de-la-boucle-à-verrouillage-de-phase"></span>
+    <a href="#objectif-de-la-boucle-%c3%a0-verrouillage-de-phase" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Une PLL poursuit un objectif apparemment simple mais techniquement ambitieux : générer un signal de sortie dont la phase reste parfaitement synchronisée avec celle d&rsquo;un signal de référence. Cette synchronisation de phase implique naturellement une égalité des fréquences, transformant la PLL en un véritable synthétiseur de fréquence programmable.</p>
+<p>Le principe repose sur une boucle de rétroaction négative qui compare continuellement la phase du signal généré avec celle d&rsquo;une référence. Toute dérive est immédiatement détectée et corrigée, maintenant ainsi un verrouillage précis. Cette capacité de verrouillage offre trois avantages majeurs. D&rsquo;abord, elle permet de multiplier ou diviser une fréquence de référence avec une précision extrême, créant ainsi des signaux à des fréquences précises mais différentes de la référence. Ensuite, elle filtre efficacement le bruit de phase, produisant des signaux d&rsquo;une pureté spectrale remarquable. Enfin, elle assure une stabilité à long terme héritée directement de la référence, généralement un oscillateur à quartz de haute qualité.</p>
+<p>Dans le contexte des radiocommunications, les PLL remplissent des fonctions critiques. Elles génèrent les porteuses nécessaires à l&rsquo;émission des signaux modulés et créent les oscillateurs locaux indispensables aux étages de conversion de fréquence en réception. Elles participent également à la démodulation des signaux FM et FSK, exploitant la tension de commande du VCO comme signal démodulé. Dans les systèmes numériques, elles récupèrent l&rsquo;horloge enfouie dans les données transmises, permettant une synchronisation parfaite entre émetteur et récepteur.</p>
+<h4>Les besoins en signaux de fréquences stables dans un récepteur<span class="hx:absolute hx:-mt-20" id="les-besoins-en-signaux-de-fréquences-stables-dans-un-récepteur"></span>
+    <a href="#les-besoins-en-signaux-de-fr%c3%a9quences-stables-dans-un-r%c3%a9cepteur" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Un récepteur radio moderne, qu&rsquo;il soit superhétérodyne classique ou basé sur une architecture SDR, nécessite une multitude de signaux de référence d&rsquo;une stabilité irréprochable. Cette exigence découle directement des contraintes physiques et techniques imposées par le traitement des signaux radioélectriques.</p>
+<p>Prenons l&rsquo;exemple d&rsquo;un récepteur superhétérodyne accordé sur 100 MHz avec une bande passante de canal de 25 kHz. L&rsquo;oscillateur local doit maintenir sa fréquence avec une précision meilleure que ±1 kHz pour garantir que le signal reste centré dans le filtre de fréquence intermédiaire. Cela représente une stabilité relative de 10 ppm (parties par million), déjà difficile à atteindre avec un simple oscillateur LC. Pour les communications numériques modernes, où les canaux peuvent être espacés de seulement quelques kilohertz, les exigences se durcissent encore, nécessitant des stabilités de l&rsquo;ordre de 1 ppm voire mieux.</p>
+<p>La dérive en fréquence des oscillateurs libres constitue un problème majeur. Un oscillateur LC classique peut dériver de plusieurs kilohertz sur une plage de température de 50°C, rendant impossible la réception stable d&rsquo;un signal à bande étroite. Les variations de tension d&rsquo;alimentation, le vieillissement des composants et les vibrations mécaniques aggravent encore cette instabilité. Même les oscillateurs à quartz, pourtant réputés pour leur stabilité, nécessitent une compensation thermique sophistiquée pour atteindre les performances requises.</p>
+<p>C&rsquo;est ici que la PLL révèle toute sa puissance. En verrouillant un oscillateur variable (VCO) sur une référence stable, elle combine le meilleur des deux mondes : l&rsquo;agilité en fréquence du VCO et la stabilité long terme de la référence. Un récepteur moderne peut ainsi utiliser une unique référence à quartz de haute qualité pour générer, via plusieurs PLL, tous les signaux nécessaires à son fonctionnement : oscillateurs locaux pour les différents étages de conversion, horloge d&rsquo;échantillonnage pour les convertisseurs analogique-numérique, fréquences de traitement pour les processeurs de signal numérique.</p>
+<h4>Boucle à verrouillage de phase à retour unitaire<span class="hx:absolute hx:-mt-20" id="boucle-à-verrouillage-de-phase-à-retour-unitaire"></span>
+    <a href="#boucle-%c3%a0-verrouillage-de-phase-%c3%a0-retour-unitaire" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>La PLL à retour unitaire représente la forme la plus élémentaire de boucle à verrouillage de phase, où le signal de sortie est directement rebouclé vers le détecteur de phase sans modification. Cette architecture, bien que simple, illustre parfaitement les mécanismes fondamentaux du verrouillage de phase.</p>
+<p>Au cœur de cette boucle, trois éléments essentiels interagissent en permanence. Le détecteur de phase compare les phases instantanées du signal de référence et du signal de sortie, produisant une tension d&rsquo;erreur proportionnelle à leur différence. Cette tension traverse ensuite un filtre de boucle, généralement un filtre passe-bas, qui détermine la dynamique de la réponse du système. Le filtre élimine les composantes haute fréquence indésirables tout en définissant la bande passante de la boucle. Enfin, l&rsquo;oscillateur contrôlé en tension (VCO) génère le signal de sortie dont la fréquence varie linéairement avec la tension de commande issue du filtre.</p>
+<p>Le processus de verrouillage s&rsquo;établit progressivement. Initialement, si les fréquences diffèrent, le détecteur de phase produit un battement à la fréquence différence. Cette composante basse fréquence, après filtrage, module le VCO qui se rapproche progressivement de la fréquence de référence. Lorsque l&rsquo;écart devient suffisamment faible, la boucle &ldquo;accroche&rdquo; et maintient un verrouillage stable. La phase du VCO suit alors fidèlement celle de la référence, avec un décalage constant déterminé par les caractéristiques de la boucle.</p>
+<p>La conception du filtre de boucle revêt une importance capitale. Un filtre du premier ordre, simple capacité en parallèle, offre une réponse stable mais un temps d&rsquo;accrochage relativement long. Les filtres du second ordre, intégrant résistances et capacités, permettent d&rsquo;optimiser le compromis entre rapidité d&rsquo;accrochage et stabilité. La bande passante du filtre définit directement la plage de capture de la PLL, c&rsquo;est-à-dire l&rsquo;écart maximal de fréquence initial permettant le verrouillage, ainsi que la capacité de la boucle à suivre les variations rapides de la référence.</p>
+<p><figure>
+    <img src="/website/images/2025-08-19-sdr7/fr/FIG0.png" title="Schéma synoptique d&#39;une boucle à verrouilage de phase" alt="landscape"  loading="lazy" />
+    <figcaption>Schéma synoptique d&#39;une boucle à verrouilage de phase</figcaption>
+  </figure></p>
+<h4>Boucle à verrouillage de phase à retour non unitaire<span class="hx:absolute hx:-mt-20" id="boucle-à-verrouillage-de-phase-à-retour-non-unitaire"></span>
+    <a href="#boucle-%c3%a0-verrouillage-de-phase-%c3%a0-retour-non-unitaire" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>L&rsquo;architecture à retour non unitaire transforme la PLL en un véritable synthétiseur de fréquence programmable. En insérant un diviseur de fréquence dans la boucle de retour, on force le VCO à osciller à un multiple exact de la fréquence de référence, ouvrant ainsi la voie à la génération de milliers de fréquences différentes à partir d&rsquo;une unique référence.</p>
+<p><figure>
+    <img src="/website/images/2025-08-19-sdr7/fr/FIG1.png" title="Schéma synoptique d&#39;une boucle à verrouilage de phase et retour non unitaire" alt="landscape"  loading="lazy" />
+    <figcaption>Schéma synoptique d&#39;une boucle à verrouilage de phase et retour non unitaire</figcaption>
+  </figure></p>
+<p>Le principe repose sur une astuce élégante : le détecteur de phase compare la référence non pas directement au signal du VCO, mais à ce signal divisé par un facteur N programmable. À l&rsquo;équilibre, les deux signaux comparés doivent avoir la même fréquence. Si la référence oscille à fref, le VCO doit donc osciller à N × fref pour que, après division, les fréquences soient identiques au niveau du comparateur. En modifiant simplement la valeur de N, on change instantanément la fréquence de sortie par pas de fref.</p>
+<p>Cette architecture offre une flexibilité remarquable pour les systèmes de radiocommunication modernes. Un émetteur-récepteur couvrant la bande 88-108 MHz avec des canaux espacés de 100 kHz peut utiliser une référence à 100 kHz et faire varier N de 880 à 1080. La résolution fréquentielle égale à la fréquence de référence, permettant d&rsquo;atteindre n&rsquo;importe quel canal. Cependant, cette résolution impose un compromis : une référence basse fréquence offre une résolution fine mais ralentit la réponse de la boucle, tandis qu&rsquo;une référence élevée accélère la boucle mais limite la résolution.</p>
+<p>Les PLL fractionnaires modernes contournent cette limitation en utilisant des diviseurs capables de ratios non entiers. Par des techniques sophistiquées de modulation sigma-delta, elles peuvent générer des fréquences avec une résolution bien inférieure à la fréquence de référence, tout en maintenant une bande passante de boucle élevée. Ces architectures permettent des temps de commutation ultra-rapides, essentiels pour les systèmes à saut de fréquence ou les radios cognitives qui doivent explorer rapidement le spectre.</p>
+<p>L&rsquo;intégration croissante a donné naissance à des circuits PLL monolithiques remarquables. Un synthétiseur moderne intègre sur quelques millimètres carrés de silicium tous les éléments de la boucle, y compris des VCO multi-bandes couvrant plusieurs gigahertz, des diviseurs programmables haute vitesse, des détecteurs de phase numériques et même des filtres de boucle adaptatifs.</p>
+<h4>Conclusion<span class="hx:absolute hx:-mt-20" id="conclusion"></span>
+    <a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Les boucles à verrouillage de phase incarnent l&rsquo;élégance de l&rsquo;ingénierie électronique : un principe simple - la rétroaction de phase - qui, correctement mis en œuvre, résout des problèmes complexes de génération et de synchronisation de signaux. De la PLL analogique discrète des années 1930 aux synthétiseurs fractionnaires intégrés d&rsquo;aujourd&rsquo;hui, cette technologie n&rsquo;a cessé d&rsquo;évoluer pour répondre aux exigences toujours croissantes des systèmes de communication.</p>
+<p>Dans le contexte de la radio logicielle que nous explorons dans cette série d&rsquo;articles, les PLL jouent un rôle fondamental en fournissant les références temporelles et fréquentielles indispensables au bon fonctionnement des convertisseurs et des algorithmes de traitement numérique. Comprendre leur fonctionnement permet de mieux appréhender les performances et les limitations des systèmes SDR modernes, où la qualité de la synthèse de fréquence conditionne directement la sensibilité, la sélectivité et la dynamique du récepteur.</p>
+<h4>Références<span class="hx:absolute hx:-mt-20" id="références"></span>
+    <a href="#r%c3%a9f%c3%a9rences" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Collins, T. F., et al. (2018). <em>Software Defined Radio for Engineers</em>. Artech House.</li>
+<li>Mengali, U., &amp; D’Andrea, A. N. (1997). <em>Synchronization Techniques for Digital Receivers</em>. Plenum Press.</li>
+<li>Rusek, F. (2010). Carrier and Symbol Timing Recovery for SDR. <em>IEEE Transactions on Communications</em>, 58(3), 785-795.</li>
+<li>GNU Radio Community. (2023). <em>GNU Radio Manual and Documentation</em>. Disponible sur : <a href="https://www.gnuradio.org" target="_blank" rel="noopener">https://www.gnuradio.org</a>.</li>
+<li>Rice, M. (2009). <em>Digital Communications: A Discrete-Time Approach</em>. Pearson Prentice Hall.</li>
+</ul>
+
+        </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="/website/fr/blog/2025-08-13-sdr6/"
+        title="Chaînes de traitement numérique dans une radio logicielle"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Chaînes de traitement numérique dans une radio logicielle</a><a
+        href="/website/fr/blog/2025-08-19-sdr8/"
+        title="Modulations et démodulations numériques"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >Modulations et démodulations numériques<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start ">
+    <button
+      title="Changer la langue"
+      data-state="closed"
+      class="language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="Changer la langue"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>Français</span></div>
+    </button>
+    <ul
+      class="language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/nb/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Bokmål</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/fr/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Français<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-19-sdr7/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
+        </li>
+      </ul>
+  </div><button
+  title="Thème d&#39;affichage"
+  data-theme="light"
+  class="theme-toggle hx:cursor-pointer hx:group hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50"
+  type="button"
+  aria-label="Thème d&#39;affichage"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=light]:hidden">Clair</span><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=dark]:hidden">Sombre</span></div>
+</button>
+</div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 Abel DIDOUH - HuGO | Hextra</div></div>
+    </div></footer>
+    
+    <script defer src="/website/js/main.min.fee2ee5c1a34a422519f9ed8467b2dde53cd077890a235d3a031e21dd5825377.js" integrity="sha256-/uLuXBo0pCJRn57YRnst3lPNB3iQojXToDHiHdWCU3c="></script>
+<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+        <script defer src="/website/fr.search.min.f658067d0cada772db1c4ebb15663294ce225c24f8ca5fca0635af9e841b815f.js" integrity="sha256-9lgGfQytp3LbHE67FWYylM4iXCT4yl/KBjWvnoQbgV8="></script>
+  </body>
+</html>

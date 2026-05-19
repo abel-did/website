@@ -1,21 +1,82 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
+
+<script src="https://abel-did.github.io/website/js/tarteaucitron/tarteaucitron.min.js"></script>
+
+        <script type="text/javascript">
+        tarteaucitron.init({
+    	  "privacyUrl": "",  
+          "bodyPosition": "top",  
+
+    	  "hashtag": "#tarteaucitron",  
+    	  "cookieName": "tarteaucitron",  
+    
+    	  "orientation": "middle",  
+       
+          "groupServices": true,  
+          "showDetailsOnClick": true,  
+          "serviceDefaultState": "wait",  
+                           
+    	  "showAlertSmall": false,  
+    	  "cookieslist": false,  
+           "cookieslistEmbed": false,  
+                           
+          "closePopup": true,  
+
+          "showIcon": true,  
+          
+          "iconPosition": "BottomRight",  
+
+    	  "adblocker": false,  
+                           
+          "DenyAllCta" : true,  
+          "AcceptAllCta" : true,  
+          "highPrivacy": true,  
+          "alwaysNeedConsent": true,  
+                           
+    	  "handleBrowserDNTRequest": false,  
+
+    	  "removeCredit": true,  
+    	  "moreInfoLink": true,  
+
+          "useExternalCss": false,  
+          "useExternalJs": false,  
+
+    	  
+                          
+          "readmoreLink": "",  
+
+          "mandatory": true,  
+          "mandatoryCta": false,  
+    
+          
+          
+          "googleConsentMode": true,  
+          "bingConsentMode": true,  
+          "softConsentMode": true,  
+
+          "dataLayer": false,  
+          "serverSide": false,  
+          
+          "partnersList": true  
+        });
+        </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
-  <link rel="icon shortcut" href="/blog/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/blog/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="/blog/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-<link rel="icon" href="/blog/favicon-16x16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/blog/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png" sizes="180x180" />
-<link fetchpriority="low" href="/blog/site.webmanifest" rel="manifest" />
-<title>À la découverte de la radio logicielle – Abel DIDOUH</title>
-  <meta name="description" content="Cette série explore la radio logicielle (SDR), qui remplace les composants radio traditionnels par des solutions logicielles flexibles. Nous aborderons les bases théoriques de la radio, les architectures SDR, la modulation, et la capacité des canaux, tout en détaillant des concepts comme le bruit et l’échantillonnage." /><link rel="canonical" href="https://abel-did.github.io/blog/fr/blog/2025-08-09-sdr1/" itemprop="url" />
+  <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
+<title>À la découverte de la radio logicielle – DIDOUH Laboratories</title>
+  <meta name="description" content="Cette série explore la radio logicielle (SDR), qui remplace les composants radio traditionnels par des solutions logicielles flexibles. Nous aborderons les bases théoriques de la radio, les architectures SDR, la modulation, et la capacité des canaux, tout en détaillant des concepts comme le bruit et l’échantillonnage." /><link rel="canonical" href="https://abel-did.github.io/website/fr/blog/2025-08-09-sdr1/" itemprop="url" />
 
 <meta property="og:title" content="À la découverte de la radio logicielle" />
 <meta property="og:description" content="Cette série explore la radio logicielle (SDR), qui remplace les composants radio traditionnels par des solutions logicielles flexibles. Nous aborderons les bases théoriques de la radio, les architectures SDR, la modulation, et la capacité des canaux, tout en détaillant des concepts comme le bruit et l’échantillonnage." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abel-did.github.io/blog/fr/blog/2025-08-09-sdr1/" /><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://abel-did.github.io/website/fr/blog/2025-08-09-sdr1/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2025-08-10T17:38:04+12:00" />
 <meta property="article:modified_time" content="2025-08-10T17:38:04+12:00" />
 
@@ -23,17 +84,28 @@
   <meta itemprop="description" content="Cette série explore la radio logicielle (SDR), qui remplace les composants radio traditionnels par des solutions logicielles flexibles. Nous aborderons les bases théoriques de la radio, les architectures SDR, la modulation, et la capacité des canaux, tout en détaillant des concepts comme le bruit et l’échantillonnage.">
   <meta itemprop="datePublished" content="2025-08-10T17:38:04+12:00">
   <meta itemprop="dateModified" content="2025-08-10T17:38:04+12:00">
-  <meta itemprop="wordCount" content="712">
-  <meta itemprop="keywords" content="SDR,DSP">
+  <meta itemprop="wordCount" content="807">
+  <meta itemprop="keywords" content="SDR">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="À la découverte de la radio logicielle">
   <meta name="twitter:description" content="Cette série explore la radio logicielle (SDR), qui remplace les composants radio traditionnels par des solutions logicielles flexibles. Nous aborderons les bases théoriques de la radio, les architectures SDR, la modulation, et la capacité des canaux, tout en détaillant des concepts comme le bruit et l’échantillonnage.">
 
-    <link rel="preload" href="/blog/css/compiled/main.min.9d6dd1e811bda29b297a853a8142787c0c80953e98d91e5e66da20f05235d3d0.css" as="style" integrity="sha256-nW3R6BG9opspeoU6gUJ4fAyAlT6Y2R5eZtog8FI109A=" />
-    <link href="/blog/css/compiled/main.min.9d6dd1e811bda29b297a853a8142787c0c80953e98d91e5e66da20f05235d3d0.css" rel="stylesheet" integrity="sha256-nW3R6BG9opspeoU6gUJ4fAyAlT6Y2R5eZtog8FI109A=" />
+    <link rel="preload" href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" as="style" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+    <link href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" rel="stylesheet" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
 
 
   
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+  
+  <script>
+tarteaucitron.user.gtagUa = 'G-35BR2S567M';
+
+ tarteaucitron.user.gtagMore = function () {   };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+  
+
 
   <script>
      
@@ -66,17 +138,41 @@
   ></div>
 
   <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
-    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/blog/fr/">
-    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="Abel DIDOUH">Abel DIDOUH</span>
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/website/fr/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="DIDOUH Laboratories">DIDOUH Laboratories</span>
 </a>
 
             <a
               title="Blog"
-              href="/blog/fr/blog"
+              href="/website/fr/blog"
               
               class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
             >
               <span class="hx:text-center">Blog</span>
+            </a>
+            <a
+              title="Stack Guide"
+              href="/website/fr/stackguide"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Stack Guide</span>
+            </a>
+            <a
+              title="À propos"
+              href="/website/fr/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">À propos</span>
+            </a>
+            <a
+              title="Étiquettes"
+              href="/website/fr/tags"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Étiquettes</span>
             </a><div class="search-wrapper hx:relative hx:md:w-64">
   <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
     <input
@@ -136,10 +232,52 @@
     <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
       
       
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/"
+    
+  >Stack Guide
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-13-gnuradio4/"
+    
+  >Créer ses propres blocs GNU Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-13-gnuradio3/"
+    
+  >Créer un modulateur AM avec GNU Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-10-gnuradio2/"
+    
+  >Premier contact avec GNU Radio Companion
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/stackguide/2025-09-10-gnuradio1/"
+    
+  >Installation de GNU Radio
+    </a>
+              
+            </li></ul>
+      </div></li>
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/fr/blog/"
+    href="/website/fr/blog/"
     
   >Posts
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -147,7 +285,55 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/fr/blog/2025-08-09-sdr5/"
+    href="/website/fr/blog/2025-09-14-embsec2/"
+    
+  >Cryptographie et Sécurité IoT
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-09-12-embsec1/"
+    
+  >Les fondamentaux du développement sécurisé pour les systèmes IoT
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-20-sdr9/"
+    
+  >Les outils SDR : écosystème technologique de la radio logicielle moderne
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-19-sdr8/"
+    
+  >Modulations et démodulations numériques
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-19-sdr7/"
+    
+  >Boucle à verrouillage de phase
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-13-sdr6/"
+    
+  >Chaînes de traitement numérique dans une radio logicielle
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/blog/2025-08-09-sdr5/"
     
   >Architecture IQ : fondation du traitement numérique en SDR
     </a>
@@ -155,7 +341,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/fr/blog/2025-08-09-sdr4/"
+    href="/website/fr/blog/2025-08-09-sdr4/"
     
   >Technologie de numérisation du signal : pivot de la radio logicielle
     </a>
@@ -163,7 +349,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/fr/blog/2025-08-09-sdr3/"
+    href="/website/fr/blog/2025-08-09-sdr3/"
     
   >Architectures analogiques et hétérodynes
     </a>
@@ -171,7 +357,7 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/fr/blog/2025-08-09-sdr2/"
+    href="/website/fr/blog/2025-08-09-sdr2/"
     
   >Les bases théoriques de la radio
     </a>
@@ -179,7 +365,7 @@
             </li><li class="hx:flex hx:flex-col open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blog/fr/blog/2025-08-09-sdr1/"
+    href="/website/fr/blog/2025-08-09-sdr1/"
     
   >À la découverte de la radio logicielle
     </a>
@@ -195,6 +381,13 @@
               
             </li></ul>
       </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/fr/about/"
+    
+  >A propos
+    </a></li>
     </ul>
 
     <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
@@ -218,7 +411,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/blog/2025-08-09-sdr1/"
+            href="/website/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >English</a>
         </li>
@@ -226,7 +419,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/nb/blog/2025-08-09-sdr1/"
+            href="/website/nb/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Bokmål</a>
         </li>
@@ -234,9 +427,17 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/fr/blog/2025-08-09-sdr1/"
+            href="/website/fr/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Français<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-09-sdr1/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
         </li>
       </ul>
   </div><button
@@ -253,11 +454,11 @@
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">Sur cette page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#plan-de-la-s%c3%a9rie--%c3%a0-la-d%c3%a9couverte-de-la-radio-logicielle">Plan de la série : À la découverte de la radio logicielle
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#plan-de-la-s%c3%a9rie--%c3%a0-la-d%c3%a9couverte-de-la-radio-logicielle">Plan de la série : À la découverte de la radio logicielle
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#origines-et-%c3%a9volutions-de-la-sdr">Origines et évolutions de la SDR
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#origines-et-%c3%a9volutions-de-la-sdr">Origines et évolutions de la SDR
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -277,7 +478,11 @@
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#en-conclusion">En conclusion
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#en-conclusion">En conclusion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#r%c3%a9f%c3%a9rences-">Références :
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -293,52 +498,67 @@
 
 
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12" style="text-align: justify;">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
         
   <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/blog/fr/blog/">Posts</a>
+          <a href="/website/fr/blog/">Posts</a>
         </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">À la découverte de la radio logicielle</div>
   </div>
 
-        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100" style="text-align: left;">À la découverte de la radio logicielle</h1>
-        
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2 " style="text-align: left;"><span class="hx:mr-1">10 août 2025</span>  
-            <span class="hx:mx-1">·</span><span class="time-to-read">Temps de lecture : 3 minutes</span></div>
-        <div class="content">
+        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">À la découverte de la radio logicielle</h1>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">10 août 2025</span><span class="hx:mx-1">·</span><span class="hx:text-sm hx:text-gray-500">Temps de lecture : 4  minutes 
+          </span>
+        </div>
+        <div class="content" style="text-align: justify;">
           <p>Bienvenue dans cette série d’articles dédiée à la radio logicielle (Software-Defined Radio, SDR). La SDR est une technologie qui transforme la façon dont les systèmes radio sont conçus et déployés. Traditionnellement, les radios étaient construites avec des composants matériels spécifiques pour chaque fonction de traitement du signal (amplification, modulation, démodulation, etc.). En revanche, dans une SDR, une grande partie de ce traitement est effectué à l&rsquo;aide de logiciels, permettant une plus grande flexibilité, réutilisabilité et adaptabilité.</p>
-<h3>Plan de la série : À la découverte de la radio logicielle<span class="hx:absolute hx:-mt-20" id="plan-de-la-série--à-la-découverte-de-la-radio-logicielle"></span>
-    <a href="#plan-de-la-s%c3%a9rie--%c3%a0-la-d%c3%a9couverte-de-la-radio-logicielle" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><ol>
+<h4>Plan de la série : À la découverte de la radio logicielle<span class="hx:absolute hx:-mt-20" id="plan-de-la-série--à-la-découverte-de-la-radio-logicielle"></span>
+    <a href="#plan-de-la-s%c3%a9rie--%c3%a0-la-d%c3%a9couverte-de-la-radio-logicielle" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ol>
 <li>Introduction à la radio logicielle</li>
 <li>Les bases théoriques de la radio</li>
 <li>Architectures analogiques et hétérodynes</li>
 <li>Technologie de numérisation du signal</li>
+<li>Architecture IQ : fondation du traitement numérique en SDR</li>
+<li>Chaînes de traitement numérique dans une SDR</li>
+<li>Synchronisation temporelle et fréquentielle</li>
+<li>Modulations et démodulations numériques</li>
 <li>Outils SDR</li>
-<li>Architecture SDR</li>
-<li>Applications de la radio logicielle</li>
-<li>Sécurité des SDR</li>
-<li>L&rsquo;avenir de la radio logicielle</li>
-<li>Résumé des concepts</li>
 </ol>
 <p>C&rsquo;est parti plongeant dans le monde des radios logicielles.</p>
-<h3>Origines et évolutions de la SDR<span class="hx:absolute hx:-mt-20" id="origines-et-évolutions-de-la-sdr"></span>
-    <a href="#origines-et-%c3%a9volutions-de-la-sdr" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><h4>Les premières explorations (années 1960 - 1970)<span class="hx:absolute hx:-mt-20" id="les-premières-explorations-années-1960---1970"></span>
-    <a href="#les-premi%c3%a8res-explorations-ann%c3%a9es-1960---1970" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Le concept de la radio logicielle remonte aux années 1960 -1970, mais ce n&rsquo;est qu&rsquo;avec l&rsquo;essor des ordinateurs et des technologies numériques que l&rsquo;idée a réellement commencé à prendre forme. L&rsquo;idée de &ldquo;radio programmable&rdquo; ou de radio adaptable est apparue lorsque les chercheurs ont commencé à explorer des moyens de traiter les signaux à l&rsquo;aide de logiciels.</p>
-<p>À cette époque, les premières radios étaient principalement analogiques. Le besoin de radios plus flexibles et capables de traiter différents types de signaux a été évident dans le domaine des télécommunications et de l&rsquo;armée, qui cherchaient des systèmes capables de s&rsquo;adapter à différents types de modulation et de fréquences.</p>
+<h4>Origines et évolutions de la SDR<span class="hx:absolute hx:-mt-20" id="origines-et-évolutions-de-la-sdr"></span>
+    <a href="#origines-et-%c3%a9volutions-de-la-sdr" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><h4>Les premières explorations (années 1960 - 1970)<span class="hx:absolute hx:-mt-20" id="les-premières-explorations-années-1960---1970"></span>
+    <a href="#les-premi%c3%a8res-explorations-ann%c3%a9es-1960---1970" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Le concept de la radio logicielle remonte aux années 1960-1970, mais ce n’est qu’avec l’essor des ordinateurs et des technologies numériques que l’idée a réellement commencé à prendre forme. L’idée de “radio programmable” ou de radio adaptable est apparue lorsque les chercheurs ont commencé à explorer des moyens de traiter les signaux à l’aide de logiciels.
+À cette époque, les premières radios étaient principalement analogiques. Le besoin de radios plus flexibles et capables de traiter différents types de signaux a été évident dans le domaine des télécommunications et de l’armée, qui cherchaient des systèmes capables de s’adapter à différents types de modulation et de fréquences.</p>
 <h4>La naissance de la SDR moderne (années 1980-1990)<span class="hx:absolute hx:-mt-20" id="la-naissance-de-la-sdr-moderne-années-1980-1990"></span>
-    <a href="#la-naissance-de-la-sdr-moderne-ann%c3%a9es-1980-1990" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Dans les années 1980, la progression des processeurs numériques de signal (DSP) a permis un traitement plus avancé des signaux numériques, ce qui a jeté les bases de la SDR moderne. Les recherches se sont intensifiées autour de la modulation numérique, avec des chercheurs qui ont commencé à explorer la possibilité de remplacer des composants matériels spécifiques par des logiciels, notamment pour le traitement des signaux radio.</p>
-<p>Le terme « Software Defined Radio » a été introduit en 1984 par Joseph Mitola. En 1992, il publie son article fondamental où il décrit la SDR comme une radio qui utilise des logiciels pour effectuer des fonctions de traitement du signal qui étaient auparavant faites par des composants matériels.</p>
-<h4>L&rsquo;essor commercial et militaire (années 2000)<span class="hx:absolute hx:-mt-20" id="lessor-commercial-et-militaire-années-2000"></span>
-    <a href="#lessor-commercial-et-militaire-ann%c3%a9es-2000" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Dans les années 2000, la SDR devient de plus en plus une réalité dans le domaine commercial et militaire. L&rsquo;armée, en particulier, a vu dans la SDR un moyen de réduire la complexité et les coûts des systèmes de communication. Elle permettait d&rsquo;adapter rapidement les fréquences de communication et les protocoles sans avoir à remplacer le matériel, en particulier dans les environnements de guerre où la flexibilité est cruciale.</p>
+    <a href="#la-naissance-de-la-sdr-moderne-ann%c3%a9es-1980-1990" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Dans les années 1980, la progression des processeurs numériques de signal (DSP) a permis un traitement plus avancé des signaux numériques, ce qui a jeté les bases de la SDR moderne. Les recherches se sont intensifiées autour de la modulation numérique, avec des chercheurs qui ont commencé à explorer la possibilité de remplacer des composants matériels spécifiques par des logiciels, notamment pour le traitement des signaux radio.
+Le terme « Software Defined Radio » a été introduit en 1984 par Joseph Mitola. En 1992, il publie son article fondamental où il décrit la SDR comme une radio qui utilise des logiciels pour effectuer des fonctions de traitement du signal qui étaient auparavant faites par des composants matériels.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr1/fr/sdr.png" title="Frise chronologique de la SDR" alt="SDR"  loading="lazy" />
+    <figcaption>Frise chronologique de la SDR</figcaption>
+  </figure></p>
+<h4>L’essor commercial et militaire (années 2000)<span class="hx:absolute hx:-mt-20" id="lessor-commercial-et-militaire-années-2000"></span>
+    <a href="#lessor-commercial-et-militaire-ann%c3%a9es-2000" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Dans les années 2000, la SDR devient de plus en plus une réalité dans le domaine commercial et militaire. L’armée, en particulier, a vu dans la SDR un moyen de réduire la complexité et les coûts des systèmes de communication. Elle permettait d’adapter rapidement les fréquences de communication et les protocoles sans avoir à remplacer le matériel, en particulier dans les environnements de guerre où la flexibilité est cruciale.</p>
+<p><figure>
+    <img src="/website/images/2025-08-09-sdr1/fr/sdr_mil.jpg" title="Software Defined Radio enables enhanced military communications - Military Embedded Systems" alt="SDR"  loading="lazy" />
+    <figcaption>Software Defined Radio enables enhanced military communications - Military Embedded Systems</figcaption>
+  </figure></p>
 <p>En 2000, des entreprises comme National Instruments et Ettus Research ont commencé à développer des plates-formes SDR accessibles, comme le NI-USRP (Universal Software Radio Peripheral) et les flexradio systems, qui ont facilité le passage à des implémentations SDR dans des contextes aussi variés que les réseaux sans fil, la recherche et la surveillance des signaux radio.</p>
-<h4>L&rsquo;ère de la démocratisation et de l&rsquo;open-source (2010 et au-delà)<span class="hx:absolute hx:-mt-20" id="lère-de-la-démocratisation-et-de-lopen-source-2010-et-au-delà"></span>
-    <a href="#l%c3%a8re-de-la-d%c3%a9mocratisation-et-de-lopen-source-2010-et-au-del%c3%a0" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Les années 2010 ont marqué une véritable démocratisation de la SDR. Des plateformes open-source comme GNU Radio, SDR# (SDRSharp), ou HDSDR ont rendu les technologies SDR accessibles à un large public, des amateurs aux chercheurs. Ces logiciels et plateformes ont permis aux utilisateurs de construire leur propre équipement SDR avec un coût relativement faible, transformant la manière dont les chercheurs, les ingénieurs et les amateurs utilisent les technologies radio.</p>
-<p>L&rsquo;émergence de Raspberry Pi et de composants matériels abordables comme le RTL-SDR a permis une entrée dans le monde de la SDR à des prix très compétitifs, ouvrant ainsi la porte à une nouvelle génération de radioamateurs et d&rsquo;innovateurs.</p>
-<h3>En conclusion<span class="hx:absolute hx:-mt-20" id="en-conclusion"></span>
-    <a href="#en-conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>L’histoire de la radio logicielle est marquée par une série de percées technologiques dans le traitement numérique des signaux. Depuis les premières recherches dans les années 1960 jusqu&rsquo;à la démocratisation via des plateformes open-source dans les années 2010, la SDR a radicalement changé la manière dont les systèmes de communication sont conçus et utilisés. Grâce à des pionniers comme Joseph Mitola et des premières implémentations dans le domaine militaire, la SDR est désormais un élément clé de la télécommunication moderne.</p>
+<h4>L’ère de la démocratisation et de l’open-source (2010 et au-delà)<span class="hx:absolute hx:-mt-20" id="lère-de-la-démocratisation-et-de-lopen-source-2010-et-au-delà"></span>
+    <a href="#l%c3%a8re-de-la-d%c3%a9mocratisation-et-de-lopen-source-2010-et-au-del%c3%a0" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Les années 2010 ont marqué une véritable démocratisation de la SDR. Des plateformes open-source comme GNU Radio, SDR# (SDRSharp), ou HDSDR ont rendu les technologies SDR accessibles à un large public, des amateurs aux chercheurs. Ces logiciels et plateformes ont permis aux utilisateurs de construire leur propre équipement SDR avec un coût relativement faible, transformant la manière dont les chercheurs, les ingénieurs et les amateurs utilisent les technologies radio.
+L’émergence de Raspberry Pi et de composants matériels abordables comme le RTL-SDR a permis une entrée dans le monde de la SDR à des prix très compétitifs, ouvrant ainsi la porte à une nouvelle génération de radioamateurs et d’innovateurs.</p>
+<h4>En conclusion<span class="hx:absolute hx:-mt-20" id="en-conclusion"></span>
+    <a href="#en-conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>L’histoire de la radio logicielle est marquée par une série de percées technologiques dans le traitement numérique des signaux. Depuis les premières recherches dans les années 1960 jusqu’à la démocratisation via des plateformes open-source dans les années 2010, la SDR a radicalement changé la manière dont les systèmes de communication sont conçus et utilisés. Grâce à des pionniers comme Joseph Mitola et des premières implémentations dans le domaine militaire, la SDR est désormais un élément clé de la télécommunication moderne.</p>
+<h4>Références :<span class="hx:absolute hx:-mt-20" id="références-"></span>
+    <a href="#r%c3%a9f%c3%a9rences-" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Mitola, J. (1992). Software Radios: Survey, Critical Evaluation and Future Directions. IEEE Aerospace and Electronic Systems Magazine, 8(4), 25-36.</li>
+<li>Reed, J. H. (2002). Software Defined Radio: A Modern Approach to Radio Engineering. Prentice Hall.</li>
+<li>National Instruments. (2008). Introduction to Software Defined Radio with NI-USRP. NI Technical Report.</li>
+<li>Tuttlebee, W. (2004). Software Defined Radio: Origins, Drivers and International Perspectives. Wiley.</li>
+<li>GNU Radio Community. (2015). GNU Radio Manual and Documentation. Disponible sur : <a href="https://www.gnuradio.org" target="_blank" rel="noopener">https://www.gnuradio.org</a>.</li>
+</ul>
 
         </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/blog/fr/blog/2025-08-09-sdr2/"
+        href="/website/fr/blog/2025-08-09-sdr2/"
         title="Les bases théoriques de la radio"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
       >Les bases théoriques de la radio<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
@@ -363,7 +583,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/blog/2025-08-09-sdr1/"
+            href="/website/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >English</a>
         </li>
@@ -371,7 +591,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/nb/blog/2025-08-09-sdr1/"
+            href="/website/nb/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Bokmål</a>
         </li>
@@ -379,9 +599,17 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/fr/blog/2025-08-09-sdr1/"
+            href="/website/fr/blog/2025-08-09-sdr1/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Français<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-09-sdr1/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
         </li>
       </ul>
   </div><button
@@ -396,13 +624,11 @@
 </div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
       class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
     >
-      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:font-semibold"><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
-    <span>Propulsé par Hextra<svg height=1em class="hx:inline-block hx:ltr:ml-1 hx:rtl:mr-1 hx:align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
-  </a></div></div>
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 Abel DIDOUH - HuGO | Hextra</div></div>
     </div></footer>
     
-    <script defer src="/blog/js/main.min.029edd5657104c98e05c607717da081d013cb52f5ce266141f2964fb5ed4c10d.js" integrity="sha256-Ap7dVlcQTJjgXGB3F9oIHQE8tS9c4mYUHylk&#43;17UwQ0="></script>
-<script defer src="/blog/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
-        <script defer src="/blog/fr.search.min.7a9eda60fbeae2bdecfed758d7feab0d8e0fb7cc879f6a93f6b2ca5a29f4ca5c.js" integrity="sha256-ep7aYPvq4r3s/tdY1/6rDY4Pt8yHn2qT9rLKWin0ylw="></script>
+    <script defer src="/website/js/main.min.fee2ee5c1a34a422519f9ed8467b2dde53cd077890a235d3a031e21dd5825377.js" integrity="sha256-/uLuXBo0pCJRn57YRnst3lPNB3iQojXToDHiHdWCU3c="></script>
+<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+        <script defer src="/website/fr.search.min.f658067d0cada772db1c4ebb15663294ce225c24f8ca5fca0635af9e841b815f.js" integrity="sha256-9lgGfQytp3LbHE67FWYylM4iXCT4yl/KBjWvnoQbgV8="></script>
   </body>
 </html>

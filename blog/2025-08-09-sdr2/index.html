@@ -1,38 +1,111 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+
+<script src="https://abel-did.github.io/website/js/tarteaucitron/tarteaucitron.min.js"></script>
+
+        <script type="text/javascript">
+        tarteaucitron.init({
+    	  "privacyUrl": "",  
+          "bodyPosition": "top",  
+
+    	  "hashtag": "#tarteaucitron",  
+    	  "cookieName": "tarteaucitron",  
+    
+    	  "orientation": "middle",  
+       
+          "groupServices": true,  
+          "showDetailsOnClick": true,  
+          "serviceDefaultState": "wait",  
+                           
+    	  "showAlertSmall": false,  
+    	  "cookieslist": false,  
+           "cookieslistEmbed": false,  
+                           
+          "closePopup": true,  
+
+          "showIcon": true,  
+          
+          "iconPosition": "BottomRight",  
+
+    	  "adblocker": false,  
+                           
+          "DenyAllCta" : true,  
+          "AcceptAllCta" : true,  
+          "highPrivacy": true,  
+          "alwaysNeedConsent": true,  
+                           
+    	  "handleBrowserDNTRequest": false,  
+
+    	  "removeCredit": true,  
+    	  "moreInfoLink": true,  
+
+          "useExternalCss": false,  
+          "useExternalJs": false,  
+
+    	  
+                          
+          "readmoreLink": "",  
+
+          "mandatory": true,  
+          "mandatoryCta": false,  
+    
+          
+          
+          "googleConsentMode": true,  
+          "bingConsentMode": true,  
+          "softConsentMode": true,  
+
+          "dataLayer": false,  
+          "serverSide": false,  
+          
+          "partnersList": true  
+        });
+        </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
-  <link rel="icon shortcut" href="/blog/favicon.ico" sizes="32x32" />
-<link rel="icon" href="/blog/favicon.svg" type="image/svg+xml" />
-<link rel="icon" href="/blog/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)" />
-<link rel="icon" href="/blog/favicon-16x16.png" type="image/png" sizes="16x16" />
-<link rel="icon" href="/blog/favicon-32x32.png" type="image/png" sizes="32x32" />
-<link rel="apple-touch-icon" href="/blog/apple-touch-icon.png" sizes="180x180" />
-<link fetchpriority="low" href="/blog/site.webmanifest" rel="manifest" />
-<title>Theoretical Foundations of Radio – Abel DIDOUH</title>
-  <meta name="description" content="This section explores the theoretical foundations of radio essential for understanding Software-Defined Radios (SDR). It covers the concepts of baseband, modulation, channel capacity (Shannon’s theorem), noise, and filtering in SDR, linking them to the technical challenges these systems address." /><link rel="canonical" href="https://abel-did.github.io/blog/blog/2025-08-09-sdr2/" itemprop="url" />
+  <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
+<title>Theoretical foundations of radio – DIDOUH Laboratories</title>
+  <meta name="description" content="This section explores the theoretical foundations of radio necessary to understand software-defined radios (SDR). It covers concepts of baseband, modulation, channel capacity (Shannon theorem), noise and filtering in SDR, in relation to the technical challenges of these systems." /><link rel="canonical" href="https://abel-did.github.io/website/blog/2025-08-09-sdr2/" itemprop="url" />
 
-<meta property="og:title" content="Theoretical Foundations of Radio" />
-<meta property="og:description" content="This section explores the theoretical foundations of radio essential for understanding Software-Defined Radios (SDR). It covers the concepts of baseband, modulation, channel capacity (Shannon’s theorem), noise, and filtering in SDR, linking them to the technical challenges these systems address." />
+<meta property="og:title" content="Theoretical foundations of radio" />
+<meta property="og:description" content="This section explores the theoretical foundations of radio necessary to understand software-defined radios (SDR). It covers concepts of baseband, modulation, channel capacity (Shannon theorem), noise and filtering in SDR, in relation to the technical challenges of these systems." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://abel-did.github.io/blog/blog/2025-08-09-sdr2/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2025-08-12T18:45:11+12:00" />
-<meta property="article:modified_time" content="2025-08-12T18:45:11+12:00" />
+<meta property="og:url" content="https://abel-did.github.io/website/blog/2025-08-09-sdr2/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-08-11T10:44:43+12:00" />
+<meta property="article:modified_time" content="2025-08-11T10:44:43+12:00" />
 
-  <meta itemprop="name" content="Theoretical Foundations of Radio">
-  <meta itemprop="description" content="This section explores the theoretical foundations of radio essential for understanding Software-Defined Radios (SDR). It covers the concepts of baseband, modulation, channel capacity (Shannon’s theorem), noise, and filtering in SDR, linking them to the technical challenges these systems address.">
-  <meta itemprop="datePublished" content="2025-08-12T18:45:11+12:00">
-  <meta itemprop="dateModified" content="2025-08-12T18:45:11+12:00">
-  <meta itemprop="wordCount" content="661">
+  <meta itemprop="name" content="Theoretical foundations of radio">
+  <meta itemprop="description" content="This section explores the theoretical foundations of radio necessary to understand software-defined radios (SDR). It covers concepts of baseband, modulation, channel capacity (Shannon theorem), noise and filtering in SDR, in relation to the technical challenges of these systems.">
+  <meta itemprop="datePublished" content="2025-08-11T10:44:43+12:00">
+  <meta itemprop="dateModified" content="2025-08-11T10:44:43+12:00">
+  <meta itemprop="wordCount" content="828">
+  <meta itemprop="keywords" content="SDR">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Theoretical Foundations of Radio">
-  <meta name="twitter:description" content="This section explores the theoretical foundations of radio essential for understanding Software-Defined Radios (SDR). It covers the concepts of baseband, modulation, channel capacity (Shannon’s theorem), noise, and filtering in SDR, linking them to the technical challenges these systems address.">
+  <meta name="twitter:title" content="Theoretical foundations of radio">
+  <meta name="twitter:description" content="This section explores the theoretical foundations of radio necessary to understand software-defined radios (SDR). It covers concepts of baseband, modulation, channel capacity (Shannon theorem), noise and filtering in SDR, in relation to the technical challenges of these systems.">
 
-    <link rel="preload" href="/blog/css/compiled/main.min.9d6dd1e811bda29b297a853a8142787c0c80953e98d91e5e66da20f05235d3d0.css" as="style" integrity="sha256-nW3R6BG9opspeoU6gUJ4fAyAlT6Y2R5eZtog8FI109A=" />
-    <link href="/blog/css/compiled/main.min.9d6dd1e811bda29b297a853a8142787c0c80953e98d91e5e66da20f05235d3d0.css" rel="stylesheet" integrity="sha256-nW3R6BG9opspeoU6gUJ4fAyAlT6Y2R5eZtog8FI109A=" />
+    <link rel="preload" href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" as="style" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+    <link href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" rel="stylesheet" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
 
 
   
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+  
+  <script>
+tarteaucitron.user.gtagUa = 'G-35BR2S567M';
+
+ tarteaucitron.user.gtagMore = function () {   };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+  
+
 
   <script>
      
@@ -58,31 +131,48 @@
   </script>
 
   
-  
-    
-    
-    
-
-    
-        <link rel="stylesheet" href="/blog/css/katex.min.css" integrity="sha512-w&#43;7mwWRSa4yQuZ6tqfHZ8w06MYkm&#43;Li00DuTaEqVQsyny72DNnTV3vjDFU7H5637eD&#43;/9O4T8WgmqwNl6e7Vzg==" crossorigin="anonymous" />
-        </head>
+  <link rel="stylesheet" href="/website/css/katex.min.c3eee6c164526b8c90b99eada9f1d9f30d3a318926f8b8b4d03b93684a9542cca7cbbd833674d5def8c3154ec7e7adfb783fbff4ee13f16826ab0365e9eed5ce.css" integrity="sha512-w&#43;7mwWRSa4yQuZ6tqfHZ8w06MYkm&#43;Li00DuTaEqVQsyny72DNnTV3vjDFU7H5637eD&#43;/9O4T8WgmqwNl6e7Vzg==" /></head>
 <body dir="ltr"><div class="nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
   <div
     class="nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
   ></div>
 
   <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
-    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/blog/">
-    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="Abel DIDOUH">Abel DIDOUH</span>
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/website/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="DIDOUH Laboratories">DIDOUH Laboratories</span>
 </a>
 
             <a
               title="Blog"
-              href="/blog/blog"
+              href="/website/blog"
               
               class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
             >
               <span class="hx:text-center">Blog</span>
+            </a>
+            <a
+              title="Stack Guide"
+              href="/website/stackguide"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Stack Guide</span>
+            </a>
+            <a
+              title="About"
+              href="/website/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">About</span>
+            </a>
+            <a
+              title="Tags"
+              href="/website/tags"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Tags</span>
             </a><div class="search-wrapper hx:relative hx:md:w-64">
   <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
     <input
@@ -142,10 +232,52 @@
     <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
       
       
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/stackguide/"
+    
+  >Stack Guide
+        <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
+    </a><div class="hx:ltr:pr-0 hx:overflow-hidden">
+        <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/stackguide/2025-09-13-gnuradio4/"
+    
+  >Creating Your Own GNU Radio Blocks
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/stackguide/2025-09-13-gnuradio3/"
+    
+  >Creating an AM Modulator with GNU Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/stackguide/2025-09-10-gnuradio2/"
+    
+  >First Contact with GNU Radio Companion
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/stackguide/2025-09-10-gnuradio1/"
+    
+  >GNU Radio Installation
+    </a>
+              
+            </li></ul>
+      </div></li>
           <li class="open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/blog/"
+    href="/website/blog/"
     
   >Posts
         <span class="hextra-sidebar-collapsible-button"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" class="hx:h-[18px] hx:min-w-[18px] hx:rounded-xs hx:p-0.5 hx:hover:bg-gray-800/5 hx:dark:hover:bg-gray-100/5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" class="hx:origin-center hx:transition-transform hx:rtl:-rotate-180"></path></svg></span>
@@ -153,33 +285,81 @@
         <ul class='hx:relative hx:flex hx:flex-col hx:gap-1 hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:ltr:ml-3 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:mr-3 hx:rtl:pr-3 hx:rtl:before:right-0 hx:dark:before:bg-neutral-800'><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/blog/2025-08-09-sdr5/"
+    href="/website/blog/2025-09-14-embsec2/"
     
-  >IQ Architecture: Foundation of Digital Processing in SDR
+  >Cryptography and IoT Security
     </a>
               
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/blog/2025-08-09-sdr4/"
+    href="/website/blog/2025-09-12-embsec1/"
     
-  >Signal Digitization Technology: The Heart of Software-Defined Radio
+  >Fundamentals of Secure Development for IoT Systems
     </a>
               
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/blog/2025-08-09-sdr3/"
+    href="/website/blog/2025-08-20-sdr9/"
     
-  >Analog and Heterodyne Architectures
+  >SDR Tools: Technological Ecosystem of Modern Software-Defined Radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-19-sdr8/"
+    
+  >Digital modulations and demodulations
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-19-sdr7/"
+    
+  >Phase-Locked Loop
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-13-sdr6/"
+    
+  >Digital processing chains in a software-defined radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-09-sdr5/"
+    
+  >IQ architecture: foundation of digital processing in SDR
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-09-sdr4/"
+    
+  >Signal digitization technology: pivot of software-defined radio
+    </a>
+              
+            </li><li class="hx:flex hx:flex-col "><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/blog/2025-08-09-sdr3/"
+    
+  >Analog and heterodyne architectures
     </a>
               
             </li><li class="hx:flex hx:flex-col open"><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       sidebar-active-item hx:bg-primary-100 hx:font-semibold hx:text-primary-800 hx:contrast-more:border hx:contrast-more:border-primary-500 hx:dark:bg-primary-400/10 hx:dark:text-primary-600 hx:contrast-more:dark:border-primary-500"
-    href="/blog/blog/2025-08-09-sdr2/"
+    href="/website/blog/2025-08-09-sdr2/"
     
-  >Theoretical Foundations of Radio
+  >Theoretical foundations of radio
     </a>
   
     <ul class='hx:flex hx:flex-col hx:gap-1 hx:relative hx:before:absolute hx:before:inset-y-1 hx:before:w-px hx:before:bg-gray-200 hx:before:content-[""] hx:dark:before:bg-neutral-800 hx:ltr:pl-3 hx:ltr:before:left-0 hx:rtl:pr-3 hx:rtl:before:right-0 hx:ltr:ml-3 hx:rtl:mr-3'><li>
@@ -194,13 +374,20 @@
             </li><li class="hx:flex hx:flex-col "><a
     class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
       hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
-    href="/blog/blog/2025-08-09-sdr1/"
+    href="/website/blog/2025-08-09-sdr1/"
     
-  >Exploring Software-Defined Radio
+  >Discovering Software-Defined Radio
     </a>
               
             </li></ul>
       </div></li>
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/about/"
+    
+  >About
+    </a></li>
     </ul>
 
     <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
@@ -224,7 +411,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/blog/2025-08-09-sdr2/"
+            href="/website/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >English<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -232,7 +419,7 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/nb/blog/2025-08-09-sdr2/"
+            href="/website/nb/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Bokmål</a>
         </li>
@@ -240,9 +427,17 @@
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/fr/blog/2025-08-09-sdr2/"
+            href="/website/fr/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Français</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-09-sdr2/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
         </li>
       </ul>
   </div><button
@@ -259,7 +454,7 @@
 <nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
     <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">On this page</p><ul>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#article-outline">Article Outline
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#article-plan">Article Plan
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -267,7 +462,11 @@
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#shannon-and-channel-capacity">Shannon and Channel Capacity
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#modulations">Modulations
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#shannon-and-channel-capacity">Shannon and channel capacity
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
@@ -275,7 +474,15 @@
         </a>
       </li>
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
-        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#baseband-filtering">Baseband Filtering
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#baseband-filtering">Baseband filtering
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#conclusion">Conclusion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-8 hx:rtl:pr-8 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#references">References
         </a>
       </li></ul>
       <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
@@ -291,103 +498,112 @@
 
 
     <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12" style="text-align: justify;">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
         
   <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
         <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
-          <a href="/blog/blog/">Posts</a>
-        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Theoretical Foundations of Radio</div>
+          <a href="/website/blog/">Posts</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Theoretical foundations of radio</div>
   </div>
 
-        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100" style="text-align: left;">Theoretical Foundations of Radio</h1>
-        
-        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2 " style="text-align: left;"><span class="hx:mr-1">August 12, 2025</span>  
-            <span class="hx:mx-1">·</span><span class="time-to-read">Read time :6 minutes</span></div>
-        <div class="content">
-          <p>In this section, we will explore the fundamental concepts of radio, essential for understanding how Software-Defined Radios (SDR) work. We will cover key notions such as baseband, modulation, and channel capacity. These concepts will form the foundation for understanding the technical challenges that SDRs address.</p>
-<h4>Article Outline<span class="hx:absolute hx:-mt-20" id="article-outline"></span>
-    <a href="#article-outline" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Theoretical foundations of radio</h1>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">August 11, 2025</span><span class="hx:mx-1">·</span><span class="hx:text-sm hx:text-gray-500">Reading time : 4 minutes
+          </span>
+        </div>
+        <div class="content" style="text-align: justify;">
+          <p>In this section, we will explore the fundamental concepts of radio, essential for understanding how software-defined radios (SDR) work. By addressing notions such as baseband, modulations and channel capacity, we will lay the foundations necessary to understand the technical challenges that SDRs address.</p>
+<h4>Article Plan<span class="hx:absolute hx:-mt-20" id="article-plan"></span>
+    <a href="#article-plan" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
 <li>Baseband</li>
-<li>Modulation</li>
+<li>Modulations</li>
 <li>Channel Capacity (Shannon)</li>
 <li>Noise</li>
-<li>Baseband Filtering in SDR</li>
+<li>Filtering in SDR</li>
 </ul>
 <h4>Baseband<span class="hx:absolute hx:-mt-20" id="baseband"></span>
-    <a href="#baseband" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>A baseband signal refers to the original signal as produced by the source, before any transformation for transmission. For example, a digital audio file is a baseband signal: its spectrum is centered around zero frequency and extends to a maximum frequency related to its content (a few kHz for voice).
-Modulation</p>
-<p>To transmit this signal over a physical medium (cable, fiber, radio waves), it is often necessary to modulate it. Modulation consists of “carrying” the information on a higher-frequency carrier wave in order to:</p>
+    <a href="#baseband" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>A <strong>baseband</strong> signal refers to an original signal, as it is produced by the source, before any transformation for transmission. For example, a digital audio file is a baseband signal: its spectrum is centered around zero frequency and extends to a maximum frequency related to its content (a few KHz for voice).</p>
+<h4>Modulations<span class="hx:absolute hx:-mt-20" id="modulations"></span>
+    <a href="#modulations" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>To transmit this signal over a physical medium (cable, fiber, radio waves), it is often necessary to <strong>modulate</strong> the signal. <strong>Modulation</strong> consists of &ldquo;carrying&rdquo; the information on a higher carrier frequency in order to:</p>
 <ul>
-<li>Adapt the signal to the transmission channel,</li>
-<li>Enable simultaneous transmission of multiple signals (multiplexing),</li>
-<li>Reduce interference in certain media.</li>
+<li>adapt the signal to the transmission channel,</li>
+<li>allow simultaneous transmission of multiple signals (multiplexing),</li>
+<li>reduce interference in certain media.</li>
 </ul>
-<p>There are several types of modulation:</p>
+<p>There are several types of modulations:</p>
 <ul>
-<li>Amplitude Modulation (AM) – the carrier’s amplitude varies according to the signal being transmitted.</li>
-<li>Frequency Modulation (FM) – the carrier’s frequency varies with the signal.</li>
-<li>Phase Modulation (PM) – the carrier’s phase changes to encode the information.</li>
+<li><strong>Amplitude Modulation (AM)</strong>: the amplitude of the carrier varies according to the signal to be transmitted.</li>
+<li><strong>Frequency Modulation (FM)</strong>: the frequency of the carrier varies according to the signal.</li>
+<li><strong>Phase Modulation (PM)</strong>: the phase of the carrier changes to encode the information.</li>
 </ul>
-<h4>Shannon and Channel Capacity<span class="hx:absolute hx:-mt-20" id="shannon-and-channel-capacity"></span>
-    <a href="#shannon-and-channel-capacity" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In 1948, Claude Elwood Shannon modeled, for the first time, a communication channel in his paper A Mathematical Theory of Communication. This model describes all the components involved in transmitting a signal, from the information source to its destination.</p>
+<h4>Shannon and channel capacity<span class="hx:absolute hx:-mt-20" id="shannon-and-channel-capacity"></span>
+    <a href="#shannon-and-channel-capacity" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>In 1948, Claude Edwood Shannon modeled for the first time a communication channel scheme in his article entitled: <strong>A Mathematical Theory of Communication</strong>. All stakeholders in signal transmission are characterized from the information source to its destination.</p>
 <p><figure>
-    <img src="http://localhost:1313/images/2025-08-09-sdr2/2025-08-09-sdr2-fig1.png" title="Schéma d&#39;un canal de communication" alt="landscape"  loading="lazy" />
-    <figcaption>Schéma d&#39;un canal de communication</figcaption>
+    <img src="/website/images/2025-08-09-sdr2/en/canal_com.png" title="Communication channel diagram" alt="landscape"  loading="lazy" />
+    <figcaption>Communication channel diagram</figcaption>
   </figure></p>
-<p>Shannon was a pioneer in information theory. He established a fundamental theorem that defines the capacity of a channel.</p>
-<p>The formula modeling this is:</p>
+<p>The scientist is a pioneer of information theory. He established a fundamental theorem that defines the <strong>capacity of a channel</strong>.</p>
+<p>The formula that models this phenomenon is as follows:</p>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>=</mo><mi>B</mi><mi>W</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>S</mi><mi>N</mi></mfrac><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex"> C = BW \log_{2}{(1+\frac{S}{N})} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span></span><ul>
-<li>C – Channel capacity (bits/s)</li>
-<li>BW – Bandwidth (Hz)</li>
-<li>S/N – Signal-to-noise ratio (dimensionless, linear scale)</li>
+<li>C: Channel capacity (bit/s)</li>
+<li>BW: Bandwidth (Hz)</li>
+<li>S/N: Signal-to-noise ratio (unitless, on linear scale)</li>
 </ul>
-<p>Shannon’s formula calculates the maximum capacity of a channel—that is, the maximum amount of information it can transmit per second. The capacity depends on two key factors:</p>
+<p>Shannon&rsquo;s formula allows calculating the maximum capacity of a channel, that is, the amount of information it can transmit per second. The capacity depends on two important factors:</p>
 <ul>
-<li>The bandwidth</li>
-<li>The signal-to-noise ratio</li>
+<li>bandwidth</li>
+<li>signal-to-noise ratio</li>
 </ul>
-<p>In practice, this formula helps us understand how to maximize information transfer in systems such as wireless networks.</p>
-<p>** Example ** – Theoretical Capacity vs. Actual Throughput (Wi-Fi case)</p>
-<p>Let’s consider a Wi-Fi network:</p>
+<p>In practice, this formula helps us understand how to maximize information transmission in systems such as wireless networks.</p>
+<p>Let&rsquo;s take an example to manipulate Shannon&rsquo;s formula.</p>
+<p><strong>Example</strong> - Theoretical capacity vs real throughput (Wi-Fi case)</p>
+<p>Let&rsquo;s imagine a <strong>Wi-Fi</strong> network:</p>
 <ul>
-<li>Available bandwidth: B=20 MHzB=20MHz</li>
-<li>Measured signal-to-noise ratio: S/N=25 dBS/N=25dB</li>
+<li>Available bandwidth: B = 20 MHz</li>
+<li>Measured signal-to-noise ratio: S/N = 25 dB</li>
 </ul>
 <ol>
-<li>Convert the S/N ratio:</li>
+<li><strong>S/N ratio conversion:</strong></li>
 </ol>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>S</mi><mi>N</mi></mfrac><mo>=</mo><msup><mn>10</mn><mfrac><mn>25</mn><mn>10</mn></mfrac></msup><mo>=</mo><msup><mn>10</mn><mn>2.5</mn></msup><mo>≈</mo><mn>316</mn><mo separator="true">,</mo><mn>23</mn></mrow><annotation encoding="application/x-tex"> \frac{S}{N} = 10^{\frac{25}{10}} = 10^{2.5} \approx 316,23 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.004em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.004em;"><span style="top:-3.413em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8443em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">25</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2.5</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">316</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">23</span></span></span></span></span><ol start="2">
-<li>Apply Shannon’s formula:</li>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mi>S</mi><mi>N</mi></mfrac><mo>=</mo><msup><mn>10</mn><mfrac><mn>25</mn><mn>10</mn></mfrac></msup><mo>=</mo><msup><mn>10</mn><mn>2.5</mn></msup><mo>≈</mo><mn>316.23</mn></mrow><annotation encoding="application/x-tex"> \frac{S}{N} = 10^{\frac{25}{10}} = 10^{2.5} \approx 316.23 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.004em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:1.004em;"><span style="top:-3.413em;margin-right:0.05em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mopen nulldelimiter sizing reset-size3 size6"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8443em;"><span style="top:-2.656em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">10</span></span></span></span><span style="top:-3.2255em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line mtight" style="border-bottom-width:0.049em;"></span></span><span style="top:-3.384em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">25</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.344em;"><span></span></span></span></span></span><span class="mclose nulldelimiter sizing reset-size3 size6"></span></span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2.5</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">316.23</span></span></span></span></span><ol start="2">
+<li><strong>Shannon&rsquo;s formula:</strong></li>
 </ol>
 <span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>=</mo><mi>B</mi><mi>W</mi><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mfrac><mi>S</mi><mi>N</mi></mfrac><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex"> C = BW \log_{2}{(1+\frac{S}{N})} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span></span></span></span></span></span><p>
 </p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>=</mo><mn>20</mn><mo>⋅</mo><msup><mn>10</mn><mn>6</mn></msup><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>316</mn><mo separator="true">,</mo><mn>23</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex"> C = 20 \cdot 10^{6} \log_{2}{(1+316,23)} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">316</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">23</span><span class="mclose">)</span></span></span></span></span></span><p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>=</mo><mn>20</mn><mo>⋅</mo><msup><mn>10</mn><mn>6</mn></msup><msub><mrow><mi>log</mi><mo>⁡</mo></mrow><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>316.23</mn><mo stretchy="false">)</mo></mrow></mrow><annotation encoding="application/x-tex"> C = 20 \cdot 10^{6} \log_{2}{(1+316.23)} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.207em;"><span style="top:-2.4559em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2441em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">316.23</span><span class="mclose">)</span></span></span></span></span></span><p>
 </p>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>≈</mo><mn>20</mn><mo>⋅</mo><msup><mn>10</mn><mn>6</mn></msup><mo>⋅</mo><mn>8</mn><mo separator="true">,</mo><mn>31</mn><mo>≈</mo><mn>166.2</mn><mi>M</mi><mi>b</mi><mi>i</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex"> C \approx  20 \cdot 10^{6} \cdot 8,31 \approx 166.2 Mbit/s </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">8</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">31</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">166.2</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mord">/</span><span class="mord mathnormal">s</span></span></span></span></span><p>The theoretical capacity is about 166 Mb/s, whereas the actual throughput is often between 80 Mb/s and 120 Mb/s. This difference is due to losses, interference, protocol overhead, and collisions. In practice, the real throughput is always lower than the maximum channel capacity.</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>C</mi><mo>≈</mo><mn>20</mn><mo>⋅</mo><msup><mn>10</mn><mn>6</mn></msup><mo>⋅</mo><mn>8.31</mn><mo>≈</mo><mn>166.2</mn><mi>M</mi><mi>b</mi><mi>i</mi><mi>t</mi><mi mathvariant="normal">/</mi><mi>s</mi></mrow><annotation encoding="application/x-tex"> C \approx  20 \cdot 10^{6} \cdot 8.31 \approx 166.2 Mbit/s </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8.31</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">166.2</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">bi</span><span class="mord mathnormal">t</span><span class="mord">/</span><span class="mord mathnormal">s</span></span></span></span></span><p>The theoretical capacity is approximately equal to 166 Mb/s. While the real throughput is often between 80 and 120 Mb/s. This is due to losses, interference, management protocols and collisions. Thus, this shows that in practice, the obtained throughput is always lower than the maximum capacity of a channel.</p>
 <h4>Noise<span class="hx:absolute hx:-mt-20" id="noise"></span>
-    <a href="#noise" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Noise is any unwanted disturbance that corrupts a radio signal. It can come from natural sources (such as thermal noise from heat in electronic circuits) or from artificial sources (such as interference from other devices—for example, a microwave near a Wi-Fi router).</p>
-<p>As we saw earlier, noise limits a channel’s capacity by making signals harder to decode.</p>
-<p>In traditional systems, noise can be mitigated with amplifiers and analog components. In SDR systems, noise is often reduced using digital algorithms that dynamically adapt signal processing. This makes it possible to maintain optimal signal quality in noisy environments.</p>
-<h4>Baseband Filtering<span class="hx:absolute hx:-mt-20" id="baseband-filtering"></span>
-    <a href="#baseband-filtering" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Filtering a baseband signal is essential in communication systems for several reasons. Primarily, it helps reduce inter-symbol interference. Filtering also limits the signal’s bandwidth, preventing spectral waste and ensuring compliance with frequency regulations.</p>
-<p>Baseband filtering is therefore a key concept in software-defined radio. Common filter types include:</p>
+    <a href="#noise" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Noise is any unwanted disturbance that corrupts a radio signal. It can come from natural sources (such as heat in electronic circuits, called thermal noise) or artificial sources (interference from other devices, for example a microwave near a Wi-Fi router). We have seen above that noise limits the capacity of a channel by making signals more difficult to decode.</p>
+<p>Noise, in a traditional system, can be managed by amplifiers and analog components. In SDR, noise is often reduced by digital algorithms that dynamically adapt signal processing. This allows maintaining optimal signal quality in noisy environments.</p>
+<h4>Baseband filtering<span class="hx:absolute hx:-mt-20" id="baseband-filtering"></span>
+    <a href="#baseband-filtering" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Filtering a baseband signal is essential for several reasons in communication systems. It mainly helps reduce inter-symbol interference. This filtering also limits the signal bandwidth, which helps avoid spectral waste and comply with frequency regulations imposed by authorities.</p>
+<p>Thus, baseband filtering is an essential concept in the field of software-defined radio. Among the most commonly used types of filters we find:</p>
 <ul>
-<li>Gaussian filters</li>
-<li>Raised cosine filters</li>
+<li>Gaussian filter</li>
+<li>Raised cosine filter</li>
 <li>Matched filters</li>
 </ul>
-<p>Each filter type offers specific advantages and challenges depending on the application context.</p>
-<p>Whereas in traditional radio systems filtering is done using analog components, in SDR it is implemented digitally. This offers greater flexibility, since the filter’s characteristics can be changed simply through software programming, without the need to modify hardware.</p>
+<p>Each of these filters presents specific advantages and challenges, depending on the application context. While in traditional radio systems, filtering is performed with analog components, in SDR, filters are implemented digitally. This allows increased flexibility, as it is possible to modify filter characteristics simply by programming, without needing to change hardware.</p>
+<h4>Conclusion<span class="hx:absolute hx:-mt-20" id="conclusion"></span>
+    <a href="#conclusion" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><p>Software-defined radio (SDR) relies on fundamental concepts such as baseband signal, modulation, noise management, and filtering, which enable the design of flexible and efficient communication systems. Shannon&rsquo;s information theory provides a theoretical framework for optimizing communication channel capacity, while advances in digital signal processing have allowed SDR to revolutionize telecommunications. By combining techniques such as digital modulation and baseband filtering, SDR offers unprecedented adaptability, making communication systems more robust against interference and constraints of modern environments.</p>
+<h4>References<span class="hx:absolute hx:-mt-20" id="references"></span>
+    <a href="#references" class="subheading-anchor" aria-label="Permalink for this section"></a></h4><ul>
+<li>Shannon, C. E. (1948). A Mathematical Theory of Communication. Bell System Technical Journal, 27(3), 379–423.</li>
+<li>Haykin, S. (2001). Communication Systems. 4th Edition, Wiley.</li>
+<li>Proakis, J. G., &amp; Salehi, M. (2008). Digital Communications. 5th Edition, McGraw-Hill.</li>
+<li>Mitola, J. (1995). The Software Radio Architecture. IEEE Communications Magazine, 33(5), 26–38.</li>
+<li>Couch, L. W. (2013). Digital and Analog Communication Systems. 8th Edition, Pearson.</li>
+</ul>
 
         </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
-        href="/blog/blog/2025-08-09-sdr1/"
-        title="Exploring Software-Defined Radio"
+        href="/website/blog/2025-08-09-sdr1/"
+        title="Discovering Software-Defined Radio"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
-      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Exploring Software-Defined Radio</a><a
-        href="/blog/blog/2025-08-09-sdr3/"
-        title="Analog and Heterodyne Architectures"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Discovering Software-Defined Radio</a><a
+        href="/website/blog/2025-08-09-sdr3/"
+        title="Analog and heterodyne architectures"
         class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
-      >Analog and Heterodyne Architectures<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
+      >Analog and heterodyne architectures<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
     </article>
   </div>
 
@@ -409,7 +625,7 @@ Modulation</p>
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/blog/2025-08-09-sdr2/"
+            href="/website/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >English<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
         </li>
@@ -417,7 +633,7 @@ Modulation</p>
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/nb/blog/2025-08-09-sdr2/"
+            href="/website/nb/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Bokmål</a>
         </li>
@@ -425,9 +641,17 @@ Modulation</p>
         
         <li class="hx:flex hx:flex-col">
           <a
-            href="/blog/fr/blog/2025-08-09-sdr2/"
+            href="/website/fr/blog/2025-08-09-sdr2/"
             class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
           >Français</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/blog/2025-08-09-sdr2/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch</a>
         </li>
       </ul>
   </div><button
@@ -442,13 +666,11 @@ Modulation</p>
 </div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
       class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
     >
-      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:font-semibold"><a class="hx:flex hx:text-sm hx:items-center hx:gap-1 hx:text-current" target="_blank" rel="noopener noreferrer" title="Hextra GitHub Homepage" href="https://github.com/imfing/hextra">
-    <span>Powered by Hextra<svg height=1em class="hx:inline-block hx:ltr:ml-1 hx:rtl:mr-1 hx:align-[-2.5px]" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m 105.50024,22.224647 c -9.59169,-5.537563 -21.40871,-5.537563 -31.000093,0 L 39.054693,42.689119 C 29.463353,48.226675 23.55484,58.460531 23.55484,69.535642 v 40.928918 c 0,11.07542 5.908513,21.3092 15.499853,26.84652 l 35.445453,20.46446 c 9.591313,5.53732 21.408404,5.53732 31.000094,0 l 35.44507,-20.46446 c 9.59131,-5.53732 15.49985,-15.7711 15.49985,-26.84652 V 69.535642 c 0,-11.075111 -5.90854,-21.308967 -15.49985,-26.846523 z M 34.112797,85.737639 c -1.384445,2.397827 -1.384445,5.352099 0,7.749927 l 24.781554,42.922974 c 1.38437,2.39783 3.942853,3.87496 6.711592,3.87496 h 49.563107 c 2.76905,0 5.3273,-1.47713 6.71144,-3.87496 l 24.78194,-42.922974 c 1.38414,-2.397828 1.38414,-5.3521 0,-7.749927 L 121.88049,42.814746 c -1.38414,-2.397828 -3.94239,-3.874964 -6.71144,-3.874964 H 65.605944 c -2.768739,0 -5.327223,1.477059 -6.711592,3.874964 z" style="stroke-width:0.774993" /></svg></span>
-  </a></div></div>
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 Abel DIDOUH</div></div>
     </div></footer>
     
-    <script defer src="/blog/js/main.min.029edd5657104c98e05c607717da081d013cb52f5ce266141f2964fb5ed4c10d.js" integrity="sha256-Ap7dVlcQTJjgXGB3F9oIHQE8tS9c4mYUHylk&#43;17UwQ0="></script>
-<script defer src="/blog/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
-        <script defer src="/blog/en.search.min.8262ffdf412ad676ef50dc5d317bff5291582c63cd88f16ea2a60ef7c326f2a1.js" integrity="sha256-gmL/30Eq1nbvUNxdMXv/UpFYLGPNiPFuoqYO98Mm8qE="></script>
+    <script defer src="/website/js/main.min.fee2ee5c1a34a422519f9ed8467b2dde53cd077890a235d3a031e21dd5825377.js" integrity="sha256-/uLuXBo0pCJRn57YRnst3lPNB3iQojXToDHiHdWCU3c="></script>
+<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+        <script defer src="/website/en.search.min.9f8c83aed5a70b2da8bd764944b3885872c8b653f604262820dc4a3a0291c289.js" integrity="sha256-n4yDrtWnCy2ovXZJRLOIWHLItlP2BCYoINxKOgKRwok="></script>
   </body>
 </html>

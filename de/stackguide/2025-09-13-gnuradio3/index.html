@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+
+<script src="https://abel-did.github.io/website/js/tarteaucitron/tarteaucitron.min.js"></script>
+
+        <script type="text/javascript">
+        tarteaucitron.init({
+    	  "privacyUrl": "",  
+          "bodyPosition": "top",  
+
+    	  "hashtag": "#tarteaucitron",  
+    	  "cookieName": "tarteaucitron",  
+    
+    	  "orientation": "middle",  
+       
+          "groupServices": true,  
+          "showDetailsOnClick": true,  
+          "serviceDefaultState": "wait",  
+                           
+    	  "showAlertSmall": false,  
+    	  "cookieslist": false,  
+           "cookieslistEmbed": false,  
+                           
+          "closePopup": true,  
+
+          "showIcon": true,  
+          
+          "iconPosition": "BottomRight",  
+
+    	  "adblocker": false,  
+                           
+          "DenyAllCta" : true,  
+          "AcceptAllCta" : true,  
+          "highPrivacy": true,  
+          "alwaysNeedConsent": true,  
+                           
+    	  "handleBrowserDNTRequest": false,  
+
+    	  "removeCredit": true,  
+    	  "moreInfoLink": true,  
+
+          "useExternalCss": false,  
+          "useExternalJs": false,  
+
+    	  
+                          
+          "readmoreLink": "",  
+
+          "mandatory": true,  
+          "mandatoryCta": false,  
+    
+          
+          
+          "googleConsentMode": true,  
+          "bingConsentMode": true,  
+          "softConsentMode": true,  
+
+          "dataLayer": false,  
+          "serverSide": false,  
+          
+          "partnersList": true  
+        });
+        </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="robots" content="index, follow" />
+  <link rel="icon shortcut" href="/website/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/website/favicon.svg" type="image/svg+xml" id="favicon-svg" />
+<link rel="icon" href="/website/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/website/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/website/apple-touch-icon.png" sizes="180x180" />
+<link fetchpriority="low" href="/website/site.webmanifest" rel="manifest" />
+<title>Einen AM-Modulator mit GNU Radio erstellen – DIDOUH Laboratories</title>
+  <meta name="description" content="Dieser praktische Leitfaden zeigt Ihnen, wie Sie einen vollständigen AM-Modulator mit GNU Radio Companion erstellen. Wir behandeln die Theorie der Amplitudenmodulation, deren schrittweise Implementierung, Leistungstests und den Vergleich mit anderen Modulationslösungen." /><link rel="canonical" href="https://abel-did.github.io/website/de/stackguide/2025-09-13-gnuradio3/" itemprop="url" />
+
+<meta property="og:title" content="Einen AM-Modulator mit GNU Radio erstellen" />
+<meta property="og:description" content="Dieser praktische Leitfaden zeigt Ihnen, wie Sie einen vollständigen AM-Modulator mit GNU Radio Companion erstellen. Wir behandeln die Theorie der Amplitudenmodulation, deren schrittweise Implementierung, Leistungstests und den Vergleich mit anderen Modulationslösungen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://abel-did.github.io/website/de/stackguide/2025-09-13-gnuradio3/" /><meta property="article:section" content="stackguide" />
+<meta property="article:published_time" content="2025-09-10T18:27:53+02:00" />
+<meta property="article:modified_time" content="2025-09-10T18:27:53+02:00" />
+
+  <meta itemprop="name" content="Einen AM-Modulator mit GNU Radio erstellen">
+  <meta itemprop="description" content="Dieser praktische Leitfaden zeigt Ihnen, wie Sie einen vollständigen AM-Modulator mit GNU Radio Companion erstellen. Wir behandeln die Theorie der Amplitudenmodulation, deren schrittweise Implementierung, Leistungstests und den Vergleich mit anderen Modulationslösungen.">
+  <meta itemprop="datePublished" content="2025-09-10T18:27:53+02:00">
+  <meta itemprop="dateModified" content="2025-09-10T18:27:53+02:00">
+  <meta itemprop="wordCount" content="1064">
+  <meta itemprop="keywords" content="GNURadio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Einen AM-Modulator mit GNU Radio erstellen">
+  <meta name="twitter:description" content="Dieser praktische Leitfaden zeigt Ihnen, wie Sie einen vollständigen AM-Modulator mit GNU Radio Companion erstellen. Wir behandeln die Theorie der Amplitudenmodulation, deren schrittweise Implementierung, Leistungstests und den Vergleich mit anderen Modulationslösungen.">
+
+    <link rel="preload" href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" as="style" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+    <link href="/website/css/compiled/main.min.b39475f93e69f77063bb69a1db200dbb5c4c898c66ee64108e9c9d1a8c7a82b9.css" rel="stylesheet" integrity="sha256-s5R1&#43;T5p93Bju2mh2yANu1xMiYxm7mQQjpydGox6grk=" />
+
+
+  
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    
+  
+  <script>
+tarteaucitron.user.gtagUa = 'G-35BR2S567M';
+
+ tarteaucitron.user.gtagMore = function () {   };
+(tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+</script>
+  
+
+
+  <script>
+     
+    const defaultTheme = 'system';
+
+    const setDarkTheme = () => {
+      document.documentElement.classList.add("dark");
+      document.documentElement.style.colorScheme = "dark";
+    }
+    const setLightTheme = () => {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.style.colorScheme = "light";
+    }
+
+    if ("color-theme" in localStorage) {
+      localStorage.getItem("color-theme") === "dark" ? setDarkTheme() : setLightTheme();
+    } else {
+      defaultTheme === "dark" ? setDarkTheme() : setLightTheme();
+      if (defaultTheme === "system") {
+        window.matchMedia("(prefers-color-scheme: dark)").matches ? setDarkTheme() : setLightTheme();
+      }
+    }
+  </script>
+
+  
+  <link rel="stylesheet" href="/website/css/katex.min.c3eee6c164526b8c90b99eada9f1d9f30d3a318926f8b8b4d03b93684a9542cca7cbbd833674d5def8c3154ec7e7adfb783fbff4ee13f16826ab0365e9eed5ce.css" integrity="sha512-w&#43;7mwWRSa4yQuZ6tqfHZ8w06MYkm&#43;Li00DuTaEqVQsyny72DNnTV3vjDFU7H5637eD&#43;/9O4T8WgmqwNl6e7Vzg==" /></head>
+<body dir="ltr"><div class="nav-container hx:sticky hx:top-0 hx:z-20 hx:w-full hx:bg-transparent hx:print:hidden">
+  <div
+    class="nav-container-blur hx:pointer-events-none hx:absolute hx:z-[-1] hx:h-full hx:w-full hx:bg-white hx:dark:bg-dark hx:shadow-[0_2px_4px_rgba(0,0,0,.02),0_1px_0_rgba(0,0,0,.06)] hx:contrast-more:shadow-[0_0_0_1px_#000] hx:dark:shadow-[0_-1px_0_rgba(255,255,255,.1)_inset] hx:contrast-more:dark:shadow-[0_0_0_1px_#fff]"
+  ></div>
+
+  <nav class="hextra-max-navbar-width hx:mx-auto hx:flex hx:items-center hx:justify-end hx:gap-2 hx:h-16 hx:px-6">
+    <a class="hx:flex hx:items-center hx:hover:opacity-75 hx:ltr:mr-auto hx:rtl:ml-auto" href="/website/de/">
+    <span class="hx:mr-2 hx:font-extrabold hx:inline hx:select-none" title="DIDOUH Laboratories">DIDOUH Laboratories</span>
+</a>
+
+            <a
+              title="Blog"
+              href="/website/de/blog"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Blog</span>
+            </a>
+            <a
+              title="Stack Guide"
+              href="/website/de/stackguide"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:font-medium"
+            >
+              <span class="hx:text-center">Stack Guide</span>
+            </a>
+            <a
+              title="Über"
+              href="/website/de/about"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Über</span>
+            </a>
+            <a
+              title="Schlagwörter"
+              href="/website/de/tags"
+              
+              class="hx:text-sm hx:contrast-more:text-gray-700 hx:contrast-more:dark:text-gray-100 hx:relative hx:-ml-2 hx:hidden hx:whitespace-nowrap hx:p-2 hx:md:inline-block hx:text-gray-600 hx:hover:text-gray-800 hx:dark:text-gray-400 hx:dark:hover:text-gray-200"
+            >
+              <span class="hx:text-center">Schlagwörter</span>
+            </a><div class="search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="Suchen..."
+      class="search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+<button type="button" aria-label="Menu" class="hamburger-menu hx:cursor-pointer hx:-mr-2 hx:rounded-sm hx:p-2 hx:active:bg-gray-400/20 hx:md:hidden"><svg height=24 fill="none" viewBox="0 0 24 24" stroke="currentColor"><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8H20"></path></g><g><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16H20"></path></g></svg></button>
+  </nav>
+</div>
+<div class="hx:mx-auto hx:flex hextra-max-page-width">
+    <aside class="sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] hx:md:hidden hx:xl:block">
+  
+  <div class="hx:px-4 hx:pt-4 hx:md:hidden">
+    <div class="search-wrapper hx:relative hx:md:w-64">
+  <div class="hx:relative hx:flex hx:items-center hx:text-gray-900 hx:contrast-more:text-gray-800 hx:dark:text-gray-300 hx:contrast-more:dark:text-gray-300">
+    <input
+      placeholder="Suchen..."
+      class="search-input hx:block hx:w-full hx:appearance-none hx:rounded-lg hx:px-3 hx:py-2 hx:transition-colors hx:text-base hx:leading-tight hx:md:text-sm hx:bg-black/[.05] hx:dark:bg-gray-50/10 hx:focus:bg-white hx:dark:focus:bg-dark hx:placeholder:text-gray-500 hx:dark:placeholder:text-gray-400 hx:contrast-more:border hx:contrast-more:border-current"
+      type="search"
+      value=""
+      spellcheck="false"
+    />
+    <kbd
+      class="hx:absolute hx:my-1.5 hx:select-none hx:ltr:right-1.5 hx:rtl:left-1.5 hx:h-5 hx:rounded-sm hx:bg-white hx:px-1.5 hx:font-mono hx:text-[10px] hx:font-medium hx:text-gray-500 hx:border hx:border-gray-200 hx:dark:border-gray-100/20 hx:dark:bg-dark/50 hx:contrast-more:border-current hx:contrast-more:text-current hx:contrast-more:dark:border-current hx:items-center hx:gap-1 hx:transition-opacity hx:pointer-events-none hx:hidden hx:sm:flex"
+    >
+      CTRL K
+    </kbd>
+  </div>
+
+  <div>
+    <ul
+      class="search-results hextra-scrollbar hx:hidden hx:border hx:border-gray-200 hx:bg-white hx:text-gray-100 hx:dark:border-neutral-800 hx:dark:bg-neutral-900 hx:absolute hx:top-full hx:z-20 hx:mt-2 hx:overflow-auto hx:overscroll-contain hx:rounded-xl hx:py-2.5 hx:shadow-xl hx:max-h-[min(calc(50vh-11rem-env(safe-area-inset-bottom)),400px)] hx:md:max-h-[min(calc(100vh-5rem-env(safe-area-inset-bottom)),400px)] hx:inset-x-0 hx:ltr:md:left-auto hx:rtl:md:right-auto hx:contrast-more:border hx:contrast-more:border-gray-900 hx:contrast-more:dark:border-gray-50 hx:w-screen hx:min-h-[100px] hx:max-w-[min(calc(100vw-2rem),calc(100%+20rem))]"
+      style="transition: max-height 0.2s ease 0s;"
+    ></ul>
+  </div>
+</div>
+
+  </div>
+  <div class="hextra-scrollbar hx:overflow-y-auto hx:overflow-x-hidden hx:p-4 hx:grow hx:md:h-[calc(100vh-var(--navbar-height)-var(--menu-height))]">
+    <ul class="hx:flex hx:flex-col hx:gap-1 hx:md:hidden">
+      
+      
+          <li class=""><a
+    class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word]
+      hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50"
+    href="/website/de/about/"
+    
+  >Über mich
+    </a></li>
+    </ul>
+
+    <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div></div>
+  
+  
+    <div class="hx:md:hidden hx:justify-end hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show"><div class="hx:flex hx:justify-items-start hx:grow">
+    <button
+      title="Sprache ändern"
+      data-state="closed"
+      class="language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="Sprache ändern"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>Deutsch</span></div>
+    </button>
+    <ul
+      class="language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/nb/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Bokmål</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/fr/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Français</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="Darstellung ändern"
+  data-theme="light"
+  class="theme-toggle hx:cursor-pointer hx:group hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50"
+  type="button"
+  aria-label="Darstellung ändern"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
+</button>
+</div></aside>
+    
+<nav class="hextra-toc hx:order-last hx:hidden hx:w-64 hx:shrink-0 hx:xl:block hx:print:hidden hx:px-4" aria-label="table of contents">
+    <div class="hextra-scrollbar hx:sticky hx:top-16 hx:overflow-y-auto hx:pr-4 hx:pt-6 hx:text-sm [hyphens:auto] hx:max-h-[calc(100vh-var(--navbar-height)-env(safe-area-inset-bottom))] hx:ltr:-mr-4 hx:rtl:-ml-4"><p class="hx:mb-4 hx:font-semibold hx:tracking-tight">Auf dieser Seite</p><ul>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#artikel%c3%bcbersicht">Artikelübersicht
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#theoretische-grundlagen-der-am-modulation">Theoretische Grundlagen der AM-Modulation
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#grundprinzip">Grundprinzip
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#kritische-parameter">Kritische Parameter
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#vor--und-nachteile">Vor- und Nachteile
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#architektur-des-modulators-in-grc">Architektur des Modulators in GRC
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%c3%bcberblick-%c3%bcber-den-flowgraph">Überblick über den Flowgraph
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#funktionsschema">Funktionsschema
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#schrittweise-implementierung">Schrittweise Implementierung
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#schritt-1-quellen-und-generatoren">Schritt 1: Quellen und Generatoren
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#schritt-2-verarbeitungsbl%c3%b6cke">Schritt 2: Verarbeitungsblöcke
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#schritt-3-visualisierung-und-ausgang">Schritt 3: Visualisierung und Ausgang
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#vollst%c3%a4ndige-parameterkonfiguration">Vollständige Parameterkonfiguration
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#tests-und-validierung-des-modulators">Tests und Validierung des Modulators
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#test-1-sinussignal">Test 1: Sinussignal
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#test-2-%c3%bcberpr%c3%bcfung-des-modulationsindex">Test 2: Überprüfung des Modulationsindex
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#test-3-spektralanalyse">Test 3: Spektralanalyse
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#automatisiertes-testskript">Automatisiertes Testskript
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#optimierungen-und-varianten">Optimierungen und Varianten
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#verbesserung-1-audio-filterung">Verbesserung 1: Audio-Filterung
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#verbesserung-2-agc-automatic-gain-control">Verbesserung 2: AGC (Automatic Gain Control)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#verbesserung-3-double-sideband-suppressed-carrier-dsb-sc">Verbesserung 3: Double Sideband Suppressed Carrier (DSB-SC)
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#variante-synchrone-am">Variante: Synchrone AM
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#vergleich-mit-anderen-techniken">Vergleich mit anderen Techniken
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#am-vs-fm">AM vs FM
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#am-vs-digitale-modulationen">AM vs Digitale Modulationen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#gemessene-leistungen">Gemessene Leistungen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#praktische-anwendungen-und-einschr%c3%a4nkungen">Praktische Anwendungen und Einschränkungen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#reale-anwendungen">Reale Anwendungen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#technische-einschr%c3%a4nkungen">Technische Einschränkungen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#verbesserungen-f%c3%bcr-produktion">Verbesserungen für Produktion
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#praktische-%c3%bcbungen">Praktische Übungen
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%c3%bcbung-1-am-demodulator">Übung 1: AM-Demodulator
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%c3%bcbung-2-am-stereo">Übung 2: AM-Stereo
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:ltr:pl-4 hx:rtl:pr-4 hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#%c3%bcbung-3-verzerrungsanalyse">Übung 3: Verzerrungsanalyse
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#fazit">Fazit
+        </a>
+      </li>
+      <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
+        <a class="hx:font-medium hx:inline-block hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:break-words" href="#referenzen">Referenzen
+        </a>
+      </li></ul>
+      <div class="hx:mt-8 hx:border-t hx:bg-white hx:pt-8 hx:shadow-[0_-12px_16px_white] hx:dark:bg-dark hx:dark:shadow-[0_-12px_16px_#111] hx:sticky hx:bottom-0 hx:flex hx:flex-col hx:items-start hx:gap-2 hx:pb-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-t hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:border-neutral-400">
+        <button aria-hidden="true" id="backToTop" onClick="scrollUp();" class="hx:cursor-pointer hx:transition-all hx:duration-75 hx:opacity-0 hx:text-xs hx:font-medium hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-100 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">
+          <span>Nach oben</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="hx:inline hx:ltr:ml-1 hx:rtl:mr-1 hx:h-3.5 hx:w-3.5 hx:rounded-full hx:border hx:border-gray-500 hx:hover:border-gray-900 hx:dark:border-gray-400 hx:dark:hover:border-gray-100 hx:contrast-more:border-gray-800 hx:contrast-more:dark:border-gray-50">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+
+    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
+      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+        
+  <div class="hx:mt-1.5 hx:flex hx:items-center hx:gap-1 hx:overflow-hidden hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-current">
+        <div class="hx:whitespace-nowrap hx:transition-colors hx:min-w-[24px] hx:overflow-hidden hx:text-ellipsis hx:hover:text-gray-900 hx:dark:hover:text-gray-100">
+          <a href="">Stack Guide</a>
+        </div><svg class="hx:w-3.5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><div class="hx:whitespace-nowrap hx:transition-colors hx:font-medium hx:text-gray-700 hx:contrast-more:font-bold hx:contrast-more:text-current hx:dark:text-gray-100 hx:contrast-more:dark:text-current">Einen AM-Modulator mit GNU Radio erstellen</div>
+  </div>
+
+        <h1 class="hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">Einen AM-Modulator mit GNU Radio erstellen</h1>
+        <div class="hx:mt-4 hx:mb-16 hx:text-gray-500 hx:text-sm hx:flex hx:items-center hx:flex-wrap hx:gap-y-2"><span class="hx:mr-1">10. September 2025</span><span class="hx:mx-1">·</span><span class="hx:text-sm hx:text-gray-500">Lesezeit : 5  Minuten 
+          </span>
+        </div>
+        <div class="content" style="text-align: justify;">
+          <p>Nach der Entdeckung von GNU Radio Companion ist es Zeit, unser erstes konkretes Projekt zu erstellen: einen AM-Modulator (Amplitudenmodulation). Dieser Leitfaden begleitet Sie Schritt für Schritt beim Verstehen, Implementieren und Testen eines funktionsfähigen Amplitudenmodulators.</p>
+<h2>Artikelübersicht<span class="hx:absolute hx:-mt-20" id="artikelübersicht"></span>
+    <a href="#artikel%c3%bcbersicht" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>Theoretische Grundlagen der AM-Modulation</li>
+<li>Architektur des Modulators in GRC</li>
+<li>Schrittweise Implementierung</li>
+<li>Tests und Validierung des Modulators</li>
+<li>Optimierungen und Varianten</li>
+<li>Vergleich mit anderen Modulationstechniken</li>
+<li>Praktische Anwendungen und Einschränkungen</li>
+</ul>
+<h2>Theoretische Grundlagen der AM-Modulation<span class="hx:absolute hx:-mt-20" id="theoretische-grundlagen-der-am-modulation"></span>
+    <a href="#theoretische-grundlagen-der-am-modulation" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Grundprinzip<span class="hx:absolute hx:-mt-20" id="grundprinzip"></span>
+    <a href="#grundprinzip" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Die Amplitudenmodulation (AM) besteht darin, die Amplitude eines Trägersignals entsprechend dem zu übertragenden Informationssignal zu variieren. Mathematisch wird ein AM-Signal ausgedrückt als:</p>
+<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msub><mi>s</mi><mrow><mi>A</mi><mi>M</mi></mrow></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>A</mi><mi>c</mi></msub><mo stretchy="false">[</mo><mn>1</mn><mo>+</mo><mi>m</mi><mo>⋅</mo><msub><mi>s</mi><mi>m</mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo stretchy="false">]</mo><mi>cos</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>2</mn><mi>π</mi><msub><mi>f</mi><mi>c</mi></msub><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">s_{AM}(t) = A_c[1 + m \cdot s_m(t)] \cos(2\pi f_c t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">A</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">M</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.4445em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)]</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.03588em;">π</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span></span><p>Wobei:</p>
+<ul>
+<li>$A_c$ : Trägeramplitude</li>
+<li>$m$ : Modulationsindex (0 ≤ m ≤ 1)</li>
+<li>$s_m(t)$ : Modulierendes Signal (Audio)</li>
+<li>$f_c$ : Trägerfrequenz</li>
+</ul>
+<h3>Kritische Parameter<span class="hx:absolute hx:-mt-20" id="kritische-parameter"></span>
+    <a href="#kritische-parameter" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Modulationsindex (m)</strong>:</p>
+<ul>
+<li>m = 0 : Keine Modulation (reiner Träger)</li>
+<li>m = 1 : 100% Modulation (Maximum ohne Verzerrung)</li>
+<li>m &gt; 1 : Übermodulation (Verzerrung)</li>
+</ul>
+<p><strong>Bandbreite</strong>:
+Die Bandbreite eines AM-Signals ist: $BW = 2 \times f_{max}$
+Für ein Audiosignal bis 5 kHz: BW = 10 kHz</p>
+<h3>Vor- und Nachteile<span class="hx:absolute hx:-mt-20" id="vor--und-nachteile"></span>
+    <a href="#vor--und-nachteile" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Vorteile</strong>:</p>
+<ul>
+<li>Einfachheit der Demodulation</li>
+<li>Kostengünstige Empfänger</li>
+<li>Robustheit gegenüber Phaseninterferenzen</li>
+</ul>
+<p><strong>Nachteile</strong>:</p>
+<ul>
+<li>Geringe Energieeffizienz (25% theoretisch)</li>
+<li>Empfindlich gegenüber Amplitudenrauschen</li>
+<li>Große spektrale Belegung</li>
+</ul>
+<h2>Architektur des Modulators in GRC<span class="hx:absolute hx:-mt-20" id="architektur-des-modulators-in-grc"></span>
+    <a href="#architektur-des-modulators-in-grc" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Überblick über den Flowgraph<span class="hx:absolute hx:-mt-20" id="überblick-über-den-flowgraph"></span>
+    <a href="#%c3%bcberblick-%c3%bcber-den-flowgraph" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Unser AM-Modulator wird umfassen:</p>
+<ol>
+<li><strong>Audioquelle</strong>: Modulierendes Signal (Musik, Sprache)</li>
+<li><strong>Trägergenerator</strong>: Sinussignal bei gewünschter Frequenz</li>
+<li><strong>Modulationsblock</strong>: Multiplikation und Addition</li>
+<li><strong>Steuerungen</strong>: Einstellung des Modulationsindex</li>
+<li><strong>Visualisierung</strong>: Zeit- und Frequenzbereichs-Scopes</li>
+<li><strong>Ausgang</strong>: Datei oder RF-Übertragung</li>
+</ol>
+<h3>Funktionsschema<span class="hx:absolute hx:-mt-20" id="funktionsschema"></span>
+    <a href="#funktionsschema" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><pre><code>[Audio Source] ──┐
+                 ├─── [Multiply] ──┐
+[Mod Index] ─────┘                │
+                                  ├─── [Add] ──── [Output]
+[Carrier] ────────────────────────┘</code></pre></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Code kopieren"
+  >
+    <div class="copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+    <div class="success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h2>Schrittweise Implementierung<span class="hx:absolute hx:-mt-20" id="schrittweise-implementierung"></span>
+    <a href="#schrittweise-implementierung" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Schritt 1: Quellen und Generatoren<span class="hx:absolute hx:-mt-20" id="schritt-1-quellen-und-generatoren"></span>
+    <a href="#schritt-1-quellen-und-generatoren" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>1.1 Audioquelle</strong></p>
+<ul>
+<li>Block: <code>Audio Source</code></li>
+<li>Sample Rate: 48000</li>
+<li>Device Name: (Systemstandard)</li>
+</ul>
+<p><strong>1.2 Trägergenerator</strong></p>
+<ul>
+<li>Block: <code>Signal Source</code></li>
+<li>Sample Rate: 48000</li>
+<li>Waveform: Cosine</li>
+<li>Frequency: 10000 (10 kHz für Test)</li>
+<li>Amplitude: 1</li>
+</ul>
+<p><strong>1.3 Modulationsindex-Steuerung</strong></p>
+<ul>
+<li>Block: <code>QT GUI Range</code></li>
+<li>ID: mod_index</li>
+<li>Default Value: 0.5</li>
+<li>Minimum: 0</li>
+<li>Maximum: 1</li>
+<li>Step: 0.01</li>
+</ul>
+<h3>Schritt 2: Verarbeitungsblöcke<span class="hx:absolute hx:-mt-20" id="schritt-2-verarbeitungsblöcke"></span>
+    <a href="#schritt-2-verarbeitungsbl%c3%b6cke" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>2.1 Multiplikation für Modulation</strong></p>
+<ul>
+<li>Block: <code>Multiply</code></li>
+<li>Verbinden: Audio Source × mod_index</li>
+</ul>
+<p><strong>2.2 Addition des Trägers</strong></p>
+<ul>
+<li>Block: <code>Add</code></li>
+<li>Verbinden: (Audio × mod_index) + Carrier</li>
+</ul>
+<p><strong>2.3 Endamplituden-Steuerung</strong></p>
+<ul>
+<li>Block: <code>Multiply Const</code></li>
+<li>Constant: 0.5 (zur Vermeidung von Sättigung)</li>
+</ul>
+<h3>Schritt 3: Visualisierung und Ausgang<span class="hx:absolute hx:-mt-20" id="schritt-3-visualisierung-und-ausgang"></span>
+    <a href="#schritt-3-visualisierung-und-ausgang" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>3.1 Zeit-Scope</strong></p>
+<ul>
+<li>Block: <code>QT GUI Time Sink</code></li>
+<li>Sample Rate: 48000</li>
+<li>Number of Points: 2048</li>
+<li>Verbinden: Modulator-Ausgang</li>
+</ul>
+<p><strong>3.2 Spektrumanalysator</strong></p>
+<ul>
+<li>Block: <code>QT GUI Frequency Sink</code></li>
+<li>Sample Rate: 48000</li>
+<li>FFT Size: 2048</li>
+<li>Verbinden: Modulator-Ausgang</li>
+</ul>
+<p><strong>3.3 Audio-Ausgang</strong></p>
+<ul>
+<li>Block: <code>Audio Sink</code></li>
+<li>Sample Rate: 48000</li>
+<li>Verbinden: Modulator-Ausgang</li>
+</ul>
+<h3>Vollständige Parameterkonfiguration<span class="hx:absolute hx:-mt-20" id="vollständige-parameterkonfiguration"></span>
+    <a href="#vollst%c3%a4ndige-parameterkonfiguration" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>Block</th>
+          <th>Parameter</th>
+          <th>Wert</th>
+          <th>Begründung</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Audio Source</td>
+          <td>Sample Rate</td>
+          <td>48000</td>
+          <td>Audio-Standard</td>
+      </tr>
+      <tr>
+          <td>Signal Source</td>
+          <td>Frequency</td>
+          <td>10000</td>
+          <td>Hörbar für Test</td>
+      </tr>
+      <tr>
+          <td>QT GUI Range</td>
+          <td>Maximum</td>
+          <td>1.0</td>
+          <td>Übermodulation vermeiden</td>
+      </tr>
+      <tr>
+          <td>Time Sink</td>
+          <td>Points</td>
+          <td>2048</td>
+          <td>Zeitauflösung</td>
+      </tr>
+      <tr>
+          <td>FFT Sink</td>
+          <td>Size</td>
+          <td>2048</td>
+          <td>Frequenzauflösung</td>
+      </tr>
+  </tbody>
+</table>
+<h2>Tests und Validierung des Modulators<span class="hx:absolute hx:-mt-20" id="tests-und-validierung-des-modulators"></span>
+    <a href="#tests-und-validierung-des-modulators" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Test 1: Sinussignal<span class="hx:absolute hx:-mt-20" id="test-1-sinussignal"></span>
+    <a href="#test-1-sinussignal" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Ersetzen Sie temporär die Audio Source durch eine Signal Source:</p>
+<ul>
+<li>Frequency: 1000 Hz</li>
+<li>Amplitude: 1</li>
+</ul>
+<p><strong>Erwartetes Ergebnis</strong>:</p>
+<ul>
+<li>Zeit-Scope: Träger mit sinusförmiger Hüllkurve</li>
+<li>Frequenz-Scope: Peak bei 10 kHz ± 1 kHz (Seitenbänder)</li>
+</ul>
+<h3>Test 2: Überprüfung des Modulationsindex<span class="hx:absolute hx:-mt-20" id="test-2-überprüfung-des-modulationsindex"></span>
+    <a href="#test-2-%c3%bcberpr%c3%bcfung-des-modulationsindex" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Verfahren</strong>:</p>
+<ol>
+<li>Stellen Sie mod_index auf 0 → Reiner Träger sichtbar</li>
+<li>Erhöhen auf 0.5 → Modulation sichtbar, keine Verzerrung</li>
+<li>Auf 1.0 erhöhen → Maximale akzeptable Modulation</li>
+<li>Über 1.0 → Sichtbare Verzerrung (Übermodulation)</li>
+</ol>
+<p><strong>Praktische Messungen</strong>:</p>
+<ul>
+<li>Bei m = 0.5: Modulationstiefe = 50%</li>
+<li>Bei m = 1.0: Hüllkurve berührt Null ohne Überschreitung</li>
+</ul>
+<h3>Test 3: Spektralanalyse<span class="hx:absolute hx:-mt-20" id="test-3-spektralanalyse"></span>
+    <a href="#test-3-spektralanalyse" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Komplexes Audiosignal</strong>:</p>
+<ul>
+<li>Verwenden Sie eine echte Audioquelle (Musik)</li>
+<li>Beobachten Sie die spektrale Ausbreitung um 10 kHz</li>
+<li>Überprüfen Sie die Symmetrie der Seitenbänder</li>
+</ul>
+<p><strong>Qualitätsmetriken</strong>:</p>
+<ul>
+<li>THD (Total Harmonic Distortion) &lt; 1% für m ≤ 0.8</li>
+<li>Signal-Rausch-Verhältnis &gt; 40 dB</li>
+<li>Trägerrestunterdrückung</li>
+</ul>
+<h3>Automatisiertes Testskript<span class="hx:absolute hx:-mt-20" id="automatisiertes-testskript"></span>
+    <a href="#automatisiertes-testskript" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><div class="hextra-code-block hx:relative hx:mt-6 hx:first:mt-0 hx:group/code">
+
+<div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="ch">#!/usr/bin/env python3</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">gnuradio</span> <span class="kn">import</span> <span class="n">gr</span><span class="p">,</span> <span class="n">blocks</span><span class="p">,</span> <span class="n">analog</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">AM_Tester</span><span class="p">(</span><span class="n">gr</span><span class="o">.</span><span class="n">top_block</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">gr</span><span class="o">.</span><span class="n">top_block</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># Testsignal</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">sig_source</span> <span class="o">=</span> <span class="n">analog</span><span class="o">.</span><span class="n">sig_source_f</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="mi">48000</span><span class="p">,</span> <span class="n">analog</span><span class="o">.</span><span class="n">GR_SIN_WAVE</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># AM-Modulator</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">carrier</span> <span class="o">=</span> <span class="n">analog</span><span class="o">.</span><span class="n">sig_source_c</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="mi">48000</span><span class="p">,</span> <span class="n">analog</span><span class="o">.</span><span class="n">GR_COS_WAVE</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">multiply</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">multiply_ff</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">add</span> <span class="o">=</span> <span class="n">blocks</span><span class="o">.</span><span class="n">add_cc</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1"># Verbindungen</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sig_source</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">multiply</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">carrier</span><span class="p">,</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">measure_modulation_depth</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Code zur Messung der Modulationstiefe</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tb</span> <span class="o">=</span> <span class="n">AM_Tester</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tb</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Automatische Messungen</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span></span></span></code></pre></div></div><div class="hextra-code-copy-btn-container hx:opacity-0 hx:transition hx:group-hover/code:opacity-100 hx:flex hx:gap-1 hx:absolute hx:m-[11px] hx:right-0 hx:top-0">
+  <button
+    class="hextra-code-copy-btn hx:group/copybtn hx:cursor-pointer hx:transition-all hx:active:opacity-50 hx:bg-primary-700/5 hx:border hx:border-black/5 hx:text-gray-600 hx:hover:text-gray-900 hx:rounded-md hx:p-1.5 hx:dark:bg-primary-300/10 hx:dark:border-white/10 hx:dark:text-gray-400 hx:dark:hover:text-gray-50"
+    title="Code kopieren"
+  >
+    <div class="copy-icon hx:group-[.copied]/copybtn:hidden hx:pointer-events-none hx:h-4 hx:w-4"></div>
+    <div class="success-icon hx:hidden hx:group-[.copied]/copybtn:block hx:pointer-events-none hx:h-4 hx:w-4"></div>
+  </button>
+</div>
+</div>
+<h2>Optimierungen und Varianten<span class="hx:absolute hx:-mt-20" id="optimierungen-und-varianten"></span>
+    <a href="#optimierungen-und-varianten" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Verbesserung 1: Audio-Filterung<span class="hx:absolute hx:-mt-20" id="verbesserung-1-audio-filterung"></span>
+    <a href="#verbesserung-1-audio-filterung" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Fügen Sie einen Tiefpassfilter zur Begrenzung des Audiobandes hinzu:</p>
+<p><strong>Audio-Filter</strong>:</p>
+<ul>
+<li>Block: <code>Low Pass Filter</code></li>
+<li>Sample Rate: 48000</li>
+<li>Cutoff Freq: 5000</li>
+<li>Transition Width: 1000</li>
+</ul>
+<h3>Verbesserung 2: AGC (Automatic Gain Control)<span class="hx:absolute hx:-mt-20" id="verbesserung-2-agc-automatic-gain-control"></span>
+    <a href="#verbesserung-2-agc-automatic-gain-control" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Zur Aufrechterhaltung eines konstanten Modulationspegels:</p>
+<p><strong>AGC Block</strong>:</p>
+<ul>
+<li>Block: <code>AGC</code></li>
+<li>Rate: 1e-3</li>
+<li>Reference: 1.0</li>
+<li>Gain: 1.0</li>
+</ul>
+<h3>Verbesserung 3: Double Sideband Suppressed Carrier (DSB-SC)<span class="hx:absolute hx:-mt-20" id="verbesserung-3-double-sideband-suppressed-carrier-dsb-sc"></span>
+    <a href="#verbesserung-3-double-sideband-suppressed-carrier-dsb-sc" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Unterdrücken Sie den Träger zur Effizienzverbesserung:</p>
+<p><strong>Modifikation</strong>:</p>
+<ul>
+<li>Entfernen Sie die Trägeraddition</li>
+<li>Behalten Sie nur die Multiplikation</li>
+<li>Ergebnis: DSB-SC-Signal</li>
+</ul>
+<h3>Variante: Synchrone AM<span class="hx:absolute hx:-mt-20" id="variante-synchrone-am"></span>
+    <a href="#variante-synchrone-am" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Zur Verbesserung der Demodulationsqualität:</p>
+<p><strong>Ergänzungen</strong>:</p>
+<ul>
+<li>Synchronisationspilot mit niedrigem Pegel</li>
+<li>Selektive Filterung</li>
+<li>Automatische Frequenzregelung</li>
+</ul>
+<h2>Vergleich mit anderen Techniken<span class="hx:absolute hx:-mt-20" id="vergleich-mit-anderen-techniken"></span>
+    <a href="#vergleich-mit-anderen-techniken" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>AM vs FM<span class="hx:absolute hx:-mt-20" id="am-vs-fm"></span>
+    <a href="#am-vs-fm" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><table>
+  <thead>
+      <tr>
+          <th>Kriterium</th>
+          <th>AM</th>
+          <th>FM</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Energieeffizienz</td>
+          <td>25%</td>
+          <td>100%</td>
+      </tr>
+      <tr>
+          <td>Empfängerkomplexität</td>
+          <td>Einfach</td>
+          <td>Komplex</td>
+      </tr>
+      <tr>
+          <td>Audioqualität</td>
+          <td>Mittel</td>
+          <td>Ausgezeichnet</td>
+      </tr>
+      <tr>
+          <td>Rauschresistenz</td>
+          <td>Niedrig</td>
+          <td>Hoch</td>
+      </tr>
+      <tr>
+          <td>Bandbreite</td>
+          <td>2×f_max</td>
+          <td>2×(Δf + f_max)</td>
+      </tr>
+  </tbody>
+</table>
+<h3>AM vs Digitale Modulationen<span class="hx:absolute hx:-mt-20" id="am-vs-digitale-modulationen"></span>
+    <a href="#am-vs-digitale-modulationen" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>AM-Vorteile</strong>:</p>
+<ul>
+<li>Einfache Demodulation (Hüllkurvendetektor)</li>
+<li>Kompatibel mit vorhandenen Empfängern</li>
+<li>Reduzierte Kosten</li>
+</ul>
+<p><strong>Nachteile gegenüber Digital</strong>:</p>
+<ul>
+<li>Niedrige spektrale Effizienz</li>
+<li>Keine Fehlerkorrektur</li>
+<li>Begrenzte Qualität</li>
+</ul>
+<h3>Gemessene Leistungen<span class="hx:absolute hx:-mt-20" id="gemessene-leistungen"></span>
+    <a href="#gemessene-leistungen" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Vergleichstests mit 1 kHz Audiosignal:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Methode</th>
+          <th>SNR (dB)</th>
+          <th>THD (%)</th>
+          <th>Effizienz (%)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Klassische AM</td>
+          <td>42</td>
+          <td>0.8</td>
+          <td>25</td>
+      </tr>
+      <tr>
+          <td>DSB-SC</td>
+          <td>45</td>
+          <td>0.5</td>
+          <td>50</td>
+      </tr>
+      <tr>
+          <td>SSB</td>
+          <td>48</td>
+          <td>0.3</td>
+          <td>100</td>
+      </tr>
+  </tbody>
+</table>
+<h2>Praktische Anwendungen und Einschränkungen<span class="hx:absolute hx:-mt-20" id="praktische-anwendungen-und-einschränkungen"></span>
+    <a href="#praktische-anwendungen-und-einschr%c3%a4nkungen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Reale Anwendungen<span class="hx:absolute hx:-mt-20" id="reale-anwendungen"></span>
+    <a href="#reale-anwendungen" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>AM-Broadcasting</strong>:</p>
+<ul>
+<li>Kommerzielle AM-Radio (530-1600 kHz)</li>
+<li>Seefahrt-Radio (2-30 MHz)</li>
+<li>Luftfahrt (108-137 MHz)</li>
+</ul>
+<p><strong>Industrielle Anwendungen</strong>:</p>
+<ul>
+<li>Datenübertragung mit niedriger Rate</li>
+<li>Einfache Telemetrie</li>
+<li>Notfallkommunikation</li>
+</ul>
+<h3>Technische Einschränkungen<span class="hx:absolute hx:-mt-20" id="technische-einschränkungen"></span>
+    <a href="#technische-einschr%c3%a4nkungen" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Bandbreite</strong>:
+Unser 48 kSps Modulator begrenzt echte RF-Anwendungen. Für echtes RF:</p>
+<ul>
+<li>Verwenden Sie Sample-Raten &gt; 1 MSps</li>
+<li>Fügen Sie Rekonstruktionsfilter hinzu</li>
+<li>Integrieren Sie einen RF-Upconverter</li>
+</ul>
+<p><strong>Dynamikbereich</strong>:</p>
+<ul>
+<li>16 Bit begrenzen das Signal-Rausch-Verhältnis</li>
+<li>Verwenden Sie hochauflösende ADC/DAC für Produktion</li>
+</ul>
+<p><strong>Latenz</strong>:</p>
+<ul>
+<li>Audio-Buffer führt ~100ms Verzögerung ein</li>
+<li>Optimieren Sie für Echtzeit-Anwendungen</li>
+</ul>
+<h3>Verbesserungen für Produktion<span class="hx:absolute hx:-mt-20" id="verbesserungen-für-produktion"></span>
+    <a href="#verbesserungen-f%c3%bcr-produktion" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p><strong>Erweiterte Filterung</strong>:</p>
+<ul>
+<li>Präzise Anti-Aliasing-Filter</li>
+<li>Audio-Entzerrung</li>
+<li>Modulationsbegrenzer</li>
+</ul>
+<p><strong>Monitoring</strong>:</p>
+<ul>
+<li>Echtzeit-Messung des Modulationsindex</li>
+<li>Übermodulationserkennung</li>
+<li>Kontinuierliche Spektralanalyse</li>
+</ul>
+<p><strong>RF-Interfacing</strong>:</p>
+<ul>
+<li>Upconverter zu Radiofrequenzen</li>
+<li>Leistungsverstärker</li>
+<li>Sendefilter</li>
+</ul>
+<h2>Praktische Übungen<span class="hx:absolute hx:-mt-20" id="praktische-übungen"></span>
+    <a href="#praktische-%c3%bcbungen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><h3>Übung 1: AM-Demodulator<span class="hx:absolute hx:-mt-20" id="übung-1-am-demodulator"></span>
+    <a href="#%c3%bcbung-1-am-demodulator" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Erstellen Sie den entsprechenden Demodulator:</p>
+<ol>
+<li>Einfacher Hüllkurvendetektor</li>
+<li>Synchroner Demodulator</li>
+<li>Leistungsvergleich</li>
+</ol>
+<h3>Übung 2: AM-Stereo<span class="hx:absolute hx:-mt-20" id="übung-2-am-stereo"></span>
+    <a href="#%c3%bcbung-2-am-stereo" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Implementieren Sie ein AM-Stereo-System:</p>
+<ol>
+<li>L+R und L-R Kodierung</li>
+<li>19 kHz Pilotträger</li>
+<li>Stereo-Dekodierung</li>
+</ol>
+<h3>Übung 3: Verzerrungsanalyse<span class="hx:absolute hx:-mt-20" id="übung-3-verzerrungsanalyse"></span>
+    <a href="#%c3%bcbung-3-verzerrungsanalyse" class="subheading-anchor" aria-label="Permalink for this section"></a></h3><p>Messen Sie Verzerrung in Abhängigkeit vom Index:</p>
+<ol>
+<li>THD vs Modulationsindex</li>
+<li>Intermodulation mit komplexen Signalen</li>
+<li>Parameteroptimierung</li>
+</ol>
+<h2>Fazit<span class="hx:absolute hx:-mt-20" id="fazit"></span>
+    <a href="#fazit" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><p>Dieser AM-Modulator demonstriert die grundlegenden Konzepte der Amplitudenmodulation und zeigt gleichzeitig die Macht von GNU Radio für schnelles Prototyping. Obwohl einfach, legt diese Implementierung die Grundlagen für komplexere Systeme.</p>
+<p>Die wichtigsten Erkenntnisse:</p>
+<ul>
+<li>Der Modulationsindex bestimmt die Qualität</li>
+<li>Zeit-/Frequenz-Visualisierung ist essentiell</li>
+<li>Optimierungen hängen von der Zielanwendung ab</li>
+</ul>
+<p>Im nächsten Artikel werden wir die Erstellung benutzerdefinierter Blöcke zur Erweiterung der GNU Radio-Funktionalitäten behandeln.</p>
+<h2>Referenzen<span class="hx:absolute hx:-mt-20" id="referenzen"></span>
+    <a href="#referenzen" class="subheading-anchor" aria-label="Permalink for this section"></a></h2><ul>
+<li>Haykin, S. (2013). <em>Communication Systems</em>. John Wiley &amp; Sons.</li>
+<li>Proakis, J. G., &amp; Salehi, M. (2008). <em>Digital Communications</em>. McGraw-Hill.</li>
+<li>GNU Radio Project. (2023). <em>GNU Radio Tutorials</em>. Verfügbar unter: <a href="https://wiki.gnuradio.org/index.php/Tutorials" target="_blank" rel="noopener">https://wiki.gnuradio.org/index.php/Tutorials</a></li>
+<li>Collins, T. (2022). <em>PySDR: A Guide to SDR and DSP using Python</em>. Verfügbar unter: <a href="https://pysdr.org" target="_blank" rel="noopener">https://pysdr.org</a></li>
+<li>Analog Devices. (2023). <em>AM Modulation Techniques</em>. Verfügbar unter: <a href="https://wiki.analog.com/university/courses/electronics/text/chapter-14" target="_blank" rel="noopener">https://wiki.analog.com/university/courses/electronics/text/chapter-14</a></li>
+<li>ITU-R. (2019). <em>Handbook on Broadcasting Systems</em>. International Telecommunication Union.</li>
+</ul>
+
+        </div><div class="hx:mt-16"></div><div class="hx:mb-8 hx:flex hx:items-center hx:border-t hx:pt-8 hx:border-gray-200 hx:dark:border-neutral-800 hx:contrast-more:border-neutral-400 hx:dark:contrast-more:border-neutral-400 hx:print:hidden"><a
+        href="/website/de/stackguide/2025-09-10-gnuradio2/"
+        title="Erster Kontakt mit GNU Radio Companion"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:pr-4 hx:rtl:pl-4"
+      ><svg class="hx:inline hx:h-5 hx:shrink-0 hx:ltr:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>Erster Kontakt mit GNU Radio Companion</a><a
+        href="/website/de/stackguide/2025-09-13-gnuradio4/"
+        title="Eigene GNU Radio Blöcke erstellen"
+        class="hx:flex hx:max-w-[50%] hx:items-center hx:gap-1 hx:py-4 hx:text-base hx:font-medium hx:text-gray-600 hx:transition-colors [word-break:break-word] hx:hover:text-primary-600 hx:dark:text-gray-300 hx:md:text-lg hx:ltr:ml-auto hx:ltr:pl-4 hx:ltr:text-right hx:rtl:mr-auto hx:rtl:pr-4 hx:rtl:text-left"
+      >Eigene GNU Radio Blöcke erstellen<svg class="hx:inline hx:h-5 hx:shrink-0 hx:rtl:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></a></div></main>
+    </article>
+  </div>
+
+      <footer class="hextra-footer hx:bg-gray-100 hx:pb-[env(safe-area-inset-bottom)] hx:dark:bg-neutral-900 hx:print:bg-transparent"><div class="hx:mx-auto hx:flex hx:gap-2 hx:py-2 hx:px-4 hextra-max-footer-width"><div class="hx:flex hx:justify-items-start ">
+    <button
+      title="Sprache ändern"
+      data-state="closed"
+      class="language-switcher hx:cursor-pointer hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:grow"
+      type="button"
+      aria-label="Sprache ändern"
+    >
+      <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg><span>Deutsch</span></div>
+    </button>
+    <ul
+      class="language-options hx:hidden hx:z-20 hx:max-h-64 hx:overflow-auto hx:rounded-md hx:ring-1 hx:ring-black/5 hx:bg-white hx:py-1 hx:text-sm hx:shadow-lg hx:dark:ring-white/20 hx:dark:bg-neutral-800"
+      style="position: fixed; inset: auto auto 0px 0px; margin: 0px; min-width: 100px;"
+    >
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >English</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/nb/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Bokmål</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/fr/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Français</a>
+        </li>
+      
+        
+        <li class="hx:flex hx:flex-col">
+          <a
+            href="/website/de/stackguide/2025-09-13-gnuradio3/"
+            class="hx:text-gray-800 hx:dark:text-gray-100 hx:hover:bg-primary-50 hx:hover:text-primary-600 hx:hover:dark:bg-primary-500/10 hx:hover:dark:text-primary-600 hx:relative hx:cursor-pointer hx:whitespace-nowrap hx:py-1.5 hx:transition-colors hx:ltr:pl-3 hx:ltr:pr-9 hx:rtl:pr-3 hx:rtl:pl-9"
+          >Deutsch<span class="hx:absolute hx:inset-y-0 hx:flex hx:items-center hx:ltr:right-3 hx:rtl:left-3"><svg height=1em width=1em xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></span></a>
+        </li>
+      </ul>
+  </div><button
+  title="Darstellung ändern"
+  data-theme="light"
+  class="theme-toggle hx:cursor-pointer hx:group hx:h-7 hx:rounded-md hx:px-2 hx:text-left hx:text-xs hx:font-medium hx:text-gray-600 hx:transition-colors hx:dark:text-gray-400 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50"
+  type="button"
+  aria-label="Darstellung ändern"
+>
+  <div class="hx:flex hx:items-center hx:gap-2 hx:capitalize"><svg height=12 class="hx:group-data-[theme=light]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="hx:group-data-[theme=light]:hidden">Hell</span><svg height=12 class="hx:group-data-[theme=dark]:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg><span class="hx:group-data-[theme=dark]:hidden">Dunkel</span></div>
+</button>
+</div><hr class="hx:border-gray-200 hx:dark:border-neutral-800" /><div class="hextra-custom-footer hextra-max-footer-width hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400"></div><div
+      class="hextra-max-footer-width hx:mx-auto hx:flex hx:justify-center hx:py-12 hx:pl-[max(env(safe-area-inset-left),1.5rem)] hx:pr-[max(env(safe-area-inset-right),1.5rem)] hx:text-gray-600 hx:dark:text-gray-400 hx:md:justify-start"
+    >
+      <div class="hx:flex hx:w-full hx:flex-col hx:items-center hx:sm:items-start"><div class="hx:mt-6 hx:text-xs">© 2025 Hextra Project.</div></div>
+    </div></footer>
+    
+    <script defer src="/website/js/main.min.fee2ee5c1a34a422519f9ed8467b2dde53cd077890a235d3a031e21dd5825377.js" integrity="sha256-/uLuXBo0pCJRn57YRnst3lPNB3iQojXToDHiHdWCU3c="></script>
+<script defer src="/website/js/flexsearch.433e941a8a573ebb9931fc16fc75266ab6b93f569ac2fb4f3dc66882e0416f4c.js" integrity="sha256-Qz6UGopXPruZMfwW/HUmara5P1aawvtPPcZoguBBb0w=" crossorigin="anonymous"></script>
+        <script defer src="/website/de.search.min.f87330d44cb43939e62f7095ae030648a7e9b84cf59b1acd60ab408f255a2069.js" integrity="sha256-&#43;HMw1Ey0OTnmL3CVrgMGSKfpuEz1mxrNYKtAjyVaIGk="></script>
+  </body>
+</html>

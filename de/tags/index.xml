@@ -1,0 +1,19 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DIDOUH Laboratories – Schlagwörter</title>
+    <link>http://localhost:1313/website/de/tags/</link>
+    <description>Recent content in Schlagwörter on DIDOUH Laboratories</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Sun, 14 Sep 2025 12:33:55 +0200</lastBuildDate>
+    
+	  <atom:link href="http://localhost:1313/website/de/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+  </channel>
+</rss>

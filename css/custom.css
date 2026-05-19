@@ -1,0 +1,19 @@
+/* Hauteur minimale pour éviter les espaces vides */
+.hx-content {
+  min-height: 100vh;
+}
+
+/* Espacement des cartes features */
+.hextra-feature-card {
+  min-height: 280px;
+}
+
+/* Footer collé en bas */
+.hx-footer {
+  margin-top: auto;
+}
+
+/* Container principal */
+main {
+  min-height: calc(100vh - 120px);
+}

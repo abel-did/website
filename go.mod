@@ -1,4 +1,4 @@
-module website
+module github.com/abel-did/website
 
 go 1.24.4
 

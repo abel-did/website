@@ -1,12 +1,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Abel DIDOUH – Tags</title>
-    <link>https://abel-did.github.io/blog/nb/tags/</link>
-    <description>Recent content in Tags on Abel DIDOUH</description>
+    <title>DIDOUH Laboratories – Stikkord</title>
+    <link>https://abel-did.github.io/website/nb/tags/</link>
+    <description>Recent content in Stikkord on DIDOUH Laboratories</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>nb</language>
+    <lastBuildDate>Tue, 19 Aug 2025 16:05:24 +1200</lastBuildDate>
     
-	  <atom:link href="https://abel-did.github.io/blog/nb/tags/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://abel-did.github.io/website/nb/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
       

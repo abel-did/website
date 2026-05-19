@@ -1,3 +1,5 @@
 blog: "Blog"
 about: "À propos"
-readTime: "Temps de lecture : "
+readingTime: "Temps de lecture "
+minuteR: " minute "
+minutesR: " minutes "
