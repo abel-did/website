@@ -1,30 +1,53 @@
 baseURL: https://abel-did.github.io/website/
 languageCode: en-us
-title: Abel DIDOUH
+title: DIDOUH Laboratories
+
+
+taxonomies:
+  tag: tags
 
 params:
   theme:
     # light | dark | system
-    default: dark
+    default: light
     displayToggle: true
+
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    
+  author:
+    name: Abel
+    email: abel@example.com
+
+services:
+  googleAnalytics:
+    ID: "G-35BR2S567M"
 
 module:
   imports:
-    - path: hextra-main
+    - path: github.com/imfing/hextra
 
 defaultContentLanguage: en
+
 languages:
   en:
     languageName: English
     params:
-       reading_speed: 228
+      reading_speed: 228
     weight: 1
+
   nb:
     languageName: Bokmål
     weight: 2
+
   fr:
     languageName: Français
     weight: 3
+
+  de:
+    languageName: Deutsch
+    weight: 4
 
 menu:
   main:
@@ -32,68 +55,86 @@ menu:
       name: Blog
       pageRef: /blog
       weight: 1
-    - name: Search
+
+    - identifier: stackguide
+      name: Stack Guide
+      pageRef: /stackguide
       weight: 2
+
+    - identifier: about
+      name: About
+      pageRef: /about
+      weight: 3
+
+    - identifier: tags
+      name: Tags
+      pageRef: /tags
+      weight: 4
+
+    - name: Search
+      weight: 5
       params:
         type: search
 
-
 blog:
   list:
-      displayTags: true
-      # date | lastmod | publishDate | title | weight
-      sortBy: date
-      sortOrder: desc # or "asc"
-      # Pagination
-      pagerSize: 1
+    displayTags: true
+    # date | lastmod | publishDate | title | weight
+    sortBy: date
+    sortOrder: desc
+    # Pagination
+    pagerSize: 1
 
 article:
-      displayPagination: true
+  displayPagination: true
+  displayTags: true
 
 toc:
-    displayTags: true
+  displayTags: true
 
 highlight:
-    copy:
-      enable: true
-      # hover | always
-      display: hover
+  copy:
+    enable: true
+    # hover | always
+    display: hover
 
 enableRobotsTXT: true
+
 # Parse Git commit
 enableGitInfo: false
+
 # enableEmoji: false
 hasCJKLanguage: true
 
 page:
-    # full (100%), wide (90rem), normal (80rem)
-    width: normal
-    # tabs:
-    #   sync: true
+  # full (100%), wide (90rem), normal (80rem)
+  width: normal
+
+  # tabs:
+  #   sync: true
 
 footer:
-    enable: true
-    displayCopyright: true
-    displayPoweredBy: false
-    width: normal
-
-params:
-  navbar:
-    displayTitle: true
-    displayLogo: false
-
+  enable: true
+  displayCopyright: true
+  displayPoweredBy: false
+  width: normal
 
 markup:
   highlight:
     noClasses: false
+
   goldmark:
     renderer:
       unsafe: true
+
     extensions:
       passthrough:
         delimiters:
-          block: [['\[', '\]'], ['$$', '$$']]
-          inline: [['\(', '\)']]
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+
+          inline:
+            - ['\(', '\)']
+
         enable: true
-
-
