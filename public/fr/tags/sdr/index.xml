@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DIDOUH Laboratories – SDR</title>
+    <title>DIDOUH Abel – SDR</title>
     <link>https://abel-did.github.io/website/fr/tags/sdr/</link>
-    <description>Recent content in SDR on DIDOUH Laboratories</description>
+    <description>Recent content in SDR on DIDOUH Abel</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>fr</language>
     <managingEditor>abel@example.com (Abel)</managingEditor>
